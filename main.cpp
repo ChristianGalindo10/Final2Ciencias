@@ -1,278 +1,29 @@
 #include <iostream>
-#include <string>
-#include <sstream>
 #include "lista.h"
-#include "Cola.h"
-#include <fstream>
+//Clases
+#include "profesor.h"
+#include "tema.h"
+#include "llenarlistas.h"
+#include "lecturaarchivos.h"
+/*#include "evaluacion.h"
+#include "contenedor.h"
+#include "nota.h"
+#include "corte.h"
 
 using namespace std;
-//using std::string;
+//using std::string;*/
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 //Estructuras
 
-struct evaluacion{
-	int porcentaje;
-	int tema;
-};
-//
-
-struct contenedor{
-	int i;
-	lista<evaluacion> c;
-};
-
-struct nota{
-	string tipo;
-	int porcentaje;
-	lista<contenedor> evaluaciones;
-};
-
-struct corte{
-	string nombre;
-	lista<nota> evaluaciones;
-};
-
-struct profesor{
-	long long int cedula;
-	char apellidos[50];
-	char nombres[50];
-	int numClases;
-	lista<corte> cortes;
-};
-
-struct tema{
-	int codigo;
-	string nombre;
-};
-
 //Funciones para manejo de archivos
-void escribirProfesores(lista<profesor> ps);
-void escribirCortes(lista<profesor> ps);
-void escribirNotas(lista<profesor> ps);
-void escribirContenedores(lista<profesor> ps);
-void escribirEvaluaciones(lista<profesor> ps);
-lista<profesor> lectura(lista<profesor> ps);
-lista<corte> lecturaCortes(profesor p);
-lista<nota> lecturaNotas(profesor p, corte cor);
-lista<contenedor> lecturaContenedores(profesor p, corte cor, nota nt);
-lista<evaluacion> lecturaEvaluaciones(profesor p, corte cor, nota nt, contenedor cont);
+//void escribirProfesores(lista<profesor> ps);
+//void escribirCortes(lista<profesor> ps);
+//void escribirNotas(lista<profesor> ps);
+//void escribirContenedores(lista<profesor> ps);
+//void escribirEvaluaciones(lista<profesor> ps);
 
-
-//Implementacion funciones manejo de archivos
-lista<profesor> lectura(lista<profesor> ps){
-	ifstream archivo;
-	int numLines = 0;
-	ifstream in("archivos//Profesores//profesores.txt");
-	string unused;
-	//Contar lineas de archivo
-	while (getline(in, unused) )
-   		++numLines; 
-	cola<string> Cola;
-	archivo.open("archivos//Profesores//profesores.txt",ios::in);
-	if(archivo.fail()){
-		cout<<"No se pudo abrir el archivo";
-		exit(1);
-	}
-	string aux;
-	//while(!archivo.eof()){
-	for(int i=0;i<numLines;i++){
-		profesor p;
-		string puntero="";
-		getline(archivo,aux);
-		stringstream ss(aux);
-		while(ss.good()){
-			string substr;
-			getline(ss,substr,',');
-			Cola.InsCola(substr);
-		}
-		Cola.AtenderCola(&puntero);
-		istringstream cedula(puntero);
-		if ( !(cedula >> p.cedula) ) //give the value to 'Result' using the characters in the stream
-    		p.cedula = 0;
-    	Cola.AtenderCola(&puntero);
-		for(int i = 0; i<puntero.length(); i++){
-			p.apellidos[i] = puntero[i];
-		}
-		for(int i = puntero.length(); i<50; i++){
-			p.apellidos[i] = 0;
-		}
-		Cola.AtenderCola(&puntero);
-		for(int i = 0; i<puntero.length(); i++){
-			p.nombres[i] = puntero[i];
-		}
-		for(int i = puntero.length(); i<50; i++){
-			p.nombres[i] = 0;
-		}
-		Cola.AtenderCola(&puntero);
-		istringstream numClases(puntero);
-		if ( !(numClases >> p.numClases) ) //give the value to 'Result' using the characters in the stream
-    		p.numClases = 0;
-		p.cortes=lecturaCortes(p);		
-    	ps.insertarOrd(p,p.cedula);
-	}
-	archivo.close();
-	return ps;
-}
-
-lista<corte> lecturaCortes(profesor p){	
-	ifstream archivo;
-	ostringstream ss;
-	ss << p.cedula;
-	string ruta;
-	ruta="archivos//Cortes//"+ss.str()+"cortes.txt";
-	//Contar lineas de archivo
-	int numLines = 0;
-	ifstream in(ruta.c_str());
-	string unused;
-	while (getline(in, unused))
-   		++numLines; 
-	archivo.open(ruta.c_str(),ios::in);
-	if(archivo.fail()){
-		cout<<"No se pudo abrir el archivo";
-		//exit(1);
-	}
-	corte c;
-	c.nombre="CorteEjemplo";
-	lista<corte> cs= lista<corte>(c);
-	for(int i=0;i<numLines;i++){
-		string nombre;
-		getline(archivo,nombre);
-		c.nombre=nombre;
-		c.evaluaciones=lecturaNotas(p,c);
-		cs.insertarOrd(c,cs.get_tam()+1);
-	}
-	archivo.close();
-	return cs;
-}
-
-lista<nota> lecturaNotas(profesor p, corte cor){
-	ifstream archivo;
-	ostringstream ss;
-	ss << p.cedula;
-	string ruta;
-	ruta="archivos//TiposEvaluacion//"+ss.str()+cor.nombre+"tiposEval.txt";
-	//cout<<ruta;
-	//Contar lineas de archivo
-	int numLines = 0;
-	ifstream in(ruta.c_str());
-	string unused;
-	while (getline(in, unused))
-   		++numLines; 
-	archivo.open(ruta.c_str(),ios::in);
-	if(archivo.fail()){
-		cout<<"No se pudo abrir el archivo";
-		//exit(1);
-	}
-	nota nt;
-	nt.porcentaje=1000;
-	nt.tipo="TipoCualquiera";
-	lista<nota> ns= lista<nota>(nt);
-	string aux;
-	cola<string> Cola2;
-	for(int i=0;i<numLines;i++){
-		string puntero="";
-		getline(archivo,aux);
-		stringstream ss(aux);
-		while(ss.good()){
-			string substr;
-			getline(ss,substr,',');
-			Cola2.InsCola(substr);
-		}
-		Cola2.AtenderCola(&puntero);
-		nt.tipo=puntero;
-		Cola2.AtenderCola(&puntero);
-		istringstream porcentaje(puntero);
-		if ( !(porcentaje >> nt.porcentaje) ) //give the value to 'Result' using the characters in the stream
-    		nt.porcentaje = 0;
-    		nt.evaluaciones=lecturaContenedores(p,cor,nt);
-    	ns.insertarOrd(nt,ns.get_tam()+1);	
-	}
-	archivo.close();
-	return ns;
-}
-
-lista<contenedor> lecturaContenedores(profesor p, corte cor, nota nt){
-	ifstream archivo;
-	ostringstream ss;
-	ss << p.cedula;
-	string ruta;
-	ruta="archivos//Contenedores//"+ss.str()+cor.nombre+nt.tipo+".txt";
-	//Contar lineas de archivo
-	int numLines = 0;
-	ifstream in(ruta.c_str());
-	string unused;
-	while (getline(in, unused))
-   		++numLines; 
-	archivo.open(ruta.c_str(),ios::in);
-	if(archivo.fail()){
-		cout<<"No se pudo abrir el archivo";
-		//exit(1);
-	}
-	contenedor cont;
-	cont.i=1000;
-	lista<contenedor> cs= lista<contenedor>(cont);
-	string aux;
-	for(int i=0;i<numLines;i++){
-		getline(archivo,aux);
-		istringstream contador(aux);
-		if ( !(contador >> cont.i) ) //give the value to 'Result' using the characters in the stream
-    		cont.i = 0;
-    	cont.c=lecturaEvaluaciones(p,cor,nt,cont);	
-    	cs.insertarOrd(cont,cs.get_tam()+1);
-	}
-    return cs;	
-}
-
-lista<evaluacion> lecturaEvaluaciones(profesor p, corte cor, nota nt, contenedor cont){
-	ifstream archivo;
-	ostringstream ss;
-	ss << p.cedula;
-	ostringstream ss2;
-	ss2 << cont.i;
-	string ruta;
-	ruta="archivos//Evaluaciones//"+ss.str()+cor.nombre+nt.tipo+ss2.str()+"preguntas.txt";
-	//Contar lineas de archivo
-	int numLines = 0;
-	ifstream in(ruta.c_str());
-	string unused;
-	while (getline(in, unused))
-   		++numLines; 
-	archivo.open(ruta.c_str(),ios::in);
-	if(archivo.fail()){
-		cout<<"No se pudo abrir el archivo";
-		//exit(1);
-	}
-	evaluacion eva;
-	eva.porcentaje=1000;
-	eva.tema=1000;
-	lista<evaluacion> vs= lista<evaluacion>(eva);
-	string aux;
-	cola<string> Cola3;
-	for(int i=0;i<numLines;i++){
-		string puntero="";
-		getline(archivo,aux);
-		stringstream ss(aux);
-		while(ss.good()){
-			string substr;
-			getline(ss,substr,',');
-			Cola3.InsCola(substr);
-		}
-		Cola3.AtenderCola(&puntero);
-		istringstream tema(puntero);
-		if ( !(tema >> eva.tema) ) //give the value to 'Result' using the characters in the stream
-    		eva.tema = 0;
-		Cola3.AtenderCola(&puntero);
-		istringstream porcentaje(puntero);
-		if ( !(porcentaje >> eva.porcentaje) ) //give the value to 'Result' using the characters in the stream
-    		eva.porcentaje = 0;
-    	vs.insertarOrd(eva,vs.get_tam()+1);
-	}
-    return vs;	
-}
-
-
-void escribirProfesores(lista<profesor> ps){
+/*void escribirProfesores(lista<profesor> ps){
 	ofstream archivo;
 	profesor p;
 	archivo.open("archivos//Profesores//profesores.txt",ios::out); //Abrir archivo
@@ -288,9 +39,9 @@ void escribirProfesores(lista<profesor> ps){
 	}
 	
 	archivo.close();
-}
+}*/
 
-void escribirCortes(lista<profesor> ps){
+/*void escribirCortes(lista<profesor> ps){
 	profesor p;
 	corte cor;
 	for(int pos=1;pos<=ps.get_tam();pos++){
@@ -307,9 +58,9 @@ void escribirCortes(lista<profesor> ps){
 		}
 		archivo.close();	
 	}
-}
+}*/
 
-void escribirNotas(lista<profesor> ps){
+/*void escribirNotas(lista<profesor> ps){
 	profesor p;
 	corte cor;
 	nota nt;
@@ -330,9 +81,9 @@ void escribirNotas(lista<profesor> ps){
 			archivo.close();
 		}
 	}
-}
+}*/
 
-void escribirContenedores(lista<profesor> ps){
+/*void escribirContenedores(lista<profesor> ps){
 	profesor p;
 	corte cor;
 	nota nt;
@@ -357,9 +108,9 @@ void escribirContenedores(lista<profesor> ps){
 			}
 		}
 	}
-}
+}*/
 
-void escribirEvaluaciones(lista<profesor> ps){
+/*void escribirEvaluaciones(lista<profesor> ps){
 	profesor p;
 	corte cor;
 	nota nt;
@@ -390,21 +141,21 @@ void escribirEvaluaciones(lista<profesor> ps){
 			}
 		}
 	}
-}
+}*/
 
 //Prototipos funciones de llenado
-lista<tema> llenaTemas(lista<tema> ts,tema t);
-lista<profesor> llenaProfes(lista<profesor> ps);
-lista<corte> llenaCortes(lista<corte> cs);
-lista<nota> llenaNotas(lista<nota> ns);
-lista<contenedor> llenaContenedores(lista<contenedor> cs);
-lista<evaluacion> llenaEvaluaciones(lista<evaluacion> es);
+//lista<tema> llenaTemas(lista<tema> ts,tema t);
+//lista<profesor> llenaProfes(lista<profesor> ps);
+//lista<corte> llenaCortes(lista<corte> cs);
+//lista<nota> llenaNotas(lista<nota> ns);
+//lista<contenedor> llenaContenedores(lista<contenedor> cs);
+//lista<evaluacion> llenaEvaluaciones(lista<evaluacion> es);
 
 
 
 
 //Implementación funciones de llenado
-lista<tema> llenaTemas(lista<tema> ts,tema t){
+/*lista<tema> llenaTemas(lista<tema> ts,tema t){
 	t.codigo=1;
 	t.nombre="tipos de algoritmos";
 	ts.insertarOrd(t,t.codigo);
@@ -425,9 +176,9 @@ lista<tema> llenaTemas(lista<tema> ts,tema t){
 	t.nombre="Demostraciones";
 	ts.insertarOrd(t,t.codigo);
 	return ts;
-}
+}*/
 
-lista<corte> llenaCortes(lista<corte> cs){
+/*lista<corte> llenaCortes(lista<corte> cs){
 	int c=1,e=0;
 	nota n;
 	n.porcentaje=1000;
@@ -448,9 +199,9 @@ lista<corte> llenaCortes(lista<corte> cs){
 		cin>>c;
 	}
 	return cs;
-}
+}*/
 
-lista<nota> llenaNotas(lista<nota> ns){
+/*lista<nota> llenaNotas(lista<nota> ns){
 	int nc=1,e=1;
 	contenedor cont;
 	cont.i=9999999;
@@ -474,9 +225,9 @@ lista<nota> llenaNotas(lista<nota> ns){
 		cin>>nc;
 	}
 	return ns;
-}
+}*/
 
-lista<contenedor> llenaContenedores(lista<contenedor> cs){
+/*lista<contenedor> llenaContenedores(lista<contenedor> cs){
 	int c=1;
 	evaluacion eva;
 	eva.porcentaje=99999;
@@ -493,9 +244,9 @@ lista<contenedor> llenaContenedores(lista<contenedor> cs){
 		cin>>c;
 	}
 	return cs;
-}
+}*/
 
-lista<evaluacion> llenaEvaluaciones(lista<evaluacion> es){
+/*lista<evaluacion> llenaEvaluaciones(lista<evaluacion> es){
 	int e=1;
 	while(e!=0){
 		evaluacion eva;
@@ -510,9 +261,9 @@ lista<evaluacion> llenaEvaluaciones(lista<evaluacion> es){
 		cin>>e;
 	}
 	return es;
-}
+}*/
 
-lista<profesor> llenaProfes(lista<profesor> ps){
+/*lista<profesor> llenaProfes(lista<profesor> ps){
 	int d=1,c=0;
 	corte cor;
 	cor.nombre="CorteFinalFinal";
@@ -540,74 +291,78 @@ lista<profesor> llenaProfes(lista<profesor> ps){
 		cin>>d;
 		cin.ignore();
 	}
-	return ps;
-}
+	return ps;*/
+//}
 
 int main(int argc, char** argv) {
 	int pos=1,c=1,n=1,cont=1,e=1;
 	string ap,nom;
-	profesor p;
-	corte cor;
-	nota nt;
-	contenedor ct;
-	evaluacion eva;
-	cor.nombre="zzzzz";
-	p.cedula=999999;
+	Profesor p;
+	Corte cor;
+	Nota nt;
+	Contenedor ct;
+	Evaluacion eva;
+	LlenarListas llenarLista;
+	LecturaArchivos lecArchivos;
+	cor.setNombre("zzzzz");
+	p.setCedula(999999);
 	ap="Apellido1 Apellido2";
 	nom="Nombre1 Nombre 2";
 	for(int i = 0; i<ap.length(); i++){
-		p.apellidos[i] = ap[i];
+		p.setApellidos(i,ap[i]);
 	}
 	for(int i = 0; i<nom.length(); i++){
-		p.nombres[i] = nom[i];
+		p.setNombres(i,nom[i]);
 	}
-	p.numClases=1000;
-	tema t;
-	t.codigo=1000;
-	t.nombre="temaEjemplo";
+	p.setNumClases(1000);
+	
+	Tema t;
+	t.setCodigo(1000);
+	
+	t.setNombre("temaEjemplo");
 	
 	//Lista profesores
-	lista<profesor> profesores = lista<profesor>(p);
 	
+	lista<Profesor> profesores = lista<Profesor>(p);
 	
 	//Lista de temas
-	lista<tema> temas = lista<tema>(t);
+	lista<Tema> temas = lista<Tema>(t);
 	
 	//Llenar temas
-	temas=llenaTemas(temas,t);
+	temas=llenarLista.llenaTemas(temas,t);
 	
-	profesores=lectura(profesores);
+	profesores=lecArchivos.lecturaProfesores(profesores);
 	//Llenar profesores
 	//profesores=llenaProfes(profesores);
 	
 	//system("cls");
-
+	
 	
 	//Muestra la lista
 	cout<<"Profesores"<<endl;
 	for(pos=1;pos<=profesores.get_tam();pos++){
 		profesores.recorrer(pos,&p);
 		cout<<"Profesor:"<<endl;	
-		cout<<"Cedula: "<<p.cedula<<endl;
-		cout<<"Apellidos: "<<p.apellidos<<endl;
-		cout<<"Nombres: "<<p.nombres<<endl;
-		cout<<"Numero de clases: "<<p.numClases<<endl;
+		cout<<"Cedula: "<<p.getCedula()<<endl;
+		cout<<"Apellidos: "<<p.getApellidos()<<endl;
+		cout<<"Nombres: "<<p.getNombres()<<endl;
+		cout<<"Numero de clases: "<<p.getNumClases()<<endl;
 		
 		cout<<"Cortes:"<<endl;
-		for(c=1;c<=(p.cortes.get_tam());c++){
-			p.cortes.recorrer(c,&cor);
-			cout<<cor.nombre<<": "<<endl;
+		for(c=1;c<=(p.getListaCorte().get_tam());c++){
+			p.getListaCorte().recorrer(c,&cor);
+			cout<<cor.getNombre()<<": "<<endl;
 			cout<<"Tipos de evaluaciones:"<<endl;
-			for(n=1;n<=(cor.evaluaciones.get_tam());n++){
-				cor.evaluaciones.recorrer(n,&nt);
-				cout<<"Tipo: "<<nt.tipo<<". Porcentaje: "<<nt.porcentaje<<"%"<<endl;
+			for(n=1;n<=(cor.getListaNotas().get_tam());n++){
+				cor.getListaNotas().recorrer(n,&nt);
+				cout<<"Tipo: "<<nt.getTipo()<<". Porcentaje: "<<nt.getPorcentaje()<<"%"<<endl;
 				cout<<"Evaluaciones: "<<endl;
-				for(cont=1;cont<=(nt.evaluaciones.get_tam());cont++){
-					nt.evaluaciones.recorrer(cont,&ct);
-					cout<<"evaluacion #"<<ct.i<<endl;
-					for(e=1;e<=(ct.c.get_tam());e++){
-						ct.c.recorrer(e,&eva);
-						cout<<"Porcentaje: "<<eva.porcentaje<<". Tema: "<<eva.tema<<endl;
+				for(cont=1;cont<=(nt.getListaContenedor().get_tam());cont++){
+					nt.getListaContenedor().recorrer(cont,&ct);
+					cout<<"evaluacion #"<<ct.getI()<<endl;
+					for(e=1;e<=(ct.getListaEvaluacion().get_tam());e++){
+						ct.getListaEvaluacion().recorrer(e,&eva);
+						cout<<"Porcentaje: "<<eva.getPorcentaje()<<". Tema: "<<eva.getTema()<<endl;
 					}
 				}
 			}
