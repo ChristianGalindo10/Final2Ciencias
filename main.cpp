@@ -6,6 +6,7 @@
 #include "llenarlistas.h"
 #include "lecturaarchivos.h"
 #include "escribirarchivos.h"
+#include "menuprincipal.h"
 /*#include "evaluacion.h"
 #include "contenedor.h"
 #include "nota.h"
@@ -87,6 +88,10 @@ int main(int argc, char** argv) {
 			}
 		}
 	}
+	
+	//Menús
+	MenuPrincipal inicio;
+	inicio.mostrarMenu();
 	/*
 	escribirProfesores(profesores);
 	escribirCortes(profesores);
