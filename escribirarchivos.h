@@ -8,12 +8,24 @@
 #include "profesor.h"
 class EscribirArchivos{
 	public:
+		void escribir(lista<Profesor> ps, lista<Tema> ts);
 		void escribirProfesores(lista<Profesor> ps);
 		void escribirCortes(lista<Profesor> ps);
 		void escribirNotas(lista<Profesor> ps);
 		void escribirContenedores(lista<Profesor> ps);
 		void escribirEvaluaciones(lista<Profesor> ps);
+		void escribirTemas(lista<Tema> ts);
 };
+
+void EscribirArchivos::escribir(lista<Profesor> ps, lista<Tema> ts){
+	escribirProfesores(ps);
+	escribirCortes(ps);
+	escribirNotas(ps);
+	escribirContenedores(ps);
+	escribirEvaluaciones(ps);
+	escribirTemas(ts);
+}
+
 void EscribirArchivos::escribirProfesores(lista<Profesor> ps){
 	ofstream archivo;
 	Profesor p;
@@ -130,5 +142,26 @@ void EscribirArchivos::escribirEvaluaciones(lista<Profesor> ps){
 		}
 	}
 }
+
+
+void EscribirArchivos::escribirTemas(lista<Tema> ts){
+	ofstream archivo;
+	Tema t;
+	archivo.open("archivos//Temas//temas.txt",ios::out); //Abrir archivo
+	
+	if(archivo.fail()){
+		cout<<"No se pudo abrir el archivo";
+		exit(1);
+	}
+	
+	for(int pos=1;pos<=ts.get_tam();pos++){
+		ts.recorrer(pos,&t);
+		archivo<<t.getCodigo()<<","<<t.getNombre()<<endl;
+	}
+	
+	archivo.close();
+}
+
+
 #endif
 

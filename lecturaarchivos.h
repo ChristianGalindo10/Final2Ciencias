@@ -11,6 +11,7 @@
 #include "Cola.h"
 #include "contenedor.h"
 #include "profesor.h"
+#include "tema.h"
 class LecturaArchivos{
 	public:
 		lista<Profesor> lecturaProfesores(lista<Profesor> ps);
@@ -18,6 +19,7 @@ class LecturaArchivos{
 		lista<Nota> lecturaNotas(Profesor p, Corte cor);
 		lista<Contenedor> lecturaContenedores(Profesor p, Corte cor, Nota nt);
 		lista<Evaluacion> lecturaEvaluaciones(Profesor p, Corte cor, Nota nt, Contenedor cont);
+		lista<Tema> lecturaTemas(lista<Tema> ts);
 };
 lista<Profesor> LecturaArchivos::lecturaProfesores(lista<Profesor> ps){
 	ifstream archivo;
@@ -217,7 +219,7 @@ lista<Evaluacion> LecturaArchivos::lecturaEvaluaciones(Profesor p, Corte cor, No
 		}
 		Cola3.AtenderCola(&puntero);
 		istringstream tema(puntero);
-		if ( !(tema >> eva.getTema()) ) //give the value to 'Result' using the characters in the stream
+		if ( !(tema >> eva.getTema()) ) //E
     		eva.setTema(0);
 		Cola3.AtenderCola(&puntero);
 		istringstream porcentaje(puntero);
@@ -227,4 +229,50 @@ lista<Evaluacion> LecturaArchivos::lecturaEvaluaciones(Profesor p, Corte cor, No
 	}
     return vs;
 }
+
+lista<Tema> LecturaArchivos::lecturaTemas(lista<Tema> ts){
+	ifstream archivo;
+	string ruta;
+	ruta="archivos//Temas//temas.txt";
+	//Contar lineas de archivo
+	int numLines = 0;
+	ifstream in(ruta.c_str());
+	string unused;
+	while (getline(in, unused))
+   		++numLines; 
+	archivo.open(ruta.c_str(),ios::in);
+	if(archivo.fail()){
+		cout<<"No se pudo abrir el archivo";
+		//exit(1);
+	}
+	Tema t;
+	string aux;
+	cola<string> Cola4;
+	for(int i=0;i<numLines;i++){
+		string puntero="";
+		getline(archivo,aux);
+		stringstream ss(aux);
+		while(ss.good()){
+			string substr;
+			getline(ss,substr,',');
+			Cola4.InsCola(substr);
+		}
+		Cola4.AtenderCola(&puntero);
+		istringstream numt(puntero);
+		if ( !(numt >> t.getCodigo()) ) //give the value to 'Result' using the characters in the stream
+    		t.setCodigo(0);
+		Cola4.AtenderCola(&puntero);
+		for(int i = 0; i<puntero.length(); i++){
+			t.setNombre(i,puntero[i]);
+		}
+		for(int i = puntero.length(); i<50; i++){
+			t.setNombre(i,0);
+		}
+    	ts.insertarOrd(t,t.getCodigo());
+	}
+    return ts;
+}
+
+
+
 #endif

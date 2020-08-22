@@ -1,57 +1,68 @@
 #ifndef LLENARLISTAS_H
 #define LLENARLISTAS_H
-#include "tema.h"
 using namespace std;
 class LlenarListas{
 	public:
-		lista<Tema> llenaTemas(lista<Tema> ts,Tema t);
+		lista<Tema> llenaTemas(lista<Tema> ts);
 		lista<Profesor> llenaProfes(lista<Profesor> ps);
 		lista<Corte> llenaCortes(lista<Corte> cs);
 		lista<Nota> llenaNotas(lista<Nota> ns);
 		lista<Contenedor> llenaContenedores(lista<Contenedor> cs);
 		lista<Evaluacion> llenaEvaluaciones(lista<Evaluacion> es);
+		lista<Profesor> modificarProfe(lista<Profesor> ps);
+		lista<Corte> modificarCorte(lista<Corte> cs);
+		lista<Nota> modificarNota(lista<Nota> ns);
+		lista<Tema> modificarTema(lista<Tema> ts);
+		lista<Contenedor> modificarContenedor(lista<Contenedor> cs);
+		lista<Evaluacion> modificarEvaluacion(lista<Evaluacion> es);
+		lista<Profesor> eliminarProfesor(lista<Profesor> ps);
 };
-lista<Tema> LlenarListas::llenaTemas(lista<Tema> ts,Tema t){
-	t.setCodigo(1);
-	t.setNombre("tipos de algoritmos");
-	ts.insertarOrd(t,t.getCodigo());
-	
-	t.setCodigo(2);
-	t.setNombre("complejidad en memoria");
-	ts.insertarOrd(t,t.getCodigo());
-	
-	t.setCodigo(3);
-	t.setNombre("complejidad en tiempo");
-	ts.insertarOrd(t,t.getCodigo());
-	
-	t.setCodigo(6);
-	t.setNombre("Definicion de orden");
-	ts.insertarOrd(t,t.getCodigo());
-	
-	t.setCodigo(8);
-	t.setNombre("Demostraciones");
-	ts.insertarOrd(t,t.getCodigo());
+
+lista<Tema> LlenarListas::llenaTemas(lista<Tema> ts){
+	cin.ignore();
+	Tema t;
+	int d=1,cod;
+	char tipo[50];
+	while(d!=0){
+		cout<<"Digite el código del tema: ";
+		cin>>cod;
+		t.setCodigo(cod);
+		cout<<"Digite el tema: ";
+		cin.ignore();
+		cin.getline(tipo, 50);
+		for (int i = 0; i < 50; i++) { 
+        	t.setNombre(i,tipo[i]);
+    	}
+		ts.insertarOrd(t,t.getCodigo());
+		cout<<"Desea ingresar otro tema, Si=1, No=0: ";
+		cin>>d; 	
+	}
 	return ts;
 }
 lista<Profesor> LlenarListas::llenaProfes(lista<Profesor> ps){
+	cin.ignore();
 	int d=1,c=0;
 	Corte cor;
-	long long int cedula;
-	char apellidos[50];
-	char nombres[50];
-	int numClases;
 	cor.setNombre("CorteFinalFinal");
 	while(d!=0){
+		char apellidos[50];
+		char nombres[50];
+		long long int cedula;
+		int numClases;
 		lista<Corte> cortes = lista<Corte>(cor);
 		Profesor p;
 		cout<<"Digite los nombres del profesor: ";
 		//cin.ignore();
 		cin.getline(nombres, 50);
-		p.setNombres(*nombres);
+		for(int i=0;i<50;i++){
+			p.setNombres(i,nombres[i]);
+		}
 		cout<<"Digite los apellidos del profesor: ";
 		//cin.ignore();
 		cin.getline(apellidos, 50);
-		p.setApellidos(*apellidos);
+		for(int i=0;i<50;i++){
+			p.setApellidos(i,apellidos[i]);
+		}
 		cout<<"Digite la cedula del profesor: ";
 		cin>>cedula;
 		p.setCedula(cedula);
@@ -162,4 +173,285 @@ lista<Evaluacion> LlenarListas::llenaEvaluaciones(lista<Evaluacion> es){
 	}
 	return es;
 }
+
+lista<Profesor> LlenarListas::modificarProfe(lista<Profesor> ps){
+	Profesor p;
+	long long int cedula;
+	int d=1;
+	while(d!=0){	
+		for(int i=1;i<=ps.get_tam();i++){
+		ps.recorrer(i,&p);
+		cout<<p.getCedula()<<". "<<p.getApellidos()<<p.getNombres()<<" Numero de clases: "<<p.getNumClases()<<endl;
+		}
+		cout<<"Digite la cedula del profesor a modificar: ";
+		cin>>cedula;
+		ps.buscar(cedula,&p);
+		cout<<endl;
+		cout<<"Que desea modificar?"<<endl;
+		cout<<"1. Numero de clases"<<endl;
+		cout<<"2. Cortes"<<endl;
+		cout<<"0. volver"<<endl;
+		cin>>d;
+		if(d==1){
+			int nc;
+			cout<<"Ingrese el nuevo valor: ";
+			cin>>nc;
+			p.setNumClases(nc);
+			ps.cambiar(cedula,p);
+		}else{
+			if(d==2){
+				p.setListaCorte(modificarCorte(p.getListaCorte()));
+				ps.cambiar(cedula,p);
+			}
+		}
+		cout << "El profesor identificado con la cedula "<<cedula<<" ha sido modificado exitosamente" << endl;
+		cout<<"desea modificar otro profesor? Si=1, No=0 :";
+		cin>>d;
+	}
+	return ps;
+}
+
+lista<Corte> LlenarListas::modificarCorte(lista<Corte> cs){
+	Corte cor;
+	int d=1,pos=0;
+		while(d!=0){
+			for(int i=1;i<=cs.get_tam();i++){
+				cs.recorrer(i,&cor);
+				cout<<i<<"."<<cor.getNombre()<<endl;
+			}
+			cout<<"Desea: "<<endl;
+			cout<<"1. Agregar un corte"<<endl;
+			cout<<"2. Eliminar un corte"<<endl;
+			cout<<"3. Modificar un corte"<<endl;
+			cout<<"0. volver"<<endl;
+			cin>>d;
+			if(d==1){
+				cs=llenaCortes(cs);
+			}else{
+				if(d==2){
+					if(!cs.lista_vacia()){
+						cout<<"Digite la posicion del corte a eliminar"<<endl;
+						cin>>pos;
+						cs.borrar(pos);
+					}else{
+						cout<<"El profesor no tiene cortes."<<endl;
+					}
+				}else{
+					if(d==3){
+						if(!cs.lista_vacia()){
+							cout<<"Digite la posicion del corte a modificar"<<endl;
+							cin>>pos;
+							cs.buscar(pos,&cor);
+							cor.setEvaluaciones(modificarNota(cor.getListaNotas()));
+							cs.cambiar(pos,cor);
+						}else{
+							cout<<"El profesor no tiene cortes."<<endl;
+						}
+				}
+			}
+			cout<<"Desea modificar otro corte Si=1, No=0: ";
+			cin>>d;
+		}
+	}
+	return cs;
+}
+
+lista<Nota> LlenarListas::modificarNota(lista<Nota> ns){
+	Nota nt;
+	string tipo;
+	int porcentaje;
+	int d=1,d2=1,pos=0;
+	while(d!=0){
+		for(int i=1;i<=ns.get_tam();i++){
+			ns.recorrer(i,&nt);
+			cout<<i<<"."<<nt.getTipo()<<" "<<nt.getPorcentaje()<<endl;
+			}
+		cout<<"Desea: "<<endl;
+		cout<<"1. Agregar un tipo de evaluacion"<<endl;
+		cout<<"2. Eliminar un tipo de evaluacion"<<endl;
+		cout<<"3. Modificar un tipo de evaluacion"<<endl;
+		cout<<"0. volver"<<endl;
+		cin>>d;
+		if(d==1){
+			ns=llenaNotas(ns);
+		}else{
+			if(d==2){
+				if(!ns.lista_vacia()){
+					cout<<"Digite la posicion del tipo de evaluacion a eliminar"<<endl;
+					cin>>pos;
+					ns.borrar(pos);
+				}else{
+					cout<<"El corte seleccionado no tiene tipos de evaluacion"<<endl;
+				}
+			}else{
+				if(d==3){
+					if(!ns.lista_vacia()){
+						cout<<"Digite la posicion del tipo de evaluacion a modificar: ";
+						cin>>pos;
+						cout<<"Ingrese el tipo de evaluacion: ";
+						cin>>tipo;
+						nt.setTipo(tipo);
+						cout<<endl;
+						cout<<"Digite el porcentaje: ";
+						cin>>porcentaje;
+						cout<<endl;
+						cout<<"Desea modificar las evaluaciones correspondientes? Si=1, No=0:";
+						cin>>d2;
+						if(d2==1){
+							nt.setListaContenedor(modificarContenedor(nt.getListaContenedor()));
+						}
+						nt.setPorcentaje(porcentaje);
+						ns.cambiar(pos,nt);
+					}else{
+						cout<<"El corte no tiene tipos de evaluacion"<<endl;
+					}
+				}
+			}	
+		}
+		cout<<"Desea modificar otro tipo de evaluacion? Si=1, No=0: ";
+			cin>>d;
+	}
+	return ns;
+}
+
+lista<Contenedor> LlenarListas::modificarContenedor(lista<Contenedor> cs){
+	Contenedor ct;
+	int d=1,pos=0;
+	while(d!=0){
+		for(int i=1;i<=cs.get_tam();i++){
+			cs.recorrer(i,&ct);
+			cout<<"Evaluacion #"<<ct.getI()<<endl;
+		}
+		cout<<"Desea: "<<endl;
+		cout<<"1. Agregar una evaluacion"<<endl;
+		cout<<"2. Eliminar una evaluacion"<<endl;
+		cout<<"3. Modificar una evaluacion"<<endl;
+		cout<<"0. volver"<<endl;
+		cin>>d;
+		if(d==1){
+			cs=llenaContenedores(cs);
+		}else{
+			if(d==2){
+				if(!cs.lista_vacia()){
+					cout<<"Digite evaluacion a eliminar"<<endl;
+					cin>>pos;
+					cs.borrar(pos);
+				}else{
+					cout<<"No se encuentran evaluaciones"<<endl;
+				}
+			}else{
+				if(d==3){
+					if(!cs.lista_vacia()){
+						cout<<"Digite la posicion de la evaluacion a modificar: ";
+						cin>>pos;
+						ct.setListaEvaluacion(modificarEvaluacion(ct.getListaEvaluacion()));
+						cs.cambiar(pos,ct);
+					}else{
+						cout<<"No se encuentran evaluaciones"<<endl;
+					}
+				}
+			}	
+		}
+		cout<<"Desea modificar otro tipo de evaluacion? Si=1, No=0: ";
+		cin>>d;
+	}
+	return cs;
+}
+
+lista<Evaluacion> LlenarListas::modificarEvaluacion(lista<Evaluacion> es){
+	Evaluacion eva;
+	int d=1,pos=0,porcentaje,tema;
+	while(d!=0){
+		for(int i=1;i<=es.get_tam();i++){
+			es.recorrer(i,&eva);
+			cout<<i<<". Porcentaje:"<<eva.getPorcentaje()<<"%, Tema:"<<eva.getTema()<<endl;
+		}
+		cout<<"Desea: "<<endl;
+		cout<<"1. Agregar una pregunta a la evaluacion"<<endl;
+		cout<<"2. Eliminar una pregunta de la evaluacion"<<endl;
+		cout<<"3. Modificar una pregunta de la evaluacion"<<endl;
+		cout<<"0. volver"<<endl;
+		cin>>d;
+		if(d==1){
+			es=llenaEvaluaciones(es);
+		}else{
+			if(d==2){
+				if(!es.lista_vacia()){
+					cout<<"Digite la pregunta a eliminar"<<endl;
+					cin>>pos;
+					es.borrar(pos);
+				}else{
+					cout<<"No se encuentran preguntas"<<endl;
+				}
+			}else{
+				if(d==3){
+					if(!es.lista_vacia()){
+						cout<<"Digite la pregunta a modificar: ";
+						cin>>pos;
+						es.buscar(pos,&eva);
+						cout<<"Digite el porcentaje: ";
+						cin>>porcentaje;
+						eva.setPorcentaje(porcentaje);
+						cout<<endl;
+						cout<<"Digite el tema: ";
+						cin>>tema;
+						eva.setTema(tema);
+						es.cambiar(pos,eva);
+					}else{
+						cout<<"No se encuentran preguntas"<<endl;
+					}
+				}
+			}	
+		}
+		cout<<"Desea modificar otra pregunta? Si=1, No=0: ";
+		cin>>d;
+	}
+	return es;
+}
+
+lista<Tema> LlenarListas::modificarTema(lista<Tema> ts){
+	Tema t;
+	int d=1,pos;
+	char tema[50];
+	while(d!=0){
+		for(int i=1;i<=ts.get_tam();i++){
+			ts.recorrer(i,&t);
+			cout<<t.getCodigo()<<". "<<t.getNombre()<<endl;
+		}
+		cout<<"Digite el codigo del tema a modificar: "<<endl;
+		cin>>pos;
+		ts.buscar(pos,&t);
+		cout<<endl;
+		cout<<"Digite el tema: ";
+		cin.ignore();
+		cin.getline(tema,50);
+		for(int j=0;j<50;j++){
+			t.setNombre(j,tema[j]);
+		}
+		ts.cambiar(pos,t);
+		cout<<"Desea modificar otro tema? Si=1, No=0: ";
+		cin>>d;
+	}
+	return ts;
+}
+
+lista<Profesor> LlenarListas::eliminarProfesor(lista<Profesor> ps){
+	Profesor p;
+	long long int cedula;
+	int d=1;
+	while(d!=0){	
+		for(int i=1;i<=ps.get_tam();i++){
+		ps.recorrer(i,&p);
+		cout<<p.getCedula()<<". "<<p.getApellidos()<<p.getNombres()<<" Numero de clases: "<<p.getNumClases()<<endl;
+		}
+		cout<<"Digite la cedula del profesor a eliminar: ";
+		cin>>cedula;
+		ps.borrar(cedula);
+		cout<<"Profesor eliminado correctamente"<<endl;
+		cout<<"Desea eliminar otro profesor? Si=1, No=0: ";
+		cin>>d;
+	}
+	return ps;	
+}
+
 #endif

@@ -1,2 +1,1 @@
-corte1
-corte3
+corte2

@@ -3,27 +3,27 @@
 
 class Tema{
 		int codigo;
-		string nombre;
+		char nombre[50];
 	public:
 		//Setters
 		void setCodigo(int cod);
-		void setNombre(string nom);
+		void setNombre(int pos, char letra);
 		//Getters
-		string getNombre();
-		int getCodigo();
+		char* getNombre();
+		int& getCodigo();
 };
 //Setters
 void Tema::setCodigo(int cod){
 	codigo=cod;
 }
-void Tema::setNombre(string nom){
-	nombre=nom;
+void Tema::setNombre(int pos, char letra){
+	nombre[pos]=letra;
 }
 //Getters
-string Tema::getNombre(){
+char* Tema::getNombre(){
 	return nombre;
 }
-int Tema::getCodigo(){
+int& Tema::getCodigo(){
 	return codigo;
 }
 #endif
