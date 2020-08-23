@@ -10,7 +10,7 @@ int main(int argc, char** argv) {
 	Controlador controlador = Controlador();
 	controlador.leerProfes();
 	controlador.leerTemas();
-	controlador.leerClases();
+	controlador.leerCursos();
 	MenuPrincipal menu;
 	menu.mostrarMenu(controlador);
 	return 0;

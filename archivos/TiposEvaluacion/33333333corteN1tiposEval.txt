@@ -1,0 +1,2 @@
+quices,15
+parcial,20

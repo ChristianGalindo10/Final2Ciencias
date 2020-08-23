@@ -1,3 +1,0 @@
-quiz,7
-talleres,15
-parciales,13

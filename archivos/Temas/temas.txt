@@ -1,3 +1,6 @@
-2,complejidad en memoria
-3,complejidad en tiempo
-6,definicion de orden
+1,Algoritmos
+2,Metodos de busqueda y ordenamiento
+3,Analisis de complejidad
+4,Analisis de algoritmos recursivos
+5,Estructuras lineales
+6,Estructuras jerarquicas

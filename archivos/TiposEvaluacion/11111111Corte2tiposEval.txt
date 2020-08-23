@@ -1,0 +1,3 @@
+taller,10
+quices,10
+parcial,15

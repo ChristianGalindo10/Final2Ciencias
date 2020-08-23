@@ -13,7 +13,7 @@
 #include "contenedor.h"
 #include "nota.h"
 #include "evaluacion.h"
-#include "clase.h"
+#include "curso.h"
 #include "estudiante.h"
 #include "llenarlistas.h"
 #include "lecturaarchivos.h"
@@ -24,7 +24,7 @@ using namespace std;
 class Controlador{
 	lista<Profesor> profesores;
 	lista<Tema> temas;
-	lista<Clase> clases;
+	lista<Curso> cursos;
 	LecturaArchivos lecArchivos;
 	EscribirArchivos escArchivos;
 	LlenarListas insertar;
@@ -37,7 +37,7 @@ class Controlador{
 	string ap;
 	string nom;
 	Tema t;
-	Clase clase;
+	Curso curso;
 	Estudiante est;
 	public:	
 		Controlador(){
@@ -61,8 +61,8 @@ class Controlador{
 				t.setNombre(i,nom[i]);
 			}
 			temas = lista<Tema>(t);
-			clase.setCodigo("CodigoFinal");
-			clases = lista<Clase>(clase);
+			curso.setCodigo("CodigoFinal");
+			cursos = lista<Curso>(curso);
 			
 		};
 		//Métodos para manejar listas
@@ -73,19 +73,19 @@ class Controlador{
 		void mostrarListaContenedores(Nota nt);
 		void mostrarListaEvaluaciones(Contenedor cont);
 		void mostrarListaTemas();
-		void mostrarListaClases();
-		void mostrarListaEstudiantes(Clase c);
+		void mostrarListaCursos();
+		void mostrarListaEstudiantes(Curso c);
 		
 		//Métodos modificación
 		void insertarProfes();
 		void insertarTemas();
-		void insertarClases();
+		void insertarCursos();
 		void insertarEstudiantes();
 		void modificarProfesor();
 		void modificarTemas();	
 		void eliminarProfesor();	
 		void eliminarEstudiante();
-		void eliminarClase();
+		void eliminarCurso();
 		void eliminarTema();
 		
 		//Métodos profesores
@@ -98,18 +98,21 @@ class Controlador{
 		void leerTemas();
 		void setTemas(lista<Tema> ts);
 		
-		//Métodos clases
-		lista<Clase> getClases();
-		void setClases(lista<Clase> cs);
-		void leerClases(); 
+		//Métodos Cursos
+		lista<Curso> getCursos();
+		void setCursos(lista<Curso> cs);
+		void leerCursos(); 
 		
 		//Métodos de escritura
 		void escribirArchivos();
 		
+		//Métodos de clases
+		void llenarClases();
+		
 };
 
 void Controlador::escribirArchivos(){
-	escArchivos.escribir(profesores,temas,clases);
+	escArchivos.escribir(profesores,temas,cursos);
 }
 
 lista<Profesor> Controlador::getProfes(){
@@ -124,16 +127,16 @@ void Controlador::setProfes(lista<Profesor> ps){
 	profesores=ps;
 }
 
-void Controlador::leerClases(){
-	clases=lecArchivos.lecturaClases(clases);
+void Controlador::leerCursos(){
+	cursos=lecArchivos.lecturaCursos(cursos);
 }
 
-void Controlador::setClases(lista<Clase> cs){
-	clases=cs;
+void Controlador::setCursos(lista<Curso> cs){
+	cursos=cs;
 }
 
-lista<Clase> Controlador::getClases(){
-	return clases;
+lista<Curso> Controlador::getCursos(){
+	return cursos;
 }
 
 
@@ -149,19 +152,24 @@ void Controlador::setTemas(lista<Tema> ts){
 	temas=ts;
 }
 
-void Controlador::mostrarListaClases(){
-	for(int i=1;i<=clases.get_tam();i++){
-		clases.recorrer(i,&clase);
-		cout<<clase.getCodigo()<<endl;
-		cout<<"Estudiantes: "<<endl;
-		mostrarListaEstudiantes(clase);
+void Controlador::mostrarListaCursos(){
+	int pos;
+	for(int i=1;i<=cursos.get_tam();i++){
+		cursos.recorrer(i,&curso);
+		cout<<i<<". "<<curso.getCodigo()<<endl;
+		//cout<<"Estudiantes: "<<endl;
+		//mostrarListaEstudiantes(curso);
 	}
+	cout<<"Digite la posición del curso del cual desea ver los estudiantes: ";
+	cin>>pos;
+	cursos.buscar(pos,&curso);
+	mostrarListaEstudiantes(curso);
 }
 
-void Controlador::mostrarListaEstudiantes(Clase c){
+void Controlador::mostrarListaEstudiantes(Curso c){
 	for(int i=1;i<=c.getListaEstudiantes().get_tam();i++){
 		c.getListaEstudiantes().recorrer(i,&est);
-		cout<<est.getCodigo()<<" "<<est.getApellidos()<<" "<<est.getNombres()<<endl;
+		cout<<"Codigo: "<<est.getCodigo()<<" Apellidos: "<<est.getApellidos()<<" Nombres: "<<est.getNombres()<<endl;
 	}
 }
 
@@ -176,7 +184,7 @@ void Controlador::mostrarListaProfes(){
 		cout<<"Cedula: "<<p.getCedula()<<endl;
 		cout<<"Apellidos: "<<p.getApellidos()<<endl;
 		cout<<"Nombres: "<<p.getNombres()<<endl;
-		cout<<"Numero de clases: "<<p.getNumClases()<<endl;
+		cout<<"Numero de Clases: "<<p.getNumClases()<<endl;
 		mostrarListaCortes(p);
 	}
 }
@@ -193,7 +201,7 @@ void Controlador::mostrarListaProfes(int c){
 			cout<<"Cedula: "<<p.getCedula()<<endl;
 			cout<<"Apellidos: "<<p.getApellidos()<<endl;
 			cout<<"Nombres: "<<p.getNombres()<<endl;
-			cout<<"Numero de clases: "<<p.getNumClases()<<endl;
+			cout<<"Numero de Clases: "<<p.getNumClases()<<endl;
 			mostrarListaCortes(p);
 		}
 	}
@@ -261,39 +269,39 @@ void Controlador::eliminarProfesor(){
 }
 
 
-void Controlador::insertarClases(){
-	clases=insertar.llenaClases(clases);
+void Controlador::insertarCursos(){
+	cursos=insertar.llenaCursos(cursos);
 }
 
 void Controlador::insertarEstudiantes(){
 	int cod;
-	for(int i=1;i<=clases.get_tam();i++){
-		clases.recorrer(i,&clase);
-		cout<<i<<". "<<clase.getCodigo()<<endl;
+	for(int i=1;i<=cursos.get_tam();i++){
+		cursos.recorrer(i,&curso);
+		cout<<i<<". "<<curso.getCodigo()<<endl;
 	}
-	cout<<"Digite la posicion de la clase en la cual desea insertar el estudiante: ";
+	cout<<"Digite la posicion de la Curso en la cual desea insertar el estudiante: ";
 	cin>>cod;	
-	clases.buscar(cod,&clase);
-	clase.setListaEstudiantes(insertar.llenaEstudiantes(clase.getListaEstudiantes()));
-	clases.cambiar(cod,clase);
-	mostrarListaEstudiantes(clase);
+	cursos.buscar(cod,&curso);
+	curso.setListaEstudiantes(insertar.llenaEstudiantes(curso.getListaEstudiantes()));
+	cursos.cambiar(cod,curso);
+	mostrarListaEstudiantes(curso);
 }
 
-void Controlador::eliminarClase(){
-	clases=insertar.eliminarClase(clases);
+void Controlador::eliminarCurso(){
+	cursos=insertar.eliminarCurso(cursos);
 }
 
 void Controlador::eliminarEstudiante(){
 	int cod;
-	for(int i=1;i<=clases.get_tam();i++){
-		clases.recorrer(i,&clase);
-		cout<<i<<". "<<clase.getCodigo()<<endl;
+	for(int i=1;i<=cursos.get_tam();i++){
+		cursos.recorrer(i,&curso);
+		cout<<i<<". "<<curso.getCodigo()<<endl;
 	}
-	cout<<"Digite la posicion de la clase en la cual desea insertar el estudiante: ";
+	cout<<"Digite la posicion de la Curso en la cual desea insertar el estudiante: ";
 	cin>>cod;	
-	clases.buscar(cod,&clase);
-	clase.setListaEstudiantes(insertar.eliminarEstudiante(clase.getListaEstudiantes()));
-	clases.cambiar(cod,clase);
+	cursos.buscar(cod,&curso);
+	curso.setListaEstudiantes(insertar.eliminarEstudiante(curso.getListaEstudiantes()));
+	cursos.cambiar(cod,curso);
 }
 
 void Controlador::eliminarTema(){

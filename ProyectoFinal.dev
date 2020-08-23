@@ -221,7 +221,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit16]
-FileName=clase.h
+FileName=curso.h
 CompileCpp=1
 Folder=
 Compile=1

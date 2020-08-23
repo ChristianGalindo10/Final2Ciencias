@@ -8,25 +8,25 @@
 #include "profesor.h"
 class EscribirArchivos{
 	public:
-		void escribir(lista<Profesor> ps, lista<Tema> ts, lista<Clase> cs);
+		void escribir(lista<Profesor> ps, lista<Tema> ts, lista<Curso> cs);
 		void escribirProfesores(lista<Profesor> ps);
 		void escribirCortes(lista<Profesor> ps);
 		void escribirNotas(lista<Profesor> ps);
 		void escribirContenedores(lista<Profesor> ps);
 		void escribirEvaluaciones(lista<Profesor> ps);
 		void escribirTemas(lista<Tema> ts);
-		void escribirClases(lista<Clase> cs);
-		void escribirEstudiantes(lista<Clase> cs);
+		void escribirCursos(lista<Curso> cs);
+		void escribirEstudiantes(lista<Curso> cs);
 };
 
-void EscribirArchivos::escribir(lista<Profesor> ps, lista<Tema> ts, lista<Clase> cs){
+void EscribirArchivos::escribir(lista<Profesor> ps, lista<Tema> ts, lista<Curso> cs){
 	escribirProfesores(ps);
 	escribirCortes(ps);
 	escribirNotas(ps);
 	escribirContenedores(ps);
 	escribirEvaluaciones(ps);
 	escribirTemas(ts);
-	escribirClases(cs);
+	escribirCursos(cs);
 	escribirEstudiantes(cs);
 }
 
@@ -166,9 +166,9 @@ void EscribirArchivos::escribirTemas(lista<Tema> ts){
 	archivo.close();
 }
 
-void EscribirArchivos::escribirClases(lista<Clase> cs){
+void EscribirArchivos::escribirCursos(lista<Curso> cs){
 	ofstream archivo;
-	Clase c;
+	Curso c;
 	archivo.open("archivos//Clases//clases.txt",ios::out); //Abrir archivo
 	
 	if(archivo.fail()){
@@ -183,8 +183,8 @@ void EscribirArchivos::escribirClases(lista<Clase> cs){
 	archivo.close();
 }
 
-void EscribirArchivos::escribirEstudiantes(lista<Clase> cs){
-	Clase cl;
+void EscribirArchivos::escribirEstudiantes(lista<Curso> cs){
+	Curso cl;
 	Estudiante e;
 	for(int pos=1;pos<=cs.get_tam();pos++){
 		cs.recorrer(pos,&cl);

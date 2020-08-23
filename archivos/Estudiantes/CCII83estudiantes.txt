@@ -1,0 +1,5 @@
+20181020036,Verde Pintor,Francisco Jose
+20181020037,Araque Astorga,Rafael
+20181020038,Cubero Zarate,Alfonso
+20181020039,Benavent Junquera,Josefa
+20181020040,Abella Sarria,Maria Teresa

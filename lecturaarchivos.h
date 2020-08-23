@@ -12,7 +12,7 @@
 #include "contenedor.h"
 #include "profesor.h"
 #include "tema.h"
-#include "clase.h"
+#include "curso.h"
 #include "estudiante.h"
 
 
@@ -24,11 +24,11 @@ class LecturaArchivos{
 		lista<Contenedor> lecturaContenedores(Profesor p, Corte cor, Nota nt);
 		lista<Evaluacion> lecturaEvaluaciones(Profesor p, Corte cor, Nota nt, Contenedor cont);
 		lista<Tema> lecturaTemas(lista<Tema> ts);
-		lista<Clase> lecturaClases(lista<Clase> cs);
-		lista<Estudiante> lecturaEstudiantes(Clase c);
+		lista<Curso> lecturaCursos(lista<Curso> cs);
+		lista<Estudiante> lecturaEstudiantes(Curso c);
 };
 
-lista<Clase> LecturaArchivos::lecturaClases(lista<Clase> cs){
+lista<Curso> LecturaArchivos::lecturaCursos(lista<Curso> cs){
 	ifstream archivo;
 	int numLines = 0;
 	ifstream in("archivos//Clases//clases.txt");
@@ -43,7 +43,7 @@ lista<Clase> LecturaArchivos::lecturaClases(lista<Clase> cs){
 	}
 	string aux;
 	for(int i=0;i<numLines;i++){
-		Clase c;
+		Curso c;
 		getline(archivo,aux);
 		c.setCodigo(aux);
     	c.setListaEstudiantes(lecturaEstudiantes(c));
@@ -53,7 +53,7 @@ lista<Clase> LecturaArchivos::lecturaClases(lista<Clase> cs){
 	return cs;
 }
 
-lista<Estudiante> LecturaArchivos::lecturaEstudiantes(Clase c){
+lista<Estudiante> LecturaArchivos::lecturaEstudiantes(Curso c){
 	ifstream archivo;
 	ostringstream ss;
 	ss << c.getCodigo();
@@ -63,6 +63,7 @@ lista<Estudiante> LecturaArchivos::lecturaEstudiantes(Clase c){
 	int numLines = 0;
 	ifstream in(ruta.c_str());
 	string unused;
+	cola<string> Cola;
 	while (getline(in, unused))
    		++numLines; 
 	archivo.open(ruta.c_str(),ios::in);
@@ -74,8 +75,8 @@ lista<Estudiante> LecturaArchivos::lecturaEstudiantes(Clase c){
 	e.setCodigo(99999999999);
 	lista<Estudiante> es= lista<Estudiante>(e);
 	string aux;
-	cola<string> Cola;
 	for(int i=0;i<numLines;i++){
+		Estudiante est;
 		string puntero="";
 		getline(archivo,aux);
 		stringstream ss(aux);
@@ -86,23 +87,23 @@ lista<Estudiante> LecturaArchivos::lecturaEstudiantes(Clase c){
 		}
 		Cola.AtenderCola(&puntero);
 		istringstream codigo(puntero);
-		if ( !(codigo >> e.getCodigo() )) //give the value to 'Result' using the characters in the stream
-    		e.setCodigo(0);
-    	Cola.AtenderCola(&puntero);
-		for(int i = 0; i<puntero.length(); i++){
-			e.setApellidos(i,puntero[i]);
+		if ( !(codigo >> est.getCodigo() )) //give the value to 'Result' using the characters in the stream
+    		est.setCodigo(0);	
+		Cola.AtenderCola(&puntero);
+		for(int j = 0; j<puntero.length(); j++){
+			est.setApellidos(j,puntero[j]);
 		}
-		for(int i = puntero.length(); i<50; i++){
-			e.setApellidos(i,0);
+		for(int j = puntero.length(); j<50; j++){
+			est.setApellidos(j,0);
 		}
 		Cola.AtenderCola(&puntero);
-		for(int i = 0; i<puntero.length(); i++){
-			e.setNombres(i,puntero[i]);
+		for(int j = 0; j<puntero.length(); j++){
+			est.setNombres(j,puntero[j]);
 		}
-		for(int i = puntero.length(); i<50; i++){
-			e.setNombres(i,0);
+		for(int j = puntero.length(); j<50; j++){
+			est.setNombres(j,0);
 		}
-    	es.insertarOrd(e,e.getCodigo());
+    	es.insertarOrd(est,est.getCodigo());
 	}
 	archivo.close();
 	return es;
@@ -142,18 +143,18 @@ lista<Profesor> LecturaArchivos::lecturaProfesores(lista<Profesor> ps){
 		if ( !(cedula >> p.getCedula()) ) //give the value to 'Result' using the characters in the stream
     		p.setCedula(0);
     	Cola.AtenderCola(&puntero);
-		for(int i = 0; i<puntero.length(); i++){
-			p.setApellidos(i,puntero[i]);
+		for(int j = 0; j<puntero.length(); j++){
+			p.setApellidos(j,puntero[j]);
 		}
-		for(int i = puntero.length(); i<50; i++){
-			p.setApellidos(i,0);
+		for(int k = puntero.length(); k<50; k++){
+			p.setApellidos(k,0);
 		}
 		Cola.AtenderCola(&puntero);
-		for(int i = 0; i<puntero.length(); i++){
-			p.setNombres(i,puntero[i]);
+		for(int l = 0; l<puntero.length(); l++){
+			p.setNombres(l,puntero[l]);
 		}
-		for(int i = puntero.length(); i<50; i++){
-			p.setNombres(i,0);
+		for(int m = puntero.length(); m<50; m++){
+			p.setNombres(m,0);
 		}
 		Cola.AtenderCola(&puntero);
 		istringstream numClases(puntero);

@@ -16,15 +16,15 @@ class LlenarListas{
 		lista<Contenedor> modificarContenedor(lista<Contenedor> cs);
 		lista<Evaluacion> modificarEvaluacion(lista<Evaluacion> es);
 		lista<Profesor> eliminarProfesor(lista<Profesor> ps);
-		lista<Clase> llenaClases(lista<Clase> cs);
+		lista<Curso> llenaCursos(lista<Curso> cs);
 		lista<Estudiante> llenaEstudiantes(lista<Estudiante> es);
 		lista<Estudiante> eliminarEstudiante(lista<Estudiante> es);
-		lista<Clase> eliminarClase(lista<Clase> cs);
+		lista<Curso> eliminarCurso(lista<Curso> cs);
 		lista<Tema> eliminarTema(lista<Tema> ts);
 };
 
-lista<Clase> LlenarListas::llenaClases(lista<Clase> cs){
-	Clase c;
+lista<Curso> LlenarListas::llenaCursos(lista<Curso> cs){
+	Curso c;
 	int d=1,d2=1;
 	string cod;
 	Estudiante e;
@@ -238,7 +238,7 @@ lista<Profesor> LlenarListas::modificarProfe(lista<Profesor> ps){
 	while(d!=0){	
 		for(int i=1;i<=ps.get_tam();i++){
 		ps.recorrer(i,&p);
-		cout<<p.getCedula()<<". "<<p.getApellidos()<<p.getNombres()<<" Numero de clases: "<<p.getNumClases()<<endl;
+		cout<<p.getCedula()<<". "<<p.getApellidos()<<" "<<p.getNombres()<<" Numero de Cursos: "<<p.getNumClases()<<endl;
 		}
 		cout<<"Digite la cedula del profesor a modificar: ";
 		cin>>cedula;
@@ -530,8 +530,8 @@ lista<Profesor> LlenarListas::eliminarProfesor(lista<Profesor> ps){
 	return ps;	
 }
 
-lista<Clase> LlenarListas::eliminarClase(lista<Clase> cs){
-	Clase cl;
+lista<Curso> LlenarListas::eliminarCurso(lista<Curso> cs){
+	Curso cl;
 	int d=1,pos;
 	while(d!=0){
 		for(int i=1;i<=cs.get_tam();i++){

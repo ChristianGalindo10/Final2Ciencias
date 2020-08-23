@@ -50,8 +50,8 @@ void MenuPrincipal::mostrarMenu(Controlador c){
 							system("pause");
 							break;
 						case 4:
-							c.insertarClases();
-							c.mostrarListaClases();
+							c.insertarCursos();
+							c.mostrarListaCursos();
 							system("pause");
 							break;
 						case 5:
@@ -126,7 +126,7 @@ void MenuPrincipal::mostrarMenu(Controlador c){
 							system("pause");
 							break;
 						case 4:
-							c.eliminarClase();
+							c.eliminarCurso();
 							system("pause");
 							break;
 						case 5:
@@ -176,15 +176,13 @@ void MenuPrincipal::mostrarMenu(Controlador c){
 					case 4:
 						cout << "Ingresar el n\xa3mero de clases: " << endl;
 						cin>>numc;
-						cout << "Mostrar la lista de profesores ordenados por cedula, por ahora se muestra la lista como ya estaba c:" << endl << endl;
+						cout<<endl;
 						//Muestra la lista
 						c.mostrarListaProfes(numc);
 						system("pause");
 						break;
 					case 5:
-						cout << "Ingresar la nota: " << endl;
-						cout << "Ingresar el tema: " << endl;
-						cout << "Mostrar la lista de los estudiantes que superan dicha nota en el tema ingresado" << endl << endl;
+						c.mostrarListaCursos();
 						system("pause");
 						break;
 					case 6:

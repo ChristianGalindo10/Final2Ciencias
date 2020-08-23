@@ -1,2 +1,0 @@
-talleres,55
-parciales,30

@@ -1,0 +1,3 @@
+talleres,10
+tareas,5
+parcial,20

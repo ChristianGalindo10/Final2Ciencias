@@ -1,0 +1,3 @@
+parcial,15
+talleres,15
+exposiciones,5
