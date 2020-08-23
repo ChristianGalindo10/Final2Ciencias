@@ -109,6 +109,9 @@ class Controlador{
 		//Métodos de clases
 		void llenarClases();
 		
+		//
+		void mostrarParciales();
+		
 };
 
 void Controlador::escribirArchivos(){
@@ -307,5 +310,8 @@ void Controlador::eliminarEstudiante(){
 void Controlador::eliminarTema(){
 	temas=insertar.eliminarTema(temas);
 }
-
+void Controlador::mostrarParciales(){
+	lecArchivos.crearMemoriaClases(profesores, p);
+	lecArchivos.mostrarClases(profesores, p);
+}
 #endif

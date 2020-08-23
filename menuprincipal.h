@@ -158,6 +158,7 @@ void MenuPrincipal::mostrarMenu(Controlador c){
 					system("cls");
 					switch(op1){
 					case 1:
+						c.mostrarParciales();
 						cout << "Ingresar algo que permmita saber de que estudiante se desea saber su promedio, puede ser el codigo o algo as\xa1" << endl;
 						cout << "Ingresar el curso del cual se desea saber el promedio" << endl;
 						cout << "Mostrar el promedio del estudiante :v" << endl << endl;

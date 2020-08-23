@@ -17,6 +17,8 @@
 
 
 class LecturaArchivos{
+	private: 
+	int ***clases;
 	public:
 		lista<Profesor> lecturaProfesores(lista<Profesor> ps);
 		lista<Corte> lecturaCortes(Profesor p);
@@ -26,6 +28,10 @@ class LecturaArchivos{
 		lista<Tema> lecturaTemas(lista<Tema> ts);
 		lista<Curso> lecturaCursos(lista<Curso> cs);
 		lista<Estudiante> lecturaEstudiantes(Curso c);
+		
+		//Métodos parciales
+		void mostrarClases(lista<Profesor> profesores, Profesor p);
+		void crearMemoriaClases(lista<Profesor> profesores, Profesor p);
 };
 
 lista<Curso> LecturaArchivos::lecturaCursos(lista<Curso> cs){
@@ -365,5 +371,35 @@ lista<Tema> LecturaArchivos::lecturaTemas(lista<Tema> ts){
 }
 
 
+void LecturaArchivos::mostrarClases(lista<Profesor> profesores,Profesor p){
+	cout<<"Mostrar Parciales"<<endl;
+	for(int i= 1; i<=profesores.get_tam();i++){
+		for(int j=1;j<=p.getNumClases();j++){
+			for(int k=1;k<=3;k++){
+				cout<<*(*(*(clases+i)+j)+k)<<"-";
+			}
+			cout<<endl;
+		}
+	}
+}
+
+void LecturaArchivos::crearMemoriaClases(lista<Profesor> profesores, Profesor p){
+	//Crear arreglo dinamico de cedulas
+	clases = new int**[profesores.get_tam()];
+	for(int i= 1; i<=profesores.get_tam();i++){
+		profesores.recorrer(i,&p);
+		clases[i] = new int*[p.getNumClases()];
+		for(int j=1;j<=p.getNumClases();j++){
+			clases[i][j] = new int[3];
+		}
+	}
+	for(int i= 1; i<=profesores.get_tam();i++){
+		for(int j=1;j<=p.getNumClases();j++){
+			for(int k=1;k<=3;k++){
+				*(*(*(clases+i)+j)+k)=k;
+			}
+		}	
+	}
+}
 
 #endif
