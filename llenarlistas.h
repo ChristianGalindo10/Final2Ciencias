@@ -21,16 +21,42 @@ class LlenarListas{
 		lista<Estudiante> eliminarEstudiante(lista<Estudiante> es);
 		lista<Curso> eliminarCurso(lista<Curso> cs);
 		lista<Tema> eliminarTema(lista<Tema> ts);
+		lista<Clase> llenarClases(lista<Profesor>,lista<Curso> cr,lista<Clase> cs,lista<Cur> curs);
 };
+
+lista<Clase> LlenarListas::llenarClases(lista<Profesor> ps,lista<Curso> cr,lista<Clase> cs,lista<Cur> curs){
+	Clase c;
+	Profesor p;
+	Curso curso;
+	Cur cur;
+	for(int i=1;i<=ps.get_tam();i++){
+		ps.recorrer(i,&p);
+		c.setCedula(p.getCedula());
+		for(int j=1;j<=cr.get_tam();j++){
+			cr.recorrer(j,&curso);
+			if(curso.getProfesor()==p.getCedula()){
+				cur.curso=curso.getCodigo();
+				curs.insertarOrd(cur,curs.get_tam()+1);
+				c.setCursos(curs);
+			}
+		}
+		cs.insertarOrd(c,cs.get_tam()+1);
+	}
+	return cs;
+}
 
 lista<Curso> LlenarListas::llenaCursos(lista<Curso> cs){
 	Curso c;
 	int d=1,d2=1;
 	string cod;
 	Estudiante e;
+	long long int profesor;
 	e.setCodigo(99999999999);
 	lista<Estudiante> es = lista<Estudiante>(e);
 	while(d!=0){
+		cout<<"Digite el numero de cedula del profesor a cargo: ";
+		cin>>profesor;
+		c.setProfesor(profesor);
 		cout<<"Digite el código de la clase: ";
 		cin>>cod;
 		c.setCodigo(cod);

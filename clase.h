@@ -1,32 +1,37 @@
 #ifndef CLASE_H     
 #define CLASE_H
 #include "lista.h"
-#include "estudiante.h"
+
+struct Cur{
+	string curso;
+	lista<string> archivos;
+};
+
 class Clase{
-		string codigo;
-		lista<Estudiante> estudiantes;
+		long long int cedula;
+		lista<Cur> cursos;
 	public:
 		//Setters
-		void setCodigo(string cod);
-		void setListaEstudiantes(lista<Estudiante> es);
+		void setCedula(long long int c);
+		void setCursos(lista<Cur> cs);
 		//Getters
-		string getCodigo();
-		lista<Estudiante> getListaEstudiantes();
+		long long int& getCedula();
+		lista<Cur> getCursos();
 };
 //Setters
-void Clase::setCodigo(string cod){
-	codigo=cod;
+void Clase::setCedula(long long int c){
+	cedula=c;
 }
 
-void Clase::setListaEstudiantes(lista<Estudiante> es){
-	estudiantes=es;
+void Clase::setCursos(lista<Cur> cs){
+	cursos=cs;
 }
 //Getters
-string Clase::getCodigo(){
-	return codigo;
+long long int& Clase::getCedula(){
+	return cedula;
 }
 
-lista<Estudiante> Clase::getListaEstudiantes(){
-	return estudiantes;
+lista<Cur> Clase::getCursos(){
+	return cursos;
 }
 #endif

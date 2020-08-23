@@ -47,11 +47,24 @@ lista<Curso> LecturaArchivos::lecturaCursos(lista<Curso> cs){
 		cout<<"No se pudo abrir el archivo";
 		exit(1);
 	}
+	cola<string> Cola;
 	string aux;
 	for(int i=0;i<numLines;i++){
 		Curso c;
+		string puntero="";
 		getline(archivo,aux);
-		c.setCodigo(aux);
+		stringstream ss(aux);
+		while(ss.good()){
+			string substr;
+			getline(ss,substr,',');
+			Cola.InsCola(substr);
+		}
+		Cola.AtenderCola(&puntero);
+		istringstream cedula(puntero);
+		if ( !(cedula >> c.getProfesor() )) //give the value to 'Result' using the characters in the stream
+    		c.setProfesor(0);	
+		Cola.AtenderCola(&puntero);
+		c.setCodigo(puntero);
     	c.setListaEstudiantes(lecturaEstudiantes(c));
     	cs.insertarOrd(c,cs.get_tam()+1);
 	}
@@ -376,7 +389,7 @@ void LecturaArchivos::mostrarClases(lista<Profesor> profesores,Profesor p){
 	for(int i= 1; i<=profesores.get_tam();i++){
 		for(int j=1;j<=p.getNumClases();j++){
 			for(int k=1;k<=3;k++){
-				cout<<*(*(*(clases+i)+j)+k)<<"-";
+				cout<<"Hola";
 			}
 			cout<<endl;
 		}
@@ -385,6 +398,8 @@ void LecturaArchivos::mostrarClases(lista<Profesor> profesores,Profesor p){
 
 void LecturaArchivos::crearMemoriaClases(lista<Profesor> profesores, Profesor p){
 	//Crear arreglo dinamico de cedulas
+
+	/*
 	clases = new int**[profesores.get_tam()];
 	for(int i= 1; i<=profesores.get_tam();i++){
 		profesores.recorrer(i,&p);
@@ -399,7 +414,7 @@ void LecturaArchivos::crearMemoriaClases(lista<Profesor> profesores, Profesor p)
 				*(*(*(clases+i)+j)+k)=k;
 			}
 		}	
-	}
+	}*/
 }
 
 #endif

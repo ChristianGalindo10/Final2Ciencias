@@ -1,5 +1,5 @@
 11111111,Alvarado Nieto,Luz Deicy,3
-22222222,Hurtado Betancourt,Juan Carlos,5
+22222222,Hurtado Betancourt,Juan Carlos,2
 33333333,Diosa,Henry Alberto,2
 44444444,Leon Parada,Fernando,1
 55555555,Sanchez Rubio,Yeison Alexander,2

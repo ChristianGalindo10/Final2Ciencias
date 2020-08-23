@@ -11,6 +11,7 @@
 #include "tema.h"
 #include "corte.h"
 #include "contenedor.h"
+#include "clase.h"
 #include "nota.h"
 #include "evaluacion.h"
 #include "curso.h"
@@ -19,12 +20,12 @@
 #include "lecturaarchivos.h"
 #include "escribirarchivos.h"
 
-
 using namespace std;
 class Controlador{
 	lista<Profesor> profesores;
 	lista<Tema> temas;
 	lista<Curso> cursos;
+	lista<Clase> clases;
 	LecturaArchivos lecArchivos;
 	EscribirArchivos escArchivos;
 	LlenarListas insertar;
@@ -38,7 +39,10 @@ class Controlador{
 	string nom;
 	Tema t;
 	Curso curso;
+	Cur cur;
+	lista<Cur> cs;
 	Estudiante est;
+	Clase clase;
 	public:	
 		Controlador(){
 			//Inicializar lista profesores
@@ -63,7 +67,11 @@ class Controlador{
 			temas = lista<Tema>(t);
 			curso.setCodigo("CodigoFinal");
 			cursos = lista<Curso>(curso);
-			
+			clase.setCedula(10000);
+			cur.curso="CodigoFinal";
+			cs=lista<Cur>(cur);
+			clase.setCursos(cs);
+			clases=lista<Clase>(clase);
 		};
 		//Métodos para manejar listas
 		void mostrarListaProfes();
@@ -108,11 +116,27 @@ class Controlador{
 		
 		//Métodos de clases
 		void llenarClases();
+		void mostrarClases();
 		
 		//
-		void mostrarParciales();
 		
 };
+
+void Controlador::mostrarClases(){
+	llenarClases();
+	for(int i=1;i<=clases.get_tam();i++){
+		clases.recorrer(i,&clase);
+		cout<<clase.getCedula()<<": "<<endl;
+		for(int j=1;j<=clase.getCursos().get_tam();j++){
+			clase.getCursos().recorrer(j,&cur);
+			cout<<cur.curso<<endl;
+		}
+	}
+}
+
+void Controlador::llenarClases(){
+	clases=insertar.llenarClases(profesores,cursos,clases,cs);
+}
 
 void Controlador::escribirArchivos(){
 	escArchivos.escribir(profesores,temas,cursos);
@@ -310,8 +334,5 @@ void Controlador::eliminarEstudiante(){
 void Controlador::eliminarTema(){
 	temas=insertar.eliminarTema(temas);
 }
-void Controlador::mostrarParciales(){
-	lecArchivos.crearMemoriaClases(profesores, p);
-	lecArchivos.mostrarClases(profesores, p);
-}
+
 #endif

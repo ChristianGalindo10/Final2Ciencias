@@ -178,7 +178,7 @@ void EscribirArchivos::escribirCursos(lista<Curso> cs){
 	
 	for(int pos=1;pos<=cs.get_tam();pos++){
 		cs.recorrer(pos,&c);
-		archivo<<c.getCodigo()<<endl;
+		archivo<<c.getProfesor()<<c.getCodigo()<<endl;
 	}
 	archivo.close();
 }
