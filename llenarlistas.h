@@ -16,7 +16,64 @@ class LlenarListas{
 		lista<Contenedor> modificarContenedor(lista<Contenedor> cs);
 		lista<Evaluacion> modificarEvaluacion(lista<Evaluacion> es);
 		lista<Profesor> eliminarProfesor(lista<Profesor> ps);
+		lista<Clase> llenaClases(lista<Clase> cs);
+		lista<Estudiante> llenaEstudiantes(lista<Estudiante> es);
+		lista<Estudiante> eliminarEstudiante(lista<Estudiante> es);
+		lista<Clase> eliminarClase(lista<Clase> cs);
+		lista<Tema> eliminarTema(lista<Tema> ts);
 };
+
+lista<Clase> LlenarListas::llenaClases(lista<Clase> cs){
+	Clase c;
+	int d=1,d2=1;
+	string cod;
+	Estudiante e;
+	e.setCodigo(99999999999);
+	lista<Estudiante> es = lista<Estudiante>(e);
+	while(d!=0){
+		cout<<"Digite el código de la clase: ";
+		cin>>cod;
+		c.setCodigo(cod);
+		cout<<"Desea ingresar estudiantes a la clase? Si=1, No=0";
+		cin>>d2;
+		if(d2==1){
+			c.setListaEstudiantes(llenaEstudiantes(es));
+		}
+		cs.insertarOrd(c,cs.get_tam()+1);
+		cout<<"Desea ingresar otra clase? Si=1, No=0";
+		cin>>d;
+	}
+	return cs;
+}
+
+lista<Estudiante> LlenarListas::llenaEstudiantes(lista<Estudiante> es){
+	Estudiante e;
+	long long int codigo;
+	char nombres[50];
+	char apellidos[50];
+	int d=1;
+	while(d!=0){
+		cout<<"Codigo del estudiante: ";
+		cin>>codigo;
+		e.setCodigo(codigo);
+		cout<<"Apellidos del estudiante: ";
+		cin.ignore();
+		cin.getline(apellidos, 50);
+		for (int i = 0; i < 50; i++) { 
+        	e.setApellidos(i,apellidos[i]);
+    	}
+    	cout<<"Nombres del estudiante: ";
+    	cin.getline(nombres,50);
+    	for (int i = 0; i < 50; i++) { 
+        	e.setNombres(i,nombres[i]);
+    	}
+    	es.insertarOrd(e,e.getCodigo());
+    	cout<<"Desea ingresar otro estudiante? Si=1, No=0: ";
+    	cin>>d;
+	}
+	return es;
+}
+
 
 lista<Tema> LlenarListas::llenaTemas(lista<Tema> ts){
 	cin.ignore();
@@ -232,7 +289,11 @@ lista<Corte> LlenarListas::modificarCorte(lista<Corte> cs){
 					if(!cs.lista_vacia()){
 						cout<<"Digite la posicion del corte a eliminar"<<endl;
 						cin>>pos;
-						cs.borrar(pos);
+						if(cs.borrar(pos)){
+							cout<<"Corte eliminado correctamente"<<endl;
+						}else{
+							cout<<"No se pudo eliminar el corte"<<endl;
+						}
 					}else{
 						cout<<"El profesor no tiene cortes."<<endl;
 					}
@@ -279,7 +340,11 @@ lista<Nota> LlenarListas::modificarNota(lista<Nota> ns){
 				if(!ns.lista_vacia()){
 					cout<<"Digite la posicion del tipo de evaluacion a eliminar"<<endl;
 					cin>>pos;
-					ns.borrar(pos);
+					if(ns.borrar(pos)){
+						cout<<"Tipo de evaluacion eliminado correctamente"<<endl;
+					}else{
+						cout<<"No se pudo eliminar el tipo de evaluacion"<<endl;
+					}
 				}else{
 					cout<<"El corte seleccionado no tiene tipos de evaluacion"<<endl;
 				}
@@ -335,7 +400,11 @@ lista<Contenedor> LlenarListas::modificarContenedor(lista<Contenedor> cs){
 				if(!cs.lista_vacia()){
 					cout<<"Digite evaluacion a eliminar"<<endl;
 					cin>>pos;
-					cs.borrar(pos);
+					if(cs.borrar(pos)){
+						cout<<"Evaluacion eliminada correctamente"<<endl;
+					}else{
+						cout<<"No se pudo eliminar la evaluacion"<<endl;
+					}
 				}else{
 					cout<<"No se encuentran evaluaciones"<<endl;
 				}
@@ -379,7 +448,11 @@ lista<Evaluacion> LlenarListas::modificarEvaluacion(lista<Evaluacion> es){
 				if(!es.lista_vacia()){
 					cout<<"Digite la pregunta a eliminar"<<endl;
 					cin>>pos;
-					es.borrar(pos);
+					if(es.borrar(pos)){
+						cout<<"Pregunta eliminada correctamente"<<endl;
+					}else{
+						cout<<"No se pudo eliminar la pregunta"<<endl;
+					}
 				}else{
 					cout<<"No se encuentran preguntas"<<endl;
 				}
@@ -446,12 +519,85 @@ lista<Profesor> LlenarListas::eliminarProfesor(lista<Profesor> ps){
 		}
 		cout<<"Digite la cedula del profesor a eliminar: ";
 		cin>>cedula;
-		ps.borrar(cedula);
-		cout<<"Profesor eliminado correctamente"<<endl;
+		if(ps.borrar(cedula)){
+			cout<<"Profesor eliminado correctamente"<<endl;
+		}else{
+			cout<<"No se pudo eliminar el profesor"<<endl;
+		}
 		cout<<"Desea eliminar otro profesor? Si=1, No=0: ";
 		cin>>d;
 	}
 	return ps;	
+}
+
+lista<Clase> LlenarListas::eliminarClase(lista<Clase> cs){
+	Clase cl;
+	int d=1,pos;
+	while(d!=0){
+		for(int i=1;i<=cs.get_tam();i++){
+			cs.recorrer(i,&cl);
+			cout<<i<<". "<<cl.getCodigo()<<endl;
+		}
+		cout<<"Digite la posicion de la clase a eliminar: ";
+		cin>>pos;
+		if(cs.borrar(pos)){
+			cout<<endl;
+			cout<<"Clase eliminada correctamente"<<endl;
+		}else{
+			cout<<endl;
+			cout<<"No se pudo eliminar la clase"<<endl;
+		}
+		cout<<"Desea eliminar otra clase? Si=1, No=0: ";
+		cin>>d;
+	}
+	return cs;
+}
+
+lista<Estudiante> LlenarListas::eliminarEstudiante(lista<Estudiante> es){
+	int d=1;
+	long long int cod;
+	Estudiante e;
+	while(d!=0){
+		for(int j=1;j<=es.get_tam();j++){
+			es.recorrer(j,&e);
+			cout<<e.getCodigo()<<" "<<e.getApellidos()<<" "<<e.getNombres()<<endl;
+		}
+		cout<<"Digite el codigo del estudiante a eliminar: ";
+		cin>>cod;
+		if(es.borrar(cod)){
+			cout<<endl;
+			cout<<"Estudiante eliminado correctamente"<<endl;
+		}else{
+			cout<<"No se pudo eliminar el estudiante"<<endl;
+		}
+		
+		cout<<"Desea eliminar otro estudiante? Si=1, No=0: ";
+		cin>>d;
+	}
+	return es;
+}
+
+lista<Tema> LlenarListas::eliminarTema(lista<Tema> ts){
+	int d=1;
+	int cod;
+	Tema t;
+	while(d!=0){
+		for(int j=1;j<=ts.get_tam();j++){
+			ts.recorrer(j,&t);
+			cout<<t.getCodigo()<<". "<<t.getNombre()<<endl;
+		}
+		cout<<"Digite el codigo del tema a eliminar: ";
+		cin>>cod;
+		if(ts.borrar(cod)){
+			cout<<endl;
+			cout<<"Tema eliminado correctamente"<<endl;
+		}else{
+			cout<<"No se pudo eliminar el tema"<<endl;
+		}
+		cout<<"Desea eliminar otro tema? Si=1, No=0: ";
+		cin>>d;
+	}
+	return ts;
 }
 
 #endif

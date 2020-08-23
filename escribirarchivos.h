@@ -8,22 +8,26 @@
 #include "profesor.h"
 class EscribirArchivos{
 	public:
-		void escribir(lista<Profesor> ps, lista<Tema> ts);
+		void escribir(lista<Profesor> ps, lista<Tema> ts, lista<Clase> cs);
 		void escribirProfesores(lista<Profesor> ps);
 		void escribirCortes(lista<Profesor> ps);
 		void escribirNotas(lista<Profesor> ps);
 		void escribirContenedores(lista<Profesor> ps);
 		void escribirEvaluaciones(lista<Profesor> ps);
 		void escribirTemas(lista<Tema> ts);
+		void escribirClases(lista<Clase> cs);
+		void escribirEstudiantes(lista<Clase> cs);
 };
 
-void EscribirArchivos::escribir(lista<Profesor> ps, lista<Tema> ts){
+void EscribirArchivos::escribir(lista<Profesor> ps, lista<Tema> ts, lista<Clase> cs){
 	escribirProfesores(ps);
 	escribirCortes(ps);
 	escribirNotas(ps);
 	escribirContenedores(ps);
 	escribirEvaluaciones(ps);
 	escribirTemas(ts);
+	escribirClases(cs);
+	escribirEstudiantes(cs);
 }
 
 void EscribirArchivos::escribirProfesores(lista<Profesor> ps){
@@ -160,6 +164,42 @@ void EscribirArchivos::escribirTemas(lista<Tema> ts){
 	}
 	
 	archivo.close();
+}
+
+void EscribirArchivos::escribirClases(lista<Clase> cs){
+	ofstream archivo;
+	Clase c;
+	archivo.open("archivos//Clases//clases.txt",ios::out); //Abrir archivo
+	
+	if(archivo.fail()){
+		cout<<"No se pudo abrir el archivo";
+		exit(1);
+	}
+	
+	for(int pos=1;pos<=cs.get_tam();pos++){
+		cs.recorrer(pos,&c);
+		archivo<<c.getCodigo()<<endl;
+	}
+	archivo.close();
+}
+
+void EscribirArchivos::escribirEstudiantes(lista<Clase> cs){
+	Clase cl;
+	Estudiante e;
+	for(int pos=1;pos<=cs.get_tam();pos++){
+		cs.recorrer(pos,&cl);
+		ofstream archivo;
+		ostringstream ss;
+		ss << cl.getCodigo();
+		string ruta;
+		ruta="archivos//Estudiantes//"+ss.str()+"estudiantes.txt";
+		archivo.open(ruta.c_str(),ios::out);
+		for(int c=1;c<=cl.getListaEstudiantes().get_tam();c++){
+			cl.getListaEstudiantes().recorrer(c,&e);
+			archivo<<e.getCodigo()<<","<<e.getApellidos()<<","<<e.getNombres()<<endl;
+		}
+		archivo.close();	
+	}
 }
 
 

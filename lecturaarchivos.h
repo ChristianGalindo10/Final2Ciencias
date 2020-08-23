@@ -12,6 +12,10 @@
 #include "contenedor.h"
 #include "profesor.h"
 #include "tema.h"
+#include "clase.h"
+#include "estudiante.h"
+
+
 class LecturaArchivos{
 	public:
 		lista<Profesor> lecturaProfesores(lista<Profesor> ps);
@@ -20,7 +24,93 @@ class LecturaArchivos{
 		lista<Contenedor> lecturaContenedores(Profesor p, Corte cor, Nota nt);
 		lista<Evaluacion> lecturaEvaluaciones(Profesor p, Corte cor, Nota nt, Contenedor cont);
 		lista<Tema> lecturaTemas(lista<Tema> ts);
+		lista<Clase> lecturaClases(lista<Clase> cs);
+		lista<Estudiante> lecturaEstudiantes(Clase c);
 };
+
+lista<Clase> LecturaArchivos::lecturaClases(lista<Clase> cs){
+	ifstream archivo;
+	int numLines = 0;
+	ifstream in("archivos//Clases//clases.txt");
+	string unused;
+	//Contar lineas de archivo
+	while (getline(in, unused) )
+   		++numLines; 
+	archivo.open("archivos//Clases//clases.txt",ios::in);
+	if(archivo.fail()){
+		cout<<"No se pudo abrir el archivo";
+		exit(1);
+	}
+	string aux;
+	for(int i=0;i<numLines;i++){
+		Clase c;
+		getline(archivo,aux);
+		c.setCodigo(aux);
+    	c.setListaEstudiantes(lecturaEstudiantes(c));
+    	cs.insertarOrd(c,cs.get_tam()+1);
+	}
+	archivo.close();
+	return cs;
+}
+
+lista<Estudiante> LecturaArchivos::lecturaEstudiantes(Clase c){
+	ifstream archivo;
+	ostringstream ss;
+	ss << c.getCodigo();
+	string ruta;
+	ruta="archivos//Estudiantes//"+ss.str()+"estudiantes.txt";
+	//Contar lineas de archivo
+	int numLines = 0;
+	ifstream in(ruta.c_str());
+	string unused;
+	while (getline(in, unused))
+   		++numLines; 
+	archivo.open(ruta.c_str(),ios::in);
+	if(archivo.fail()){
+		cout<<"No se pudo abrir el archivo";
+		//exit(1);
+	}
+	Estudiante e;
+	e.setCodigo(99999999999);
+	lista<Estudiante> es= lista<Estudiante>(e);
+	string aux;
+	cola<string> Cola;
+	for(int i=0;i<numLines;i++){
+		string puntero="";
+		getline(archivo,aux);
+		stringstream ss(aux);
+		while(ss.good()){
+			string substr;
+			getline(ss,substr,',');
+			Cola.InsCola(substr);
+		}
+		Cola.AtenderCola(&puntero);
+		istringstream codigo(puntero);
+		if ( !(codigo >> e.getCodigo() )) //give the value to 'Result' using the characters in the stream
+    		e.setCodigo(0);
+    	Cola.AtenderCola(&puntero);
+		for(int i = 0; i<puntero.length(); i++){
+			e.setApellidos(i,puntero[i]);
+		}
+		for(int i = puntero.length(); i<50; i++){
+			e.setApellidos(i,0);
+		}
+		Cola.AtenderCola(&puntero);
+		for(int i = 0; i<puntero.length(); i++){
+			e.setNombres(i,puntero[i]);
+		}
+		for(int i = puntero.length(); i<50; i++){
+			e.setNombres(i,0);
+		}
+    	es.insertarOrd(e,e.getCodigo());
+	}
+	archivo.close();
+	return es;
+}
+
+
+
+
 lista<Profesor> LecturaArchivos::lecturaProfesores(lista<Profesor> ps){
 	ifstream archivo;
 	int numLines = 0;

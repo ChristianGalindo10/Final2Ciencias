@@ -29,30 +29,29 @@ void MenuPrincipal::mostrarMenu(Controlador c){
 					cout << "\t1. Profesores." << endl;
 					cout << "\t2. Estudiantes." << endl;
 					cout << "\t3. Temas." << endl;
-					cout << "\t4. Evaluaciones." << endl;
+					cout << "\t4. Clases." << endl;
 					cout << "\t5. Volver." << endl << endl;
 					cout << "\tSeleccione una opci\xa2n: ";
 					cin >> op1;
 					system("cls");
 					switch(op1){
 						case 1:
-							cout << "Lo necesario para agregar un profesor, por ahora lo que ya se tenia" << endl << endl;
 							c.insertarProfes();
 							c.mostrarListaProfes();
 							system("pause");
 							break;
 						case 2:
-							cout << "Lo necesario para agregar un estudiante" << endl;
+							c.insertarEstudiantes();
 							system("pause");
 							break;
 						case 3:
-							cout << "Lo necesario para agregar un tema" << endl;
 							c.insertarTemas();
 							c.mostrarListaTemas();						
 							system("pause");
 							break;
 						case 4:
-							cout << "Lo necesario para agregar una evaluaci\xa2n" << endl;
+							c.insertarClases();
+							c.mostrarListaClases();
 							system("pause");
 							break;
 						case 5:
@@ -63,19 +62,18 @@ void MenuPrincipal::mostrarMenu(Controlador c){
 							break;	
 					}
 				}
+				op1=0;
 				}
 				break;
 			case 2:
 				{
 				int op1;
-				while(op1!=5){
+				while(op1!=3){
 					system("cls");
 					cout << "\t-----------MENU MODIFICACIONES-----------" << endl << endl;
 					cout << "\t1. Profesores." << endl;
-					cout << "\t2. Estudiantes." << endl;
-					cout << "\t3. Temas." << endl;
-					cout << "\t4. Evaluaciones." << endl;
-					cout << "\t5. Volver." << endl << endl;
+					cout << "\t2. Temas." << endl;
+					cout << "\t3. Volver." << endl << endl;
 					cout << "\tSeleccione una opci\xa2n: ";
 					cin >> op1;
 					system("cls");
@@ -85,19 +83,10 @@ void MenuPrincipal::mostrarMenu(Controlador c){
 							system("pause");
 							break;
 						case 2:
-							cout << "Ingresar el codigo o algo semejante que permita identificar el estudiante: " << endl;
-							cout << "Modificar estudiante el estudiante elegido" << endl;
-							cout << "El estudiante con el codigo (codigo del estudiante) modificado exitosamente" << endl;
-							system("pause");
-							break;
-						case 3:
 							c.modificarTemas();
 							system("pause");
 							break;
-						case 4:
-							system("pause");
-							break;
-						case 5:
+						case 3:
 							break;
 						default:
 							cout << "\tOpci\xa2n invalida" << endl;
@@ -105,6 +94,7 @@ void MenuPrincipal::mostrarMenu(Controlador c){
 							break;
 					}
 				}
+				op1=0;
 				}
 				break;
 			case 3:
@@ -116,7 +106,7 @@ void MenuPrincipal::mostrarMenu(Controlador c){
 					cout << "\t1. Profesores." << endl;
 					cout << "\t2. Estudiantes." << endl;
 					cout << "\t3. Temas." << endl;
-					cout << "\t4. Evaluaciones." << endl;
+					cout << "\t4. Clases." << endl;
 					cout << "\t5. Volver." << endl << endl;
 					cout << "\tSeleccione una opci\xa2n: ";
 					cin >> op1;
@@ -127,34 +117,33 @@ void MenuPrincipal::mostrarMenu(Controlador c){
 							system("pause");
 							break;
 						case 2:
-							cout << "Ingresar el codigo o algo semejante que permita identificar el estudiante: " << endl;
-							cout << "El estudiante con el codigo (codigo del estudiante) eliminado exitosamente" << endl;
+							c.eliminarEstudiante();
 							system("pause");
 							break;
 						case 3:
-							cout << "Ingresar el codigo del tema que desea eliminar: " << endl;
-							cout << "El tema con el codigo (codigo del tema) ha sido eliminado exitosamente" << endl;
+							c.eliminarTema();
+							c.mostrarListaTemas();
 							system("pause");
 							break;
 						case 4:
-							cout << "Ingrese la cedula del profresor: " << endl;
-							cout << "Ingrese el nombre de la evaluaci\xa2n que desea editar, o algo as\xa1, la vdd no estoy seguro :c x2" << endl;
-							cout << "Evaluaci\xa2n eliminada exitosamente" << endl;
+							c.eliminarClase();
 							system("pause");
 							break;
 						case 5:
-							break;
+							break;	
 						default:
 							cout << "\tOpci\xa2n invalida" << endl;
 							system("pause");
 							break;
 					}
 				}
+				op1=0;
 			    }
 				break;
 			case 4:
 				{
 				int op1;
+				int numc;
 				while(op1!=6){
 					system("cls");
 					cout << "\t-----------MENU CONSULTAS-----------" << endl << endl;
@@ -185,10 +174,11 @@ void MenuPrincipal::mostrarMenu(Controlador c){
 						system("pause");
 						break;
 					case 4:
-						cout << "Ingresar el n\xa3mero de clases" << endl;
+						cout << "Ingresar el n\xa3mero de clases: " << endl;
+						cin>>numc;
 						cout << "Mostrar la lista de profesores ordenados por cedula, por ahora se muestra la lista como ya estaba c:" << endl << endl;
 						//Muestra la lista
-						c.mostrarListaProfes();
+						c.mostrarListaProfes(numc);
 						system("pause");
 						break;
 					case 5:
@@ -205,6 +195,7 @@ void MenuPrincipal::mostrarMenu(Controlador c){
 						break;	
 					}
 				}
+				op1=0;
 				}
 				break;
 			case 5:

@@ -1,3 +1,3 @@
-1,Funciones
-2,Otro tema
-3,tema fiunal
+2,complejidad en memoria
+3,complejidad en tiempo
+6,definicion de orden

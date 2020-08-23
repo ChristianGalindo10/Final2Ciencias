@@ -1,29 +1,32 @@
-#ifndef EVALUACION_H     
-#define EVALUACION_H
-
-class Evaluacion{
-		int porcentaje;
-		int tema;
+#ifndef CLASE_H     
+#define CLASE_H
+#include "lista.h"
+#include "estudiante.h"
+class Clase{
+		string codigo;
+		lista<Estudiante> estudiantes;
 	public:
 		//Setters
-		void setPorcentaje(int porcen);
-		void setTema(int t);
+		void setCodigo(string cod);
+		void setListaEstudiantes(lista<Estudiante> es);
 		//Getters
-		int& getTema();
-		int& getPorcentaje();
+		string getCodigo();
+		lista<Estudiante> getListaEstudiantes();
 };
 //Setters
-void Evaluacion::setPorcentaje(int porcen){
-	porcentaje = porcen;
+void Clase::setCodigo(string cod){
+	codigo=cod;
 }
-void Evaluacion::setTema(int t){
-	tema = t;
+
+void Clase::setListaEstudiantes(lista<Estudiante> es){
+	estudiantes=es;
 }
 //Getters
-int& Evaluacion::getTema(){
-	return tema;
+string Clase::getCodigo(){
+	return codigo;
 }
-int& Evaluacion::getPorcentaje(){
-	return porcentaje;
+
+lista<Estudiante> Clase::getListaEstudiantes(){
+	return estudiantes;
 }
 #endif
