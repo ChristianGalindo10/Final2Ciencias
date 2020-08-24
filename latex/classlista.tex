@@ -1,0 +1,209 @@
+\hypertarget{classlista}{}\doxysection{Referencia de la plantilla de la Clase lista$<$ T $>$}
+\label{classlista}\index{lista$<$ T $>$@{lista$<$ T $>$}}
+
+
+\mbox{\hyperlink{class_clase}{Clase}} para implementar una lista ordenada de datos.  
+
+
+
+
+{\ttfamily \#include $<$lista.\+h$>$}
+
+\doxysubsection*{MÃ©todos pÃºblicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlista_a45ffd7acba43cf5a38421a0a5955b604}{lista}} (T Infomax)
+\begin{DoxyCompactList}\small\item\em Constructor por defecto lista. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlista_a575b7bb15674654c5ebcf23ff0c42021}{lista\+\_\+vacia}} ()
+\begin{DoxyCompactList}\small\item\em Devuelve el estado de la cola. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlista_ac5511377d596c5d921ca3044ea2d9172}{insertar\+Ord}} (T info, long long int clave)
+\begin{DoxyCompactList}\small\item\em Inserta de manera ordenada por clave en la lista. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlista_a49ffe9367e4b85646a65298b3cbafe25}{borrar}} (long long int clave)
+\begin{DoxyCompactList}\small\item\em Elimina un dato de la lista. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlista_abf3d18cf707e951e28ab433e72d03628}{buscar}} (long long int clave, T $\ast$info\+Ret)
+\begin{DoxyCompactList}\small\item\em Busca un dato en la lista. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlista_a7f7bb4425da18f7dd2258488947901f5}{cambiar}} (long long int clave, T info\+Nueva)
+\begin{DoxyCompactList}\small\item\em Cambia la información relacionada a un dato de la lista. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlista_afc9ad2823d0faf460882e219f2a33c1f}{pertenece}} (long long int clave)
+\begin{DoxyCompactList}\small\item\em Indica si un dato pertenece a la lista. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlista_ae951dda680e1e2bbd2a86ff27251130f}{recorrer}} (long long int pos, T $\ast$info\+Ret)
+\begin{DoxyCompactList}\small\item\em Recorre la lista. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlista_a3f61f469d094c94596131d563d0bf239}{get\+\_\+tam}} ()
+\begin{DoxyCompactList}\small\item\em Devuelve el tamaño de la lista. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{DescripciÃ³n detallada}
+\subsubsection*{template$<$class T$>$\newline
+class lista$<$ T $>$}
+
+\mbox{\hyperlink{class_clase}{Clase}} para implementar una lista ordenada de datos. 
+
+\doxysubsection{DocumentaciÃ³n del constructor y destructor}
+\mbox{\Hypertarget{classlista_a45ffd7acba43cf5a38421a0a5955b604}\label{classlista_a45ffd7acba43cf5a38421a0a5955b604}} 
+\index{lista$<$ T $>$@{lista$<$ T $>$}!lista@{lista}}
+\index{lista@{lista}!lista$<$ T $>$@{lista$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{lista()}{lista()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classlista}{lista}}$<$ T $>$\+::\mbox{\hyperlink{classlista}{lista}} (\begin{DoxyParamCaption}\item[{T}]{Infomax }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor por defecto lista. 
+
+
+\begin{DoxyParams}{ParÃ¡metros}
+{\em Info\+Max} & Informacion máxima que puede contener un dato almacenado en la lista \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{DocumentaciÃ³n de las funciones miembro}
+\mbox{\Hypertarget{classlista_a49ffe9367e4b85646a65298b3cbafe25}\label{classlista_a49ffe9367e4b85646a65298b3cbafe25}} 
+\index{lista$<$ T $>$@{lista$<$ T $>$}!borrar@{borrar}}
+\index{borrar@{borrar}!lista$<$ T $>$@{lista$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{borrar()}{borrar()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classlista}{lista}}$<$ T $>$\+::borrar (\begin{DoxyParamCaption}\item[{long long int}]{clave }\end{DoxyParamCaption})}
+
+
+
+Elimina un dato de la lista. 
+
+
+\begin{DoxyParams}{ParÃ¡metros}
+{\em clave} & Clave del dato a eliminar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Verdadero si se pudo eliminar el dato, falso en caso contrario 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlista_abf3d18cf707e951e28ab433e72d03628}\label{classlista_abf3d18cf707e951e28ab433e72d03628}} 
+\index{lista$<$ T $>$@{lista$<$ T $>$}!buscar@{buscar}}
+\index{buscar@{buscar}!lista$<$ T $>$@{lista$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{buscar()}{buscar()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classlista}{lista}}$<$ T $>$\+::buscar (\begin{DoxyParamCaption}\item[{long long int}]{clave,  }\item[{T $\ast$}]{info\+Ret }\end{DoxyParamCaption})}
+
+
+
+Busca un dato en la lista. 
+
+
+\begin{DoxyParams}{ParÃ¡metros}
+{\em clave} & Clave del dato a buscar \\
+\hline
+{\em info\+Ret} & Direccion de un tipo de dato asociado al tipo de dato de la lista, para poder retornar la información del dato encontrado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Verdadero si se encuentra el dato, falso en caso contrario 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlista_a7f7bb4425da18f7dd2258488947901f5}\label{classlista_a7f7bb4425da18f7dd2258488947901f5}} 
+\index{lista$<$ T $>$@{lista$<$ T $>$}!cambiar@{cambiar}}
+\index{cambiar@{cambiar}!lista$<$ T $>$@{lista$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{cambiar()}{cambiar()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classlista}{lista}}$<$ T $>$\+::cambiar (\begin{DoxyParamCaption}\item[{long long int}]{clave,  }\item[{T}]{info\+Nueva }\end{DoxyParamCaption})}
+
+
+
+Cambia la información relacionada a un dato de la lista. 
+
+
+\begin{DoxyParams}{ParÃ¡metros}
+{\em clave} & Clave del dato al cual se desea cambiar la información \\
+\hline
+{\em info\+Nueva} & Tipo de dato que contiene la nueva información \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Verdadero si se logra cambiar la información, falso en caso contrario 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlista_a3f61f469d094c94596131d563d0bf239}\label{classlista_a3f61f469d094c94596131d563d0bf239}} 
+\index{lista$<$ T $>$@{lista$<$ T $>$}!get\_tam@{get\_tam}}
+\index{get\_tam@{get\_tam}!lista$<$ T $>$@{lista$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_tam()}{get\_tam()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{classlista}{lista}}$<$ T $>$\+::get\+\_\+tam (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el tamaño de la lista. 
+
+\begin{DoxyReturn}{Devuelve}
+El tamaño de la lista de tipo entero 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlista_ac5511377d596c5d921ca3044ea2d9172}\label{classlista_ac5511377d596c5d921ca3044ea2d9172}} 
+\index{lista$<$ T $>$@{lista$<$ T $>$}!insertarOrd@{insertarOrd}}
+\index{insertarOrd@{insertarOrd}!lista$<$ T $>$@{lista$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{insertarOrd()}{insertarOrd()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classlista}{lista}}$<$ T $>$\+::insertar\+Ord (\begin{DoxyParamCaption}\item[{T}]{info,  }\item[{long long int}]{clave }\end{DoxyParamCaption})}
+
+
+
+Inserta de manera ordenada por clave en la lista. 
+
+
+\begin{DoxyParams}{ParÃ¡metros}
+{\em info} & Dato a ingresar en la lista \\
+\hline
+{\em clave} & Clave del dato a ingresar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlista_a575b7bb15674654c5ebcf23ff0c42021}\label{classlista_a575b7bb15674654c5ebcf23ff0c42021}} 
+\index{lista$<$ T $>$@{lista$<$ T $>$}!lista\_vacia@{lista\_vacia}}
+\index{lista\_vacia@{lista\_vacia}!lista$<$ T $>$@{lista$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{lista\_vacia()}{lista\_vacia()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classlista}{lista}}$<$ T $>$\+::lista\+\_\+vacia}
+
+
+
+Devuelve el estado de la cola. 
+
+\begin{DoxyReturn}{Devuelve}
+Verdadero si está vacía, falso en caso contrario 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlista_afc9ad2823d0faf460882e219f2a33c1f}\label{classlista_afc9ad2823d0faf460882e219f2a33c1f}} 
+\index{lista$<$ T $>$@{lista$<$ T $>$}!pertenece@{pertenece}}
+\index{pertenece@{pertenece}!lista$<$ T $>$@{lista$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{pertenece()}{pertenece()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classlista}{lista}}$<$ T $>$\+::pertenece (\begin{DoxyParamCaption}\item[{long long int}]{clave }\end{DoxyParamCaption})}
+
+
+
+Indica si un dato pertenece a la lista. 
+
+
+\begin{DoxyParams}{ParÃ¡metros}
+{\em clave} & Clave del dato a buscar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Verdadero si el dato pertenece a la lista, falso en caso contrario 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlista_ae951dda680e1e2bbd2a86ff27251130f}\label{classlista_ae951dda680e1e2bbd2a86ff27251130f}} 
+\index{lista$<$ T $>$@{lista$<$ T $>$}!recorrer@{recorrer}}
+\index{recorrer@{recorrer}!lista$<$ T $>$@{lista$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{recorrer()}{recorrer()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classlista}{lista}}$<$ T $>$\+::recorrer (\begin{DoxyParamCaption}\item[{long long int}]{pos,  }\item[{T $\ast$}]{info\+Ret }\end{DoxyParamCaption})}
+
+
+
+Recorre la lista. 
+
+
+\begin{DoxyParams}{ParÃ¡metros}
+{\em pos} & Posición que se desea mostrar \\
+\hline
+{\em info\+Ret} & Direccion de un tipo de dato asociado al tipo de dato de la lista, para poder retornar la información del dato en la posición dada \\
+\hline
+\end{DoxyParams}
+
+
+La documentaciÃ³n para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{lista_8h}{lista.\+h}}\end{DoxyCompactItemize}

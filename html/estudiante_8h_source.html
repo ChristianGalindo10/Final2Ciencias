@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ProyectoFinalCienciasI: Fichero Fuente estudiante.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">ProyectoFinalCienciasI
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Manejo de listas y archivos</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">estudiante.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="estudiante_8h.html">Ir a la documentaciÃ³n de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef ESTUDIANTE_H     </span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define ESTUDIANTE_H</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_estudiante.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_estudiante.html">Estudiante</a>{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> codigo; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordtype">char</span> apellidos[50]; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordtype">char</span> nombres[50]; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="comment">//Setters</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"></span>        <span class="keywordtype">void</span> <a class="code" href="class_estudiante.html#acdc609e34c839da82007315da6b1cf34">setCodigo</a>(<span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> cod);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_estudiante.html#ac6f6a2e176b3f75fb1f68ca1f2274b5b">setNombres</a>(<span class="keywordtype">int</span> pos, <span class="keywordtype">char</span> letra);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_estudiante.html#ab74903b3fb8e1a3bdb2091e56e0440dd">setApellidos</a>(<span class="keywordtype">int</span> pos, <span class="keywordtype">char</span> letra);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="comment">//Getters</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"></span>        <span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span>&amp; <a class="code" href="class_estudiante.html#ab1e96569dc3fcee5405cc82e0298534b">getCodigo</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordtype">char</span>* <a class="code" href="class_estudiante.html#a7cbd1f3f5bb82decbaaa040a9ef675ea">getApellidos</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordtype">char</span>* <a class="code" href="class_estudiante.html#a475a0229a86bf78f6e70d7ba6b4ebefa">getNombres</a>();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">//Setters</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="class_estudiante.html#acdc609e34c839da82007315da6b1cf34">   61</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_estudiante.html#acdc609e34c839da82007315da6b1cf34">Estudiante::setCodigo</a>(<span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> cod){</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    codigo=cod;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="class_estudiante.html#ac6f6a2e176b3f75fb1f68ca1f2274b5b">   65</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_estudiante.html#ac6f6a2e176b3f75fb1f68ca1f2274b5b">Estudiante::setNombres</a>(<span class="keywordtype">int</span> pos, <span class="keywordtype">char</span> letra){</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    nombres[pos]=letra;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="class_estudiante.html#ab74903b3fb8e1a3bdb2091e56e0440dd">   69</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_estudiante.html#ab74903b3fb8e1a3bdb2091e56e0440dd">Estudiante::setApellidos</a>(<span class="keywordtype">int</span> pos, <span class="keywordtype">char</span> letra){</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    apellidos[pos]=letra;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">//Getters</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="class_estudiante.html#ab1e96569dc3fcee5405cc82e0298534b">   74</a></span>&#160;<span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span>&amp; <a class="code" href="class_estudiante.html#ab1e96569dc3fcee5405cc82e0298534b">Estudiante::getCodigo</a>(){</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">return</span> codigo;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="class_estudiante.html#a475a0229a86bf78f6e70d7ba6b4ebefa">   78</a></span>&#160;<span class="keywordtype">char</span>* <a class="code" href="class_estudiante.html#a475a0229a86bf78f6e70d7ba6b4ebefa">Estudiante::getNombres</a>(){</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">return</span> nombres;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="class_estudiante.html#a7cbd1f3f5bb82decbaaa040a9ef675ea">   82</a></span>&#160;<span class="keywordtype">char</span>* <a class="code" href="class_estudiante.html#a7cbd1f3f5bb82decbaaa040a9ef675ea">Estudiante::getApellidos</a>(){</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">return</span> apellidos;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_estudiante_html_ab1e96569dc3fcee5405cc82e0298534b"><div class="ttname"><a href="class_estudiante.html#ab1e96569dc3fcee5405cc82e0298534b">Estudiante::getCodigo</a></div><div class="ttdeci">long long int &amp; getCodigo()</div><div class="ttdoc">Retorna el código del estudiante.</div><div class="ttdef"><b>Definition:</b> estudiante.h:74</div></div>
+<div class="ttc" id="aclass_estudiante_html"><div class="ttname"><a href="class_estudiante.html">Estudiante</a></div><div class="ttdoc">Clase para manejar los datos relacionados al estudiante.</div><div class="ttdef"><b>Definition:</b> estudiante.h:15</div></div>
+<div class="ttc" id="aclass_estudiante_html_ab74903b3fb8e1a3bdb2091e56e0440dd"><div class="ttname"><a href="class_estudiante.html#ab74903b3fb8e1a3bdb2091e56e0440dd">Estudiante::setApellidos</a></div><div class="ttdeci">void setApellidos(int pos, char letra)</div><div class="ttdoc">Establece los apellidos del estudiante.</div><div class="ttdef"><b>Definition:</b> estudiante.h:69</div></div>
+<div class="ttc" id="aclass_estudiante_html_a475a0229a86bf78f6e70d7ba6b4ebefa"><div class="ttname"><a href="class_estudiante.html#a475a0229a86bf78f6e70d7ba6b4ebefa">Estudiante::getNombres</a></div><div class="ttdeci">char * getNombres()</div><div class="ttdoc">Retorna los nombres del estudiante.</div><div class="ttdef"><b>Definition:</b> estudiante.h:78</div></div>
+<div class="ttc" id="aclass_estudiante_html_acdc609e34c839da82007315da6b1cf34"><div class="ttname"><a href="class_estudiante.html#acdc609e34c839da82007315da6b1cf34">Estudiante::setCodigo</a></div><div class="ttdeci">void setCodigo(long long int cod)</div><div class="ttdoc">&lt; Nombres del estudiante</div><div class="ttdef"><b>Definition:</b> estudiante.h:61</div></div>
+<div class="ttc" id="aclass_estudiante_html_a7cbd1f3f5bb82decbaaa040a9ef675ea"><div class="ttname"><a href="class_estudiante.html#a7cbd1f3f5bb82decbaaa040a9ef675ea">Estudiante::getApellidos</a></div><div class="ttdeci">char * getApellidos()</div><div class="ttdoc">Retorna los apellidos del estudiante.</div><div class="ttdef"><b>Definition:</b> estudiante.h:82</div></div>
+<div class="ttc" id="aclass_estudiante_html_ac6f6a2e176b3f75fb1f68ca1f2274b5b"><div class="ttname"><a href="class_estudiante.html#ac6f6a2e176b3f75fb1f68ca1f2274b5b">Estudiante::setNombres</a></div><div class="ttdeci">void setNombres(int pos, char letra)</div><div class="ttdoc">Establece los nombres del estudiante.</div><div class="ttdef"><b>Definition:</b> estudiante.h:65</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

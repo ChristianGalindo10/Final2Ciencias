@@ -1,0 +1,204 @@
+\hypertarget{class_profesor}{}\doxysection{Referencia de la Clase Profesor}
+\label{class_profesor}\index{Profesor@{Profesor}}
+
+
+\mbox{\hyperlink{class_clase}{Clase}} para manejar los datos relacionados al profesor.  
+
+
+
+
+{\ttfamily \#include $<$profesor.\+h$>$}
+
+\doxysubsection*{MÃ©todos pÃºblicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_profesor_abf158f1b3c5f3f6bcb36159795356515}{Profesor}} ()
+\begin{DoxyCompactList}\small\item\em $<$ Lista de cortes asociada al profesor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_profesor_aac09ae72d0591b6a68be6673bd4bf107}{set\+Cedula}} (long long int cc)
+\begin{DoxyCompactList}\small\item\em Establece la cédula del profesor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_profesor_a58d97e321a4ec078272a382993382d7f}{set\+Apellidos}} (int pos, char letra)
+\begin{DoxyCompactList}\small\item\em Establece los apellidos del profesor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_profesor_aab7c6c6d2f93387cc95356d61853c5cf}{set\+Nombres}} (int pos, char letra)
+\begin{DoxyCompactList}\small\item\em Establece los nombres del profesor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_profesor_a23db75e79e79d519a93e88f95e0a8f7a}{set\+Num\+Clases}} (int num)
+\begin{DoxyCompactList}\small\item\em Establece el número de clases del profesor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_profesor_ab48d23045200975899417254b0ed8d88}{set\+Lista\+Corte}} (\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{class_corte}{Corte}} $>$ cor)
+\begin{DoxyCompactList}\small\item\em Establece la lista de cortes del profesor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{class_corte}{Corte}} $>$ \mbox{\hyperlink{class_profesor_a6bf755be76c0eb40e922d1a62a1fc2aa}{get\+Lista\+Corte}} ()
+\begin{DoxyCompactList}\small\item\em Retorna la lista de cortes del profesor. \end{DoxyCompactList}\item 
+long long int \& \mbox{\hyperlink{class_profesor_a3b227b40fcf822b2e978a7e22a552816}{get\+Cedula}} ()
+\begin{DoxyCompactList}\small\item\em Retorna la cédula del profesor. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{class_profesor_a22c264073c8bf1ff33752fbddf584932}{get\+Apellidos}} ()
+\begin{DoxyCompactList}\small\item\em Retorna los apellidos del profesor. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{class_profesor_a8b2bbc2e6253c5d81669f2278c9ccc1a}{get\+Nombres}} ()
+\begin{DoxyCompactList}\small\item\em Retorna los nombres del profesor. \end{DoxyCompactList}\item 
+int \& \mbox{\hyperlink{class_profesor_a1fd72aa0625a4e5ce95dabb974b9f8cd}{get\+Num\+Clases}} ()
+\begin{DoxyCompactList}\small\item\em Retorna el número de clases del profesor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{DescripciÃ³n detallada}
+\mbox{\hyperlink{class_clase}{Clase}} para manejar los datos relacionados al profesor. 
+
+\doxysubsection{DocumentaciÃ³n del constructor y destructor}
+\mbox{\Hypertarget{class_profesor_abf158f1b3c5f3f6bcb36159795356515}\label{class_profesor_abf158f1b3c5f3f6bcb36159795356515}} 
+\index{Profesor@{Profesor}!Profesor@{Profesor}}
+\index{Profesor@{Profesor}!Profesor@{Profesor}}
+\doxysubsubsection{\texorpdfstring{Profesor()}{Profesor()}}
+{\footnotesize\ttfamily Profesor\+::\+Profesor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+$<$ Lista de cortes asociada al profesor 
+
+Constructor por defecto \mbox{\hyperlink{class_profesor}{Profesor}} 
+
+\doxysubsection{DocumentaciÃ³n de las funciones miembro}
+\mbox{\Hypertarget{class_profesor_a22c264073c8bf1ff33752fbddf584932}\label{class_profesor_a22c264073c8bf1ff33752fbddf584932}} 
+\index{Profesor@{Profesor}!getApellidos@{getApellidos}}
+\index{getApellidos@{getApellidos}!Profesor@{Profesor}}
+\doxysubsubsection{\texorpdfstring{getApellidos()}{getApellidos()}}
+{\footnotesize\ttfamily char $\ast$ Profesor\+::get\+Apellidos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna los apellidos del profesor. 
+
+\begin{DoxyReturn}{Devuelve}
+Apellidos del profesor tipo puntero a char 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_profesor_a3b227b40fcf822b2e978a7e22a552816}\label{class_profesor_a3b227b40fcf822b2e978a7e22a552816}} 
+\index{Profesor@{Profesor}!getCedula@{getCedula}}
+\index{getCedula@{getCedula}!Profesor@{Profesor}}
+\doxysubsubsection{\texorpdfstring{getCedula()}{getCedula()}}
+{\footnotesize\ttfamily long long int \& Profesor\+::get\+Cedula (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna la cédula del profesor. 
+
+\begin{DoxyReturn}{Devuelve}
+Número de cédula del profesor tipo long long int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_profesor_a6bf755be76c0eb40e922d1a62a1fc2aa}\label{class_profesor_a6bf755be76c0eb40e922d1a62a1fc2aa}} 
+\index{Profesor@{Profesor}!getListaCorte@{getListaCorte}}
+\index{getListaCorte@{getListaCorte}!Profesor@{Profesor}}
+\doxysubsubsection{\texorpdfstring{getListaCorte()}{getListaCorte()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{class_corte}{Corte}} $>$ Profesor\+::get\+Lista\+Corte (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna la lista de cortes del profesor. 
+
+\begin{DoxyReturn}{Devuelve}
+Lista de tipo \mbox{\hyperlink{class_corte}{Corte}} asociada al profesor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_profesor_a8b2bbc2e6253c5d81669f2278c9ccc1a}\label{class_profesor_a8b2bbc2e6253c5d81669f2278c9ccc1a}} 
+\index{Profesor@{Profesor}!getNombres@{getNombres}}
+\index{getNombres@{getNombres}!Profesor@{Profesor}}
+\doxysubsubsection{\texorpdfstring{getNombres()}{getNombres()}}
+{\footnotesize\ttfamily char $\ast$ Profesor\+::get\+Nombres (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna los nombres del profesor. 
+
+\begin{DoxyReturn}{Devuelve}
+Nombres del profesor tipo puntero a char 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_profesor_a1fd72aa0625a4e5ce95dabb974b9f8cd}\label{class_profesor_a1fd72aa0625a4e5ce95dabb974b9f8cd}} 
+\index{Profesor@{Profesor}!getNumClases@{getNumClases}}
+\index{getNumClases@{getNumClases}!Profesor@{Profesor}}
+\doxysubsubsection{\texorpdfstring{getNumClases()}{getNumClases()}}
+{\footnotesize\ttfamily int \& Profesor\+::get\+Num\+Clases (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna el número de clases del profesor. 
+
+\begin{DoxyReturn}{Devuelve}
+Número de clases del profesor tipo entero 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_profesor_a58d97e321a4ec078272a382993382d7f}\label{class_profesor_a58d97e321a4ec078272a382993382d7f}} 
+\index{Profesor@{Profesor}!setApellidos@{setApellidos}}
+\index{setApellidos@{setApellidos}!Profesor@{Profesor}}
+\doxysubsubsection{\texorpdfstring{setApellidos()}{setApellidos()}}
+{\footnotesize\ttfamily void Profesor\+::set\+Apellidos (\begin{DoxyParamCaption}\item[{int}]{pos,  }\item[{char}]{letra }\end{DoxyParamCaption})}
+
+
+
+Establece los apellidos del profesor. 
+
+
+\begin{DoxyParams}{ParÃ¡metros}
+{\em pos} & posición del arreglo \\
+\hline
+{\em letra} & Letra que debe ir en la posición indicada \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_profesor_aac09ae72d0591b6a68be6673bd4bf107}\label{class_profesor_aac09ae72d0591b6a68be6673bd4bf107}} 
+\index{Profesor@{Profesor}!setCedula@{setCedula}}
+\index{setCedula@{setCedula}!Profesor@{Profesor}}
+\doxysubsubsection{\texorpdfstring{setCedula()}{setCedula()}}
+{\footnotesize\ttfamily void Profesor\+::set\+Cedula (\begin{DoxyParamCaption}\item[{long long int}]{cc }\end{DoxyParamCaption})}
+
+
+
+Establece la cédula del profesor. 
+
+
+\begin{DoxyParams}{ParÃ¡metros}
+{\em cc} & Cédula del profesor \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_profesor_ab48d23045200975899417254b0ed8d88}\label{class_profesor_ab48d23045200975899417254b0ed8d88}} 
+\index{Profesor@{Profesor}!setListaCorte@{setListaCorte}}
+\index{setListaCorte@{setListaCorte}!Profesor@{Profesor}}
+\doxysubsubsection{\texorpdfstring{setListaCorte()}{setListaCorte()}}
+{\footnotesize\ttfamily void Profesor\+::set\+Lista\+Corte (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{class_corte}{Corte}} $>$}]{cor }\end{DoxyParamCaption})}
+
+
+
+Establece la lista de cortes del profesor. 
+
+
+\begin{DoxyParams}{ParÃ¡metros}
+{\em cor} & lista de cortes del profesor \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_profesor_aab7c6c6d2f93387cc95356d61853c5cf}\label{class_profesor_aab7c6c6d2f93387cc95356d61853c5cf}} 
+\index{Profesor@{Profesor}!setNombres@{setNombres}}
+\index{setNombres@{setNombres}!Profesor@{Profesor}}
+\doxysubsubsection{\texorpdfstring{setNombres()}{setNombres()}}
+{\footnotesize\ttfamily void Profesor\+::set\+Nombres (\begin{DoxyParamCaption}\item[{int}]{pos,  }\item[{char}]{letra }\end{DoxyParamCaption})}
+
+
+
+Establece los nombres del profesor. 
+
+
+\begin{DoxyParams}{ParÃ¡metros}
+{\em pos} & posición del arreglo \\
+\hline
+{\em letra} & Letra que debe ir en la posición indicada \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_profesor_a23db75e79e79d519a93e88f95e0a8f7a}\label{class_profesor_a23db75e79e79d519a93e88f95e0a8f7a}} 
+\index{Profesor@{Profesor}!setNumClases@{setNumClases}}
+\index{setNumClases@{setNumClases}!Profesor@{Profesor}}
+\doxysubsubsection{\texorpdfstring{setNumClases()}{setNumClases()}}
+{\footnotesize\ttfamily void Profesor\+::set\+Num\+Clases (\begin{DoxyParamCaption}\item[{int}]{num }\end{DoxyParamCaption})}
+
+
+
+Establece el número de clases del profesor. 
+
+
+\begin{DoxyParams}{ParÃ¡metros}
+{\em num} & número de clases del profesor \\
+\hline
+\end{DoxyParams}
+
+
+La documentaciÃ³n para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{profesor_8h}{profesor.\+h}}\end{DoxyCompactItemize}

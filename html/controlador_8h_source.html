@@ -1,0 +1,516 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ProyectoFinalCienciasI: Fichero Fuente controlador.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">ProyectoFinalCienciasI
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Manejo de listas y archivos</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">controlador.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="controlador_8h.html">Ir a la documentaciÃ³n de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef CONTROLADOR_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define CONTROLADOR_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="lista_8h.html">lista.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//Clases</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="profesor_8h.html">profesor.h</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tema_8h.html">tema.h</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="corte_8h.html">corte.h</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="contenedor_8h.html">contenedor.h</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="clase_8h.html">clase.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="nota_8h.html">nota.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="evaluacion_8h.html">evaluacion.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="curso_8h.html">curso.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="estudiante_8h.html">estudiante.h</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="llenarlistas_8h.html">llenarlistas.h</a>&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="lecturaarchivos_8h.html">lecturaarchivos.h</a>&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="escribirarchivos_8h.html">escribirarchivos.h</a>&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_controlador.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_controlador.html">Controlador</a>{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classlista.html">lista&lt;Profesor&gt;</a> profesores; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classlista.html">lista&lt;Tema&gt;</a> temas; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="classlista.html">lista&lt;Curso&gt;</a> cursos; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="classlista.html">lista&lt;Clase&gt;</a> clases; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="class_lectura_archivos.html">LecturaArchivos</a> lecArchivos; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="class_escribir_archivos.html">EscribirArchivos</a> escArchivos; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="class_llenar_listas.html">LlenarListas</a> insertar; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">//Paramétros necesarios para manejo de listas</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="class_profesor.html">Profesor</a> p; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="class_corte.html">Corte</a> cor; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="class_nota.html">Nota</a> nt; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="class_contenedor.html">Contenedor</a> ct; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="class_evaluacion.html">Evaluacion</a> eva; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">string</span> ap; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">string</span> nom; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="class_tema.html">Tema</a> t; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="class_curso.html">Curso</a> curso; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="struct_cur.html">Cur</a> cur; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="classlista.html">lista&lt;Cur&gt;</a> cs; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="class_estudiante.html">Estudiante</a> est; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="class_clase.html">Clase</a> clase; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">public</span>: </div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="class_controlador.html#a17db08229680461d4d1a2110a92ccf78">   60</a></span>&#160;        <a class="code" href="class_controlador.html#a17db08229680461d4d1a2110a92ccf78">Controlador</a>(){</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="comment">//Inicializar lista profesores</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            p.<a class="code" href="class_profesor.html#aac09ae72d0591b6a68be6673bd4bf107">setCedula</a>(999999);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            ap=<span class="stringliteral">&quot;Apellido1 Apellido2&quot;</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            nom=<span class="stringliteral">&quot;Nombre1 Nombre 2&quot;</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i&lt;ap.length(); i++){</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                p.<a class="code" href="class_profesor.html#a58d97e321a4ec078272a382993382d7f">setApellidos</a>(i,ap[i]);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i&lt;nom.length(); i++){</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                p.<a class="code" href="class_profesor.html#aab7c6c6d2f93387cc95356d61853c5cf">setNombres</a>(i,nom[i]);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            p.<a class="code" href="class_profesor.html#a23db75e79e79d519a93e88f95e0a8f7a">setNumClases</a>(1000);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            profesores = <a class="code" href="classlista.html">lista&lt;Profesor&gt;</a>(p);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="comment">//Inicializar lista temas</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            t.<a class="code" href="class_tema.html#ab77006668fe1282e0fadb188b91a43d2">setCodigo</a>(1000);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            nom=<span class="stringliteral">&quot;temaEjemplo&quot;</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i&lt;nom.length(); i++){</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                t.<a class="code" href="class_tema.html#a8b43747cfdfa7d11f0c405cc5b4bafb0">setNombre</a>(i,nom[i]);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            temas = <a class="code" href="classlista.html">lista&lt;Tema&gt;</a>(t);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            curso.<a class="code" href="class_curso.html#abaea6b31e0bc00166661a8772ade459a">setCodigo</a>(<span class="stringliteral">&quot;CodigoFinal&quot;</span>);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            cursos = <a class="code" href="classlista.html">lista&lt;Curso&gt;</a>(curso);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            clase.<a class="code" href="class_clase.html#a6ca52a7abf67d6af09a3099a7837561c">setCedula</a>(10000);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            cur.<a class="code" href="struct_cur.html#a3f075f54f212bf1ef03a8abc3ae5e7c3">curso</a>=<span class="stringliteral">&quot;CodigoFinal&quot;</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            cs=<a class="code" href="classlista.html">lista&lt;Cur&gt;</a>(cur);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            clase.<a class="code" href="class_clase.html#ad57a575d64956a2c8ae69b38e7c6f62a">setCursos</a>(cs);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            clases=<a class="code" href="classlista.html">lista&lt;Clase&gt;</a>(clase);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        };</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="comment">//Métodos para manejar listas</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordtype">void</span> mostrarListaProfes();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordtype">void</span> mostrarListaProfes(<span class="keywordtype">int</span> c);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordtype">void</span> mostrarListaCortes(<a class="code" href="class_profesor.html">Profesor</a> p);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordtype">void</span> mostrarListaNotas(<a class="code" href="class_corte.html">Corte</a> cor);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordtype">void</span> mostrarListaContenedores(<a class="code" href="class_nota.html">Nota</a> nt);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordtype">void</span> mostrarListaEvaluaciones(<a class="code" href="class_contenedor.html">Contenedor</a> cont);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordtype">void</span> mostrarListaTemas();</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordtype">void</span> mostrarListaCursos();</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="keywordtype">void</span> mostrarListaEstudiantes(<a class="code" href="class_curso.html">Curso</a> c);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="comment">//Métodos modificación</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment"></span>        <span class="keywordtype">void</span> insertarProfes();</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keywordtype">void</span> insertarTemas();</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keywordtype">void</span> insertarCursos();</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordtype">void</span> insertarEstudiantes();</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordtype">void</span> modificarProfesor();</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keywordtype">void</span> modificarTemas();  </div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keywordtype">void</span> eliminarProfesor();    </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        </div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="keywordtype">void</span> eliminarEstudiante();</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keywordtype">void</span> eliminarCurso();</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keywordtype">void</span> eliminarTema();</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="comment">//Métodos profesores</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="comment"></span>        <a class="code" href="classlista.html">lista&lt;Profesor&gt;</a> getProfes();</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <span class="keywordtype">void</span> leerProfes();</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="keywordtype">void</span> setProfes(<a class="code" href="classlista.html">lista&lt;Profesor&gt;</a> ps);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        </div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="comment">//Métodos temas</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        </div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <a class="code" href="classlista.html">lista&lt;Tema&gt;</a> getTemas();</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        </div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="keywordtype">void</span> leerTemas();</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        </div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="keywordtype">void</span> setTemas(<a class="code" href="classlista.html">lista&lt;Tema&gt;</a> ts);</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        </div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="comment">//Métodos Cursos</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        </div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        <a class="code" href="classlista.html">lista&lt;Curso&gt;</a> getCursos();</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        </div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="keywordtype">void</span> setCursos(<a class="code" href="classlista.html">lista&lt;Curso&gt;</a> cs);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        </div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        <span class="keywordtype">void</span> leerCursos(); </div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        </div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="comment">//Métodos de escritura</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        </div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <span class="keywordtype">void</span> escribirArchivos();</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        </div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="comment">//Métodos de clases</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <span class="keywordtype">void</span> llenarClases();</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="keywordtype">void</span> mostrarClases();</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        </div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;};</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
+<div class="line"><a name="l00263"></a><span class="lineno"><a class="line" href="class_controlador.html#ac7d049c9b426f5000bc286323c176762">  263</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_controlador.html#ac7d049c9b426f5000bc286323c176762">Controlador::mostrarClases</a>(){</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    llenarClases();</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1;i&lt;=clases.get_tam();i++){</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        clases.recorrer(i,&amp;clase);</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        cout&lt;&lt;clase.getCedula()&lt;&lt;<span class="stringliteral">&quot;: &quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=1;j&lt;=clase.getCursos().get_tam();j++){</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            clase.getCursos().recorrer(j,&amp;cur);</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            cout&lt;&lt;cur.curso&lt;&lt;endl;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        }</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    }</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;}</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
+<div class="line"><a name="l00275"></a><span class="lineno"><a class="line" href="class_controlador.html#aab5d4e8a20ac2b4593a79bc5131c9cc4">  275</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_controlador.html#aab5d4e8a20ac2b4593a79bc5131c9cc4">Controlador::llenarClases</a>(){</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    clases=insertar.llenarClases(profesores,cursos,clases,cs);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;}</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
+<div class="line"><a name="l00279"></a><span class="lineno"><a class="line" href="class_controlador.html#a1a28c3cf8eeac4c73627b461976e1273">  279</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_controlador.html#a1a28c3cf8eeac4c73627b461976e1273">Controlador::escribirArchivos</a>(){</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    escArchivos.escribir(profesores,temas,cursos);</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;}</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
+<div class="line"><a name="l00283"></a><span class="lineno"><a class="line" href="class_controlador.html#a7bc049ca03e43a755f4f0837b9920249">  283</a></span>&#160;<a class="code" href="classlista.html">lista&lt;Profesor&gt;</a> <a class="code" href="class_controlador.html#a7bc049ca03e43a755f4f0837b9920249">Controlador::getProfes</a>(){</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keywordflow">return</span> profesores;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;}</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
+<div class="line"><a name="l00287"></a><span class="lineno"><a class="line" href="class_controlador.html#a2d9f942ad2ad5b8465abc16bc13a3007">  287</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_controlador.html#a2d9f942ad2ad5b8465abc16bc13a3007">Controlador::leerProfes</a>(){</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    profesores=lecArchivos.lecturaProfesores(profesores);</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;}</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
+<div class="line"><a name="l00291"></a><span class="lineno"><a class="line" href="class_controlador.html#a8e5389fc8d158950927ff74f07032356">  291</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_controlador.html#a8e5389fc8d158950927ff74f07032356">Controlador::setProfes</a>(<a class="code" href="classlista.html">lista&lt;Profesor&gt;</a> ps){</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    profesores=ps;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;}</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
+<div class="line"><a name="l00295"></a><span class="lineno"><a class="line" href="class_controlador.html#a687852db7872460bfa9450c59ea66fdf">  295</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_controlador.html#a687852db7872460bfa9450c59ea66fdf">Controlador::leerCursos</a>(){</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    cursos=lecArchivos.lecturaCursos(cursos);</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;}</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
+<div class="line"><a name="l00299"></a><span class="lineno"><a class="line" href="class_controlador.html#ada65bb35d776141bfb5caaf5491bb7af">  299</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_controlador.html#ada65bb35d776141bfb5caaf5491bb7af">Controlador::setCursos</a>(<a class="code" href="classlista.html">lista&lt;Curso&gt;</a> cs){</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    cursos=cs;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;}</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
+<div class="line"><a name="l00303"></a><span class="lineno"><a class="line" href="class_controlador.html#a7a70f0c1341e0701b88fb01c927a7583">  303</a></span>&#160;<a class="code" href="classlista.html">lista&lt;Curso&gt;</a> <a class="code" href="class_controlador.html#a7a70f0c1341e0701b88fb01c927a7583">Controlador::getCursos</a>(){</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <span class="keywordflow">return</span> cursos;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;}</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
+<div class="line"><a name="l00308"></a><span class="lineno"><a class="line" href="class_controlador.html#a6b8f4e4a0ca0cd12a899e8f63786d5be">  308</a></span>&#160;<a class="code" href="classlista.html">lista&lt;Tema&gt;</a> <a class="code" href="class_controlador.html#a6b8f4e4a0ca0cd12a899e8f63786d5be">Controlador::getTemas</a>(){</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="keywordflow">return</span> temas;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;}</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
+<div class="line"><a name="l00312"></a><span class="lineno"><a class="line" href="class_controlador.html#ae8a1544129aa851659f658d69f8d591e">  312</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_controlador.html#ae8a1544129aa851659f658d69f8d591e">Controlador::leerTemas</a>(){</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    temas=lecArchivos.lecturaTemas(temas);</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;}</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
+<div class="line"><a name="l00316"></a><span class="lineno"><a class="line" href="class_controlador.html#a65d0ca0348170a7cdd34986517487e64">  316</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_controlador.html#a65d0ca0348170a7cdd34986517487e64">Controlador::setTemas</a>(<a class="code" href="classlista.html">lista&lt;Tema&gt;</a> ts){</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    temas=ts;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;}</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
+<div class="line"><a name="l00320"></a><span class="lineno"><a class="line" href="class_controlador.html#acfd2f5ffef68630bd6e52bc42403f391">  320</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_controlador.html#acfd2f5ffef68630bd6e52bc42403f391">Controlador::mostrarListaCursos</a>(){</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="keywordtype">int</span> pos;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1;i&lt;=cursos.get_tam();i++){</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        cursos.recorrer(i,&amp;curso);</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        cout&lt;&lt;i&lt;&lt;<span class="stringliteral">&quot;. &quot;</span>&lt;&lt;curso.getCodigo()&lt;&lt;endl;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="comment">//cout&lt;&lt;&quot;Estudiantes: &quot;&lt;&lt;endl;</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <span class="comment">//mostrarListaEstudiantes(curso);</span></div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    }</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    cout&lt;&lt;<span class="stringliteral">&quot;Digite la posición del curso del cual desea ver los estudiantes: &quot;</span>;</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    cin&gt;&gt;pos;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    cursos.buscar(pos,&amp;curso);</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    mostrarListaEstudiantes(curso);</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;}</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
+<div class="line"><a name="l00334"></a><span class="lineno"><a class="line" href="class_controlador.html#a3173b5affd0e4e38741dc5ddaaded4cc">  334</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_controlador.html#a3173b5affd0e4e38741dc5ddaaded4cc">Controlador::mostrarListaEstudiantes</a>(<a class="code" href="class_curso.html">Curso</a> c){</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1;i&lt;=c.<a class="code" href="class_curso.html#a48cfd3d0423af49980383eeb6d3f52ea">getListaEstudiantes</a>().get_tam();i++){</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        c.<a class="code" href="class_curso.html#a48cfd3d0423af49980383eeb6d3f52ea">getListaEstudiantes</a>().<a class="code" href="classlista.html#ae951dda680e1e2bbd2a86ff27251130f">recorrer</a>(i,&amp;est);</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        cout&lt;&lt;<span class="stringliteral">&quot;Codigo: &quot;</span>&lt;&lt;est.getCodigo()&lt;&lt;<span class="stringliteral">&quot; Apellidos: &quot;</span>&lt;&lt;est.getApellidos()&lt;&lt;<span class="stringliteral">&quot; Nombres: &quot;</span>&lt;&lt;est.getNombres()&lt;&lt;endl;</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    }</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;}</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160; </div>
+<div class="line"><a name="l00341"></a><span class="lineno"><a class="line" href="class_controlador.html#a53ae3f48d11ad0ca61f310ce2943afb2">  341</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_controlador.html#a53ae3f48d11ad0ca61f310ce2943afb2">Controlador::mostrarListaProfes</a>(){</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    cout&lt;&lt;<span class="stringliteral">&quot;Profes:&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="keywordflow">if</span>(profesores.get_tam()==0){</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        cout&lt;&lt;<span class="stringliteral">&quot;Lista vacia&quot;</span>;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    }</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> pos=1;pos&lt;=profesores.get_tam();pos++){</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        profesores.recorrer(pos,&amp;p);</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        cout&lt;&lt;<span class="stringliteral">&quot;Profesor:&quot;</span>&lt;&lt;endl;    </div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        cout&lt;&lt;<span class="stringliteral">&quot;Cedula: &quot;</span>&lt;&lt;p.getCedula()&lt;&lt;endl;</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        cout&lt;&lt;<span class="stringliteral">&quot;Apellidos: &quot;</span>&lt;&lt;p.getApellidos()&lt;&lt;endl;</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        cout&lt;&lt;<span class="stringliteral">&quot;Nombres: &quot;</span>&lt;&lt;p.getNombres()&lt;&lt;endl;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        cout&lt;&lt;<span class="stringliteral">&quot;Numero de Clases: &quot;</span>&lt;&lt;p.getNumClases()&lt;&lt;endl;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        mostrarListaCortes(p);</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    }</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;}</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160; </div>
+<div class="line"><a name="l00357"></a><span class="lineno"><a class="line" href="class_controlador.html#a507430d9b418c324982b5586611edef0">  357</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_controlador.html#a53ae3f48d11ad0ca61f310ce2943afb2">Controlador::mostrarListaProfes</a>(<span class="keywordtype">int</span> c){</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    cout&lt;&lt;<span class="stringliteral">&quot;Profes:&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <span class="keywordflow">if</span>(profesores.get_tam()==0){</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        cout&lt;&lt;<span class="stringliteral">&quot;Lista vacia&quot;</span>;</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    }</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> pos=1;pos&lt;=profesores.get_tam();pos++){</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        profesores.recorrer(pos,&amp;p);</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        <span class="keywordflow">if</span>(p.getNumClases()==c){</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;            cout&lt;&lt;<span class="stringliteral">&quot;Profesor:&quot;</span>&lt;&lt;endl;    </div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;            cout&lt;&lt;<span class="stringliteral">&quot;Cedula: &quot;</span>&lt;&lt;p.getCedula()&lt;&lt;endl;</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;            cout&lt;&lt;<span class="stringliteral">&quot;Apellidos: &quot;</span>&lt;&lt;p.getApellidos()&lt;&lt;endl;</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;            cout&lt;&lt;<span class="stringliteral">&quot;Nombres: &quot;</span>&lt;&lt;p.getNombres()&lt;&lt;endl;</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;            cout&lt;&lt;<span class="stringliteral">&quot;Numero de Clases: &quot;</span>&lt;&lt;p.getNumClases()&lt;&lt;endl;</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;            mostrarListaCortes(p);</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        }</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    }</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;}</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160; </div>
+<div class="line"><a name="l00375"></a><span class="lineno"><a class="line" href="class_controlador.html#a1d6bb03751adf0e7388f45bc153b45ed">  375</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_controlador.html#a1d6bb03751adf0e7388f45bc153b45ed">Controlador::mostrarListaCortes</a>(<a class="code" href="class_profesor.html">Profesor</a> p){</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    cout&lt;&lt;<span class="stringliteral">&quot;Cortes:&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c=1;c&lt;=(p.<a class="code" href="class_profesor.html#a6bf755be76c0eb40e922d1a62a1fc2aa">getListaCorte</a>().get_tam());c++){</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        p.<a class="code" href="class_profesor.html#a6bf755be76c0eb40e922d1a62a1fc2aa">getListaCorte</a>().<a class="code" href="classlista.html#ae951dda680e1e2bbd2a86ff27251130f">recorrer</a>(c,&amp;cor);</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        cout&lt;&lt;cor.getNombre()&lt;&lt;<span class="stringliteral">&quot;: &quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        mostrarListaNotas(cor);</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    }</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;}</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160; </div>
+<div class="line"><a name="l00384"></a><span class="lineno"><a class="line" href="class_controlador.html#a10dbedfad82b1bef19fd1eccc18dc11f">  384</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_controlador.html#a10dbedfad82b1bef19fd1eccc18dc11f">Controlador::mostrarListaNotas</a>(<a class="code" href="class_corte.html">Corte</a> cor){</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    cout&lt;&lt;<span class="stringliteral">&quot;Tipos de evaluaciones:&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> n=1;n&lt;=(cor.<a class="code" href="class_corte.html#a934ac82d32ce379118eee32d4ecb8226">getListaNotas</a>().get_tam());n++){</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        cor.<a class="code" href="class_corte.html#a934ac82d32ce379118eee32d4ecb8226">getListaNotas</a>().<a class="code" href="classlista.html#ae951dda680e1e2bbd2a86ff27251130f">recorrer</a>(n,&amp;nt);</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        cout&lt;&lt;<span class="stringliteral">&quot;Tipo: &quot;</span>&lt;&lt;nt.getTipo()&lt;&lt;<span class="stringliteral">&quot;. Porcentaje: &quot;</span>&lt;&lt;nt.getPorcentaje()&lt;&lt;<span class="stringliteral">&quot;%&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        mostrarListaContenedores(nt);</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    }</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;}</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        </div>
+<div class="line"><a name="l00393"></a><span class="lineno"><a class="line" href="class_controlador.html#aa500a098b576c9132bfb0bcb1b900207">  393</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_controlador.html#aa500a098b576c9132bfb0bcb1b900207">Controlador::mostrarListaContenedores</a>(<a class="code" href="class_nota.html">Nota</a> nt){</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    cout&lt;&lt;<span class="stringliteral">&quot;Evaluaciones: &quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> cont=1;cont&lt;=(nt.<a class="code" href="class_nota.html#a25e51da3c50e11ec5222c336621c39d4">getListaContenedor</a>().get_tam());cont++){</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        nt.<a class="code" href="class_nota.html#a25e51da3c50e11ec5222c336621c39d4">getListaContenedor</a>().<a class="code" href="classlista.html#ae951dda680e1e2bbd2a86ff27251130f">recorrer</a>(cont,&amp;ct);</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        cout&lt;&lt;<span class="stringliteral">&quot;evaluacion #&quot;</span>&lt;&lt;ct.getI()&lt;&lt;endl;</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        mostrarListaEvaluaciones(ct);</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    }   </div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;}</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160; </div>
+<div class="line"><a name="l00402"></a><span class="lineno"><a class="line" href="class_controlador.html#a7e0d513d440cfca26e4bcc58b3cad8b3">  402</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_controlador.html#a7e0d513d440cfca26e4bcc58b3cad8b3">Controlador::mostrarListaEvaluaciones</a>(<a class="code" href="class_contenedor.html">Contenedor</a> ct){</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> e=1;e&lt;=(ct.<a class="code" href="class_contenedor.html#a3fc17e09e6802884d970886f6e133808">getListaEvaluacion</a>().get_tam());e++){</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        ct.<a class="code" href="class_contenedor.html#a3fc17e09e6802884d970886f6e133808">getListaEvaluacion</a>().<a class="code" href="classlista.html#ae951dda680e1e2bbd2a86ff27251130f">recorrer</a>(e,&amp;eva);</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        cout&lt;&lt;<span class="stringliteral">&quot;Porcentaje: &quot;</span>&lt;&lt;eva.getPorcentaje()&lt;&lt;<span class="stringliteral">&quot;. Tema: &quot;</span>&lt;&lt;eva.getTema()&lt;&lt;endl;</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    }</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;}</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160; </div>
+<div class="line"><a name="l00409"></a><span class="lineno"><a class="line" href="class_controlador.html#a8b5012259e72640de22aa545031a4463">  409</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_controlador.html#a8b5012259e72640de22aa545031a4463">Controlador::mostrarListaTemas</a>(){</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1;i&lt;=temas.get_tam();i++){</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        temas.recorrer(i,&amp;t);</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        cout&lt;&lt;t.getCodigo()&lt;&lt;<span class="stringliteral">&quot;. &quot;</span>&lt;&lt;t.getNombre()&lt;&lt;endl;</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    }</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;}</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160; </div>
+<div class="line"><a name="l00416"></a><span class="lineno"><a class="line" href="class_controlador.html#ad18c053a35778fb1078b978c626f7c69">  416</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_controlador.html#ad18c053a35778fb1078b978c626f7c69">Controlador::insertarProfes</a>(){</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    profesores=insertar.llenaProfes(profesores);</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;}</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160; </div>
+<div class="line"><a name="l00420"></a><span class="lineno"><a class="line" href="class_controlador.html#ac6999a2ba4fc6b8ce531cc78f90492d8">  420</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_controlador.html#ac6999a2ba4fc6b8ce531cc78f90492d8">Controlador::insertarTemas</a>(){</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    temas=insertar.llenaTemas(temas);</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;}</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160; </div>
+<div class="line"><a name="l00424"></a><span class="lineno"><a class="line" href="class_controlador.html#a1a539df53209d69c66e0530a83ada187">  424</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_controlador.html#a1a539df53209d69c66e0530a83ada187">Controlador::modificarProfesor</a>(){</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    profesores=insertar.modificarProfe(profesores);</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;}</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160; </div>
+<div class="line"><a name="l00428"></a><span class="lineno"><a class="line" href="class_controlador.html#ad0fc66d5c90a853416c023829602da97">  428</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_controlador.html#ad0fc66d5c90a853416c023829602da97">Controlador::modificarTemas</a>(){</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    temas=insertar.modificarTema(temas);</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;}</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160; </div>
+<div class="line"><a name="l00432"></a><span class="lineno"><a class="line" href="class_controlador.html#aaccef121356a27943a90c0fc05939207">  432</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_controlador.html#aaccef121356a27943a90c0fc05939207">Controlador::eliminarProfesor</a>(){</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    profesores=insertar.eliminarProfesor(profesores);</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;}</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160; </div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160; </div>
+<div class="line"><a name="l00437"></a><span class="lineno"><a class="line" href="class_controlador.html#a409bf6479db60d7c01f3fd87aa0d51d4">  437</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_controlador.html#a409bf6479db60d7c01f3fd87aa0d51d4">Controlador::insertarCursos</a>(){</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    cursos=insertar.llenaCursos(cursos);</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;}</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160; </div>
+<div class="line"><a name="l00441"></a><span class="lineno"><a class="line" href="class_controlador.html#a0eb0ff9af5c3c5bcfb29cd93d27b83b8">  441</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_controlador.html#a0eb0ff9af5c3c5bcfb29cd93d27b83b8">Controlador::insertarEstudiantes</a>(){</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    <span class="keywordtype">int</span> cod;</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1;i&lt;=cursos.get_tam();i++){</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;        cursos.recorrer(i,&amp;curso);</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;        cout&lt;&lt;i&lt;&lt;<span class="stringliteral">&quot;. &quot;</span>&lt;&lt;curso.getCodigo()&lt;&lt;endl;</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    }</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;    cout&lt;&lt;<span class="stringliteral">&quot;Digite la posicion de la Curso en la cual desea insertar el estudiante: &quot;</span>;</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;    cin&gt;&gt;cod;   </div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;    cursos.buscar(cod,&amp;curso);</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    curso.setListaEstudiantes(insertar.llenaEstudiantes(curso.getListaEstudiantes()));</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;    cursos.cambiar(cod,curso);</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;    mostrarListaEstudiantes(curso);</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;}</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160; </div>
+<div class="line"><a name="l00455"></a><span class="lineno"><a class="line" href="class_controlador.html#a83f2ecc20ad5cf1b0cec660e98a8f2f1">  455</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_controlador.html#a83f2ecc20ad5cf1b0cec660e98a8f2f1">Controlador::eliminarCurso</a>(){</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    cursos=insertar.eliminarCurso(cursos);</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;}</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160; </div>
+<div class="line"><a name="l00459"></a><span class="lineno"><a class="line" href="class_controlador.html#afd4de371144c9e063aeba48b82f07b51">  459</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_controlador.html#afd4de371144c9e063aeba48b82f07b51">Controlador::eliminarEstudiante</a>(){</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;    <span class="keywordtype">int</span> cod;</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1;i&lt;=cursos.get_tam();i++){</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;        cursos.recorrer(i,&amp;curso);</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;        cout&lt;&lt;i&lt;&lt;<span class="stringliteral">&quot;. &quot;</span>&lt;&lt;curso.getCodigo()&lt;&lt;endl;</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    }</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;    cout&lt;&lt;<span class="stringliteral">&quot;Digite la posicion de la Curso en la cual desea insertar el estudiante: &quot;</span>;</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;    cin&gt;&gt;cod;   </div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;    cursos.buscar(cod,&amp;curso);</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;    curso.setListaEstudiantes(insertar.eliminarEstudiante(curso.getListaEstudiantes()));</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;    cursos.cambiar(cod,curso);</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;}</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160; </div>
+<div class="line"><a name="l00472"></a><span class="lineno"><a class="line" href="class_controlador.html#a6d736bc3b2f33dae22c055eb83bff5f7">  472</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_controlador.html#a6d736bc3b2f33dae22c055eb83bff5f7">Controlador::eliminarTema</a>(){</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;    temas=insertar.eliminarTema(temas);</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;}</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160; </div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aevaluacion_8h_html"><div class="ttname"><a href="evaluacion_8h.html">evaluacion.h</a></div><div class="ttdoc">Clase que representa una pregunta.</div></div>
+<div class="ttc" id="aclass_controlador_html_acfd2f5ffef68630bd6e52bc42403f391"><div class="ttname"><a href="class_controlador.html#acfd2f5ffef68630bd6e52bc42403f391">Controlador::mostrarListaCursos</a></div><div class="ttdeci">void mostrarListaCursos()</div><div class="ttdoc">Muestra la lista de cursos.</div><div class="ttdef"><b>Definition:</b> controlador.h:320</div></div>
+<div class="ttc" id="aclass_controlador_html_a3173b5affd0e4e38741dc5ddaaded4cc"><div class="ttname"><a href="class_controlador.html#a3173b5affd0e4e38741dc5ddaaded4cc">Controlador::mostrarListaEstudiantes</a></div><div class="ttdeci">void mostrarListaEstudiantes(Curso c)</div><div class="ttdoc">Muestra la lista de estudiantes asociados a un curso.</div><div class="ttdef"><b>Definition:</b> controlador.h:334</div></div>
+<div class="ttc" id="aclass_llenar_listas_html"><div class="ttname"><a href="class_llenar_listas.html">LlenarListas</a></div><div class="ttdoc">Clase para manipular las listas (inserción, modificación, eliminación)</div><div class="ttdef"><b>Definition:</b> llenarlistas.h:17</div></div>
+<div class="ttc" id="aclass_corte_html_a934ac82d32ce379118eee32d4ecb8226"><div class="ttname"><a href="class_corte.html#a934ac82d32ce379118eee32d4ecb8226">Corte::getListaNotas</a></div><div class="ttdeci">lista&lt; Nota &gt; getListaNotas()</div><div class="ttdoc">Retorna la lista de tipos de evaluación</div><div class="ttdef"><b>Definition:</b> corte.h:58</div></div>
+<div class="ttc" id="aclass_controlador_html_a65d0ca0348170a7cdd34986517487e64"><div class="ttname"><a href="class_controlador.html#a65d0ca0348170a7cdd34986517487e64">Controlador::setTemas</a></div><div class="ttdeci">void setTemas(lista&lt; Tema &gt; ts)</div><div class="ttdoc">Establece la lista de temas.</div><div class="ttdef"><b>Definition:</b> controlador.h:316</div></div>
+<div class="ttc" id="aprofesor_8h_html"><div class="ttname"><a href="profesor_8h.html">profesor.h</a></div><div class="ttdoc">Clase para representar un profesor dentro del programa.</div></div>
+<div class="ttc" id="aclass_controlador_html_ad0fc66d5c90a853416c023829602da97"><div class="ttname"><a href="class_controlador.html#ad0fc66d5c90a853416c023829602da97">Controlador::modificarTemas</a></div><div class="ttdeci">void modificarTemas()</div><div class="ttdoc">Modifica temas.</div><div class="ttdef"><b>Definition:</b> controlador.h:428</div></div>
+<div class="ttc" id="aclass_contenedor_html"><div class="ttname"><a href="class_contenedor.html">Contenedor</a></div><div class="ttdoc">Clase para manejar los datos de una evaluación relacionada a un tipo de evaluación</div><div class="ttdef"><b>Definition:</b> contenedor.h:17</div></div>
+<div class="ttc" id="aclass_controlador_html_a17db08229680461d4d1a2110a92ccf78"><div class="ttname"><a href="class_controlador.html#a17db08229680461d4d1a2110a92ccf78">Controlador::Controlador</a></div><div class="ttdeci">Controlador()</div><div class="ttdoc">&lt; Instancia de Clase</div><div class="ttdef"><b>Definition:</b> controlador.h:60</div></div>
+<div class="ttc" id="aclass_curso_html_a48cfd3d0423af49980383eeb6d3f52ea"><div class="ttname"><a href="class_curso.html#a48cfd3d0423af49980383eeb6d3f52ea">Curso::getListaEstudiantes</a></div><div class="ttdeci">lista&lt; Estudiante &gt; getListaEstudiantes()</div><div class="ttdoc">Retorna la lista de estudiantes del curso.</div><div class="ttdef"><b>Definition:</b> curso.h:78</div></div>
+<div class="ttc" id="aclass_lectura_archivos_html"><div class="ttname"><a href="class_lectura_archivos.html">LecturaArchivos</a></div><div class="ttdoc">Clase para ingresar a memoria los datos leídos de varios archivos.</div><div class="ttdef"><b>Definition:</b> lecturaarchivos.h:30</div></div>
+<div class="ttc" id="aclass_profesor_html_a23db75e79e79d519a93e88f95e0a8f7a"><div class="ttname"><a href="class_profesor.html#a23db75e79e79d519a93e88f95e0a8f7a">Profesor::setNumClases</a></div><div class="ttdeci">void setNumClases(int num)</div><div class="ttdoc">Establece el número de clases del profesor.</div><div class="ttdef"><b>Definition:</b> profesor.h:106</div></div>
+<div class="ttc" id="aclass_controlador_html_a8b5012259e72640de22aa545031a4463"><div class="ttname"><a href="class_controlador.html#a8b5012259e72640de22aa545031a4463">Controlador::mostrarListaTemas</a></div><div class="ttdeci">void mostrarListaTemas()</div><div class="ttdoc">Muestra la lista de temas.</div><div class="ttdef"><b>Definition:</b> controlador.h:409</div></div>
+<div class="ttc" id="aclass_profesor_html_aac09ae72d0591b6a68be6673bd4bf107"><div class="ttname"><a href="class_profesor.html#aac09ae72d0591b6a68be6673bd4bf107">Profesor::setCedula</a></div><div class="ttdeci">void setCedula(long long int cc)</div><div class="ttdoc">Establece la cédula del profesor.</div><div class="ttdef"><b>Definition:</b> profesor.h:95</div></div>
+<div class="ttc" id="aestudiante_8h_html"><div class="ttname"><a href="estudiante_8h.html">estudiante.h</a></div><div class="ttdoc">Clase para representar un estudiante dentro del programa.</div></div>
+<div class="ttc" id="astruct_cur_html"><div class="ttname"><a href="struct_cur.html">Cur</a></div><div class="ttdoc">Estructura auxiliar para guardar las direcciones los archivos de los parciales enviados por los profe...</div><div class="ttdef"><b>Definition:</b> clase.h:15</div></div>
+<div class="ttc" id="aclass_controlador_html_a2d9f942ad2ad5b8465abc16bc13a3007"><div class="ttname"><a href="class_controlador.html#a2d9f942ad2ad5b8465abc16bc13a3007">Controlador::leerProfes</a></div><div class="ttdeci">void leerProfes()</div><div class="ttdoc">Lee los profesores desde archivos.</div><div class="ttdef"><b>Definition:</b> controlador.h:287</div></div>
+<div class="ttc" id="aclass_controlador_html_a8e5389fc8d158950927ff74f07032356"><div class="ttname"><a href="class_controlador.html#a8e5389fc8d158950927ff74f07032356">Controlador::setProfes</a></div><div class="ttdeci">void setProfes(lista&lt; Profesor &gt; ps)</div><div class="ttdoc">Establece la lista de profesores.</div><div class="ttdef"><b>Definition:</b> controlador.h:291</div></div>
+<div class="ttc" id="aclass_controlador_html"><div class="ttname"><a href="class_controlador.html">Controlador</a></div><div class="ttdef"><b>Definition:</b> controlador.h:34</div></div>
+<div class="ttc" id="aclass_controlador_html_a7bc049ca03e43a755f4f0837b9920249"><div class="ttname"><a href="class_controlador.html#a7bc049ca03e43a755f4f0837b9920249">Controlador::getProfes</a></div><div class="ttdeci">lista&lt; Profesor &gt; getProfes()</div><div class="ttdoc">Retorna la lista de profesores.</div><div class="ttdef"><b>Definition:</b> controlador.h:283</div></div>
+<div class="ttc" id="alecturaarchivos_8h_html"><div class="ttname"><a href="lecturaarchivos_8h.html">lecturaarchivos.h</a></div><div class="ttdoc">Clase leer archivos.</div></div>
+<div class="ttc" id="aclass_contenedor_html_a3fc17e09e6802884d970886f6e133808"><div class="ttname"><a href="class_contenedor.html#a3fc17e09e6802884d970886f6e133808">Contenedor::getListaEvaluacion</a></div><div class="ttdeci">lista&lt; Evaluacion &gt; getListaEvaluacion()</div><div class="ttdoc">Retorna la lista de preguntas.</div><div class="ttdef"><b>Definition:</b> contenedor.h:59</div></div>
+<div class="ttc" id="anota_8h_html"><div class="ttname"><a href="nota_8h.html">nota.h</a></div><div class="ttdoc">Clase para representar un tipo de evaluación dentro del programa.</div></div>
+<div class="ttc" id="aclass_profesor_html_a58d97e321a4ec078272a382993382d7f"><div class="ttname"><a href="class_profesor.html#a58d97e321a4ec078272a382993382d7f">Profesor::setApellidos</a></div><div class="ttdeci">void setApellidos(int pos, char letra)</div><div class="ttdoc">Establece los apellidos del profesor.</div><div class="ttdef"><b>Definition:</b> profesor.h:99</div></div>
+<div class="ttc" id="aclass_estudiante_html"><div class="ttname"><a href="class_estudiante.html">Estudiante</a></div><div class="ttdoc">Clase para manejar los datos relacionados al estudiante.</div><div class="ttdef"><b>Definition:</b> estudiante.h:15</div></div>
+<div class="ttc" id="aclass_tema_html_ab77006668fe1282e0fadb188b91a43d2"><div class="ttname"><a href="class_tema.html#ab77006668fe1282e0fadb188b91a43d2">Tema::setCodigo</a></div><div class="ttdeci">void setCodigo(int cod)</div><div class="ttdoc">&lt; Nombre o descripción del tema</div><div class="ttdef"><b>Definition:</b> tema.h:46</div></div>
+<div class="ttc" id="aclass_corte_html"><div class="ttname"><a href="class_corte.html">Corte</a></div><div class="ttdoc">Clase para manejar los datos relacionados a un corte asociado a un profesor.</div><div class="ttdef"><b>Definition:</b> corte.h:16</div></div>
+<div class="ttc" id="acorte_8h_html"><div class="ttname"><a href="corte_8h.html">corte.h</a></div><div class="ttdoc">Clase para representar un corte dentro del programa.</div></div>
+<div class="ttc" id="astruct_cur_html_a3f075f54f212bf1ef03a8abc3ae5e7c3"><div class="ttname"><a href="struct_cur.html#a3f075f54f212bf1ef03a8abc3ae5e7c3">Cur::curso</a></div><div class="ttdeci">string curso</div><div class="ttdef"><b>Definition:</b> clase.h:16</div></div>
+<div class="ttc" id="aclass_controlador_html_a6d736bc3b2f33dae22c055eb83bff5f7"><div class="ttname"><a href="class_controlador.html#a6d736bc3b2f33dae22c055eb83bff5f7">Controlador::eliminarTema</a></div><div class="ttdeci">void eliminarTema()</div><div class="ttdoc">Elimina temas.</div><div class="ttdef"><b>Definition:</b> controlador.h:472</div></div>
+<div class="ttc" id="aclass_controlador_html_a687852db7872460bfa9450c59ea66fdf"><div class="ttname"><a href="class_controlador.html#a687852db7872460bfa9450c59ea66fdf">Controlador::leerCursos</a></div><div class="ttdeci">void leerCursos()</div><div class="ttdoc">Lee los cursos desde archivos.</div><div class="ttdef"><b>Definition:</b> controlador.h:295</div></div>
+<div class="ttc" id="aclasslista_html_ae951dda680e1e2bbd2a86ff27251130f"><div class="ttname"><a href="classlista.html#ae951dda680e1e2bbd2a86ff27251130f">lista::recorrer</a></div><div class="ttdeci">void recorrer(long long int pos, T *infoRet)</div><div class="ttdoc">Recorre la lista.</div><div class="ttdef"><b>Definition:</b> lista.h:172</div></div>
+<div class="ttc" id="aclase_8h_html"><div class="ttname"><a href="clase_8h.html">clase.h</a></div></div>
+<div class="ttc" id="aclasslista_html"><div class="ttname"><a href="classlista.html">lista&lt; Profesor &gt;</a></div></div>
+<div class="ttc" id="aclass_controlador_html_ac6999a2ba4fc6b8ce531cc78f90492d8"><div class="ttname"><a href="class_controlador.html#ac6999a2ba4fc6b8ce531cc78f90492d8">Controlador::insertarTemas</a></div><div class="ttdeci">void insertarTemas()</div><div class="ttdoc">Inserta temas.</div><div class="ttdef"><b>Definition:</b> controlador.h:420</div></div>
+<div class="ttc" id="aclass_profesor_html"><div class="ttname"><a href="class_profesor.html">Profesor</a></div><div class="ttdoc">Clase para manejar los datos relacionados al profesor.</div><div class="ttdef"><b>Definition:</b> profesor.h:16</div></div>
+<div class="ttc" id="aclass_controlador_html_ada65bb35d776141bfb5caaf5491bb7af"><div class="ttname"><a href="class_controlador.html#ada65bb35d776141bfb5caaf5491bb7af">Controlador::setCursos</a></div><div class="ttdeci">void setCursos(lista&lt; Curso &gt; cs)</div><div class="ttdoc">Establece la lista de cursos.</div><div class="ttdef"><b>Definition:</b> controlador.h:299</div></div>
+<div class="ttc" id="aclass_controlador_html_ac7d049c9b426f5000bc286323c176762"><div class="ttname"><a href="class_controlador.html#ac7d049c9b426f5000bc286323c176762">Controlador::mostrarClases</a></div><div class="ttdeci">void mostrarClases()</div><div class="ttdef"><b>Definition:</b> controlador.h:263</div></div>
+<div class="ttc" id="aclass_profesor_html_aab7c6c6d2f93387cc95356d61853c5cf"><div class="ttname"><a href="class_profesor.html#aab7c6c6d2f93387cc95356d61853c5cf">Profesor::setNombres</a></div><div class="ttdeci">void setNombres(int pos, char letra)</div><div class="ttdoc">Establece los nombres del profesor.</div><div class="ttdef"><b>Definition:</b> profesor.h:103</div></div>
+<div class="ttc" id="aclass_profesor_html_a6bf755be76c0eb40e922d1a62a1fc2aa"><div class="ttname"><a href="class_profesor.html#a6bf755be76c0eb40e922d1a62a1fc2aa">Profesor::getListaCorte</a></div><div class="ttdeci">lista&lt; Corte &gt; getListaCorte()</div><div class="ttdoc">Retorna la lista de cortes del profesor.</div><div class="ttdef"><b>Definition:</b> profesor.h:125</div></div>
+<div class="ttc" id="aclass_controlador_html_aab5d4e8a20ac2b4593a79bc5131c9cc4"><div class="ttname"><a href="class_controlador.html#aab5d4e8a20ac2b4593a79bc5131c9cc4">Controlador::llenarClases</a></div><div class="ttdeci">void llenarClases()</div><div class="ttdef"><b>Definition:</b> controlador.h:275</div></div>
+<div class="ttc" id="acurso_8h_html"><div class="ttname"><a href="curso_8h.html">curso.h</a></div><div class="ttdoc">Clase para representar un curso dentro del programa.</div></div>
+<div class="ttc" id="aclass_controlador_html_a1a28c3cf8eeac4c73627b461976e1273"><div class="ttname"><a href="class_controlador.html#a1a28c3cf8eeac4c73627b461976e1273">Controlador::escribirArchivos</a></div><div class="ttdeci">void escribirArchivos()</div><div class="ttdoc">Escribe todas las listas en archivos en el disco.</div><div class="ttdef"><b>Definition:</b> controlador.h:279</div></div>
+<div class="ttc" id="aclass_controlador_html_afd4de371144c9e063aeba48b82f07b51"><div class="ttname"><a href="class_controlador.html#afd4de371144c9e063aeba48b82f07b51">Controlador::eliminarEstudiante</a></div><div class="ttdeci">void eliminarEstudiante()</div><div class="ttdoc">Elimina estudiantes.</div><div class="ttdef"><b>Definition:</b> controlador.h:459</div></div>
+<div class="ttc" id="aclass_controlador_html_aa500a098b576c9132bfb0bcb1b900207"><div class="ttname"><a href="class_controlador.html#aa500a098b576c9132bfb0bcb1b900207">Controlador::mostrarListaContenedores</a></div><div class="ttdeci">void mostrarListaContenedores(Nota nt)</div><div class="ttdoc">Muestra las evaluacios relacionadas a un tipo de evaluación</div><div class="ttdef"><b>Definition:</b> controlador.h:393</div></div>
+<div class="ttc" id="aclass_controlador_html_a7a70f0c1341e0701b88fb01c927a7583"><div class="ttname"><a href="class_controlador.html#a7a70f0c1341e0701b88fb01c927a7583">Controlador::getCursos</a></div><div class="ttdeci">lista&lt; Curso &gt; getCursos()</div><div class="ttdoc">Retorna la lista de cursos.</div><div class="ttdef"><b>Definition:</b> controlador.h:303</div></div>
+<div class="ttc" id="alista_8h_html"><div class="ttname"><a href="lista_8h.html">lista.h</a></div><div class="ttdoc">Clase para la implementación de la estructura de datos lista.</div></div>
+<div class="ttc" id="aclass_evaluacion_html"><div class="ttname"><a href="class_evaluacion.html">Evaluacion</a></div><div class="ttdoc">Clase para manejar los datos relacionados a una pregunta.</div><div class="ttdef"><b>Definition:</b> evaluacion.h:15</div></div>
+<div class="ttc" id="aclass_curso_html"><div class="ttname"><a href="class_curso.html">Curso</a></div><div class="ttdoc">Clase para manejar los datos relacionados a un curso.</div><div class="ttdef"><b>Definition:</b> curso.h:17</div></div>
+<div class="ttc" id="aclass_clase_html_ad57a575d64956a2c8ae69b38e7c6f62a"><div class="ttname"><a href="class_clase.html#ad57a575d64956a2c8ae69b38e7c6f62a">Clase::setCursos</a></div><div class="ttdeci">void setCursos(lista&lt; Cur &gt; cs)</div><div class="ttdoc">Establece la lista de cursos.</div><div class="ttdef"><b>Definition:</b> clase.h:59</div></div>
+<div class="ttc" id="aclass_curso_html_abaea6b31e0bc00166661a8772ade459a"><div class="ttname"><a href="class_curso.html#abaea6b31e0bc00166661a8772ade459a">Curso::setCodigo</a></div><div class="ttdeci">void setCodigo(string cod)</div><div class="ttdoc">&lt; Lista de estudiantes asociada al curso</div><div class="ttdef"><b>Definition:</b> curso.h:62</div></div>
+<div class="ttc" id="aclass_tema_html"><div class="ttname"><a href="class_tema.html">Tema</a></div><div class="ttdoc">Clase para manejar los datos relacionados al tema.</div><div class="ttdef"><b>Definition:</b> tema.h:15</div></div>
+<div class="ttc" id="allenarlistas_8h_html"><div class="ttname"><a href="llenarlistas_8h.html">llenarlistas.h</a></div><div class="ttdoc">Clase para manejar todas las listas utilizadas en el programa.</div></div>
+<div class="ttc" id="aescribirarchivos_8h_html"><div class="ttname"><a href="escribirarchivos_8h.html">escribirarchivos.h</a></div><div class="ttdoc">Clase para escribir los archivos en disco.</div></div>
+<div class="ttc" id="acontenedor_8h_html"><div class="ttname"><a href="contenedor_8h.html">contenedor.h</a></div><div class="ttdoc">Clase para representar una evaluación dentro del programa.</div></div>
+<div class="ttc" id="atema_8h_html"><div class="ttname"><a href="tema_8h.html">tema.h</a></div><div class="ttdoc">Clase para representar un tema dentro del programa.</div></div>
+<div class="ttc" id="aclass_clase_html_a6ca52a7abf67d6af09a3099a7837561c"><div class="ttname"><a href="class_clase.html#a6ca52a7abf67d6af09a3099a7837561c">Clase::setCedula</a></div><div class="ttdeci">void setCedula(long long int c)</div><div class="ttdoc">&lt; Lista de tipo Cur donde se encuentran los archivos de los parciales</div><div class="ttdef"><b>Definition:</b> clase.h:55</div></div>
+<div class="ttc" id="aclass_controlador_html_aaccef121356a27943a90c0fc05939207"><div class="ttname"><a href="class_controlador.html#aaccef121356a27943a90c0fc05939207">Controlador::eliminarProfesor</a></div><div class="ttdeci">void eliminarProfesor()</div><div class="ttdoc">Elimina profesores.</div><div class="ttdef"><b>Definition:</b> controlador.h:432</div></div>
+<div class="ttc" id="aclass_controlador_html_a409bf6479db60d7c01f3fd87aa0d51d4"><div class="ttname"><a href="class_controlador.html#a409bf6479db60d7c01f3fd87aa0d51d4">Controlador::insertarCursos</a></div><div class="ttdeci">void insertarCursos()</div><div class="ttdoc">Inserta cursos.</div><div class="ttdef"><b>Definition:</b> controlador.h:437</div></div>
+<div class="ttc" id="aclass_nota_html"><div class="ttname"><a href="class_nota.html">Nota</a></div><div class="ttdoc">Clase para manejar los datos relacionados a un tipo de evaluación</div><div class="ttdef"><b>Definition:</b> nota.h:16</div></div>
+<div class="ttc" id="aclass_controlador_html_a6b8f4e4a0ca0cd12a899e8f63786d5be"><div class="ttname"><a href="class_controlador.html#a6b8f4e4a0ca0cd12a899e8f63786d5be">Controlador::getTemas</a></div><div class="ttdeci">lista&lt; Tema &gt; getTemas()</div><div class="ttdoc">Retorna la lista de temas.</div><div class="ttdef"><b>Definition:</b> controlador.h:308</div></div>
+<div class="ttc" id="aclass_tema_html_a8b43747cfdfa7d11f0c405cc5b4bafb0"><div class="ttname"><a href="class_tema.html#a8b43747cfdfa7d11f0c405cc5b4bafb0">Tema::setNombre</a></div><div class="ttdeci">void setNombre(int pos, char letra)</div><div class="ttdoc">Establece el nombre o descripción del tema.</div><div class="ttdef"><b>Definition:</b> tema.h:49</div></div>
+<div class="ttc" id="aclass_controlador_html_ad18c053a35778fb1078b978c626f7c69"><div class="ttname"><a href="class_controlador.html#ad18c053a35778fb1078b978c626f7c69">Controlador::insertarProfes</a></div><div class="ttdeci">void insertarProfes()</div><div class="ttdoc">Inserta profesores.</div><div class="ttdef"><b>Definition:</b> controlador.h:416</div></div>
+<div class="ttc" id="aclass_escribir_archivos_html"><div class="ttname"><a href="class_escribir_archivos.html">EscribirArchivos</a></div><div class="ttdoc">Clase para escribir los archivos en disco luego de terminada la ejecucución del programa.</div><div class="ttdef"><b>Definition:</b> escribirarchivos.h:21</div></div>
+<div class="ttc" id="aclass_controlador_html_a7e0d513d440cfca26e4bcc58b3cad8b3"><div class="ttname"><a href="class_controlador.html#a7e0d513d440cfca26e4bcc58b3cad8b3">Controlador::mostrarListaEvaluaciones</a></div><div class="ttdeci">void mostrarListaEvaluaciones(Contenedor cont)</div><div class="ttdoc">Muestra la lista de preguntas asociadas a una evaluación</div><div class="ttdef"><b>Definition:</b> controlador.h:402</div></div>
+<div class="ttc" id="aclass_controlador_html_a10dbedfad82b1bef19fd1eccc18dc11f"><div class="ttname"><a href="class_controlador.html#a10dbedfad82b1bef19fd1eccc18dc11f">Controlador::mostrarListaNotas</a></div><div class="ttdeci">void mostrarListaNotas(Corte cor)</div><div class="ttdoc">Muestra la lista de tipos de evaluaciones asociada a un corte.</div><div class="ttdef"><b>Definition:</b> controlador.h:384</div></div>
+<div class="ttc" id="aclass_controlador_html_ae8a1544129aa851659f658d69f8d591e"><div class="ttname"><a href="class_controlador.html#ae8a1544129aa851659f658d69f8d591e">Controlador::leerTemas</a></div><div class="ttdeci">void leerTemas()</div><div class="ttdoc">Lee los temas desde archivos.</div><div class="ttdef"><b>Definition:</b> controlador.h:312</div></div>
+<div class="ttc" id="aclass_controlador_html_a0eb0ff9af5c3c5bcfb29cd93d27b83b8"><div class="ttname"><a href="class_controlador.html#a0eb0ff9af5c3c5bcfb29cd93d27b83b8">Controlador::insertarEstudiantes</a></div><div class="ttdeci">void insertarEstudiantes()</div><div class="ttdoc">Inserta estudiantes.</div><div class="ttdef"><b>Definition:</b> controlador.h:441</div></div>
+<div class="ttc" id="aclass_nota_html_a25e51da3c50e11ec5222c336621c39d4"><div class="ttname"><a href="class_nota.html#a25e51da3c50e11ec5222c336621c39d4">Nota::getListaContenedor</a></div><div class="ttdeci">lista&lt; Contenedor &gt; getListaContenedor()</div><div class="ttdoc">Retorna la lista de contenedores relacionada al tipo de evaluación</div><div class="ttdef"><b>Definition:</b> nota.h:75</div></div>
+<div class="ttc" id="aclass_controlador_html_a1a539df53209d69c66e0530a83ada187"><div class="ttname"><a href="class_controlador.html#a1a539df53209d69c66e0530a83ada187">Controlador::modificarProfesor</a></div><div class="ttdeci">void modificarProfesor()</div><div class="ttdoc">Modifica profesores.</div><div class="ttdef"><b>Definition:</b> controlador.h:424</div></div>
+<div class="ttc" id="aclass_clase_html"><div class="ttname"><a href="class_clase.html">Clase</a></div><div class="ttdoc">Clase para manejar los datos relacionados a los parciales.</div><div class="ttdef"><b>Definition:</b> clase.h:24</div></div>
+<div class="ttc" id="aclass_controlador_html_a83f2ecc20ad5cf1b0cec660e98a8f2f1"><div class="ttname"><a href="class_controlador.html#a83f2ecc20ad5cf1b0cec660e98a8f2f1">Controlador::eliminarCurso</a></div><div class="ttdeci">void eliminarCurso()</div><div class="ttdoc">Elimina cursos.</div><div class="ttdef"><b>Definition:</b> controlador.h:455</div></div>
+<div class="ttc" id="aclass_controlador_html_a1d6bb03751adf0e7388f45bc153b45ed"><div class="ttname"><a href="class_controlador.html#a1d6bb03751adf0e7388f45bc153b45ed">Controlador::mostrarListaCortes</a></div><div class="ttdeci">void mostrarListaCortes(Profesor p)</div><div class="ttdoc">Muestra la lista de cortes asociada a un profesor.</div><div class="ttdef"><b>Definition:</b> controlador.h:375</div></div>
+<div class="ttc" id="aclass_controlador_html_a53ae3f48d11ad0ca61f310ce2943afb2"><div class="ttname"><a href="class_controlador.html#a53ae3f48d11ad0ca61f310ce2943afb2">Controlador::mostrarListaProfes</a></div><div class="ttdeci">void mostrarListaProfes()</div><div class="ttdoc">Muestra la lista de profesores.</div><div class="ttdef"><b>Definition:</b> controlador.h:341</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

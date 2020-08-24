@@ -1,0 +1,213 @@
+\hypertarget{class_lectura_archivos}{}\doxysection{Referencia de la Clase Lectura\+Archivos}
+\label{class_lectura_archivos}\index{LecturaArchivos@{LecturaArchivos}}
+
+
+\mbox{\hyperlink{class_clase}{Clase}} para ingresar a memoria los datos leídos de varios archivos.  
+
+
+
+
+{\ttfamily \#include $<$lecturaarchivos.\+h$>$}
+
+\doxysubsection*{MÃ©todos pÃºblicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{class_profesor}{Profesor}} $>$ \mbox{\hyperlink{class_lectura_archivos_ad3478e5d1ffcaf6271d4203fb8bde02c}{lectura\+Profesores}} (\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{class_profesor}{Profesor}} $>$ ps)
+\begin{DoxyCompactList}\small\item\em Inserta en una lista en memoria los datos leídos del archivo que contiene los profesores. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{class_corte}{Corte}} $>$ \mbox{\hyperlink{class_lectura_archivos_acac3262f3c8d136ffc7936a3e259954f}{lectura\+Cortes}} (\mbox{\hyperlink{class_profesor}{Profesor}} p)
+\begin{DoxyCompactList}\small\item\em Inserta en una lista en memoria los datos leídos de los archivos que contiene los cortes relacionados a un profesor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{class_nota}{Nota}} $>$ \mbox{\hyperlink{class_lectura_archivos_a99243d06271c0ecb215cb6db93ffb83d}{lectura\+Notas}} (\mbox{\hyperlink{class_profesor}{Profesor}} p, \mbox{\hyperlink{class_corte}{Corte}} cor)
+\begin{DoxyCompactList}\small\item\em Inserta en una lista en memoria los datos leídos del archivo que contiene los tipo de evaluación de un corte dado. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{class_contenedor}{Contenedor}} $>$ \mbox{\hyperlink{class_lectura_archivos_aa06aaa40ab0935432767f655c55a5849}{lectura\+Contenedores}} (\mbox{\hyperlink{class_profesor}{Profesor}} p, \mbox{\hyperlink{class_corte}{Corte}} cor, \mbox{\hyperlink{class_nota}{Nota}} nt)
+\begin{DoxyCompactList}\small\item\em Inserta en una lista en memoria los datos leídos del archivo que contiene las evaluaciones de un tipo de evaluación dado. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{class_evaluacion}{Evaluacion}} $>$ \mbox{\hyperlink{class_lectura_archivos_a5661ec71734a51886912592a69a159c8}{lectura\+Evaluaciones}} (\mbox{\hyperlink{class_profesor}{Profesor}} p, \mbox{\hyperlink{class_corte}{Corte}} cor, \mbox{\hyperlink{class_nota}{Nota}} nt, \mbox{\hyperlink{class_contenedor}{Contenedor}} cont)
+\begin{DoxyCompactList}\small\item\em Inserta en una lista en memoria los datos leídos del archivo que contiene las preguntas de una evaluación dada. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{class_tema}{Tema}} $>$ \mbox{\hyperlink{class_lectura_archivos_a4e34d37700b650a0319945cea73d7b4c}{lectura\+Temas}} (\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{class_tema}{Tema}} $>$ ts)
+\begin{DoxyCompactList}\small\item\em Inserta en una lista en memoria los datos leídos del archivo que contiene los temas. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{class_curso}{Curso}} $>$ \mbox{\hyperlink{class_lectura_archivos_a53e67cd52a31cae5cc9bc01cbee34784}{lectura\+Cursos}} (\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{class_curso}{Curso}} $>$ cs)
+\begin{DoxyCompactList}\small\item\em Inserta en una lista en memoria los datos leídos del archivo que contiene los cursos. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{class_estudiante}{Estudiante}} $>$ \mbox{\hyperlink{class_lectura_archivos_a3b35c4778fbc659b4be93e9b7400951e}{lectura\+Estudiantes}} (\mbox{\hyperlink{class_curso}{Curso}} c)
+\begin{DoxyCompactList}\small\item\em Inserta en una lista en memoria los datos leídos del archivo que contiene los estudiantes asociados a un curso. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_lectura_archivos_ae1847d1ee44fea021f8c8ae3329a6b8d}{mostrar\+Clases}} (\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{class_profesor}{Profesor}} $>$ profesores, \mbox{\hyperlink{class_profesor}{Profesor}} p)
+\item 
+void \mbox{\hyperlink{class_lectura_archivos_ab4f8ad9bea76810bc04b680374453eb3}{crear\+Memoria\+Clases}} (\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{class_profesor}{Profesor}} $>$ profesores, \mbox{\hyperlink{class_profesor}{Profesor}} p)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{DescripciÃ³n detallada}
+\mbox{\hyperlink{class_clase}{Clase}} para ingresar a memoria los datos leídos de varios archivos. 
+
+\doxysubsection{DocumentaciÃ³n de las funciones miembro}
+\mbox{\Hypertarget{class_lectura_archivos_ab4f8ad9bea76810bc04b680374453eb3}\label{class_lectura_archivos_ab4f8ad9bea76810bc04b680374453eb3}} 
+\index{LecturaArchivos@{LecturaArchivos}!crearMemoriaClases@{crearMemoriaClases}}
+\index{crearMemoriaClases@{crearMemoriaClases}!LecturaArchivos@{LecturaArchivos}}
+\doxysubsubsection{\texorpdfstring{crearMemoriaClases()}{crearMemoriaClases()}}
+{\footnotesize\ttfamily void Lectura\+Archivos\+::crear\+Memoria\+Clases (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{class_profesor}{Profesor}} $>$}]{profesores,  }\item[{\mbox{\hyperlink{class_profesor}{Profesor}}}]{p }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_lectura_archivos_aa06aaa40ab0935432767f655c55a5849}\label{class_lectura_archivos_aa06aaa40ab0935432767f655c55a5849}} 
+\index{LecturaArchivos@{LecturaArchivos}!lecturaContenedores@{lecturaContenedores}}
+\index{lecturaContenedores@{lecturaContenedores}!LecturaArchivos@{LecturaArchivos}}
+\doxysubsubsection{\texorpdfstring{lecturaContenedores()}{lecturaContenedores()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{class_contenedor}{Contenedor}} $>$ Lectura\+Archivos\+::lectura\+Contenedores (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_profesor}{Profesor}}}]{p,  }\item[{\mbox{\hyperlink{class_corte}{Corte}}}]{cor,  }\item[{\mbox{\hyperlink{class_nota}{Nota}}}]{nt }\end{DoxyParamCaption})}
+
+
+
+Inserta en una lista en memoria los datos leídos del archivo que contiene las evaluaciones de un tipo de evaluación dado. 
+
+
+\begin{DoxyParams}{ParÃ¡metros}
+{\em p} & \mbox{\hyperlink{class_profesor}{Profesor}} asociado al corte \\
+\hline
+{\em cor} & \mbox{\hyperlink{class_corte}{Corte}} asociado al tipo de evaluación \\
+\hline
+{\em nt} & Tipo de evaluación asociado a las evaluaciones \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Lista de tipo \mbox{\hyperlink{class_contenedor}{Contenedor}} con los datos leídos 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_lectura_archivos_acac3262f3c8d136ffc7936a3e259954f}\label{class_lectura_archivos_acac3262f3c8d136ffc7936a3e259954f}} 
+\index{LecturaArchivos@{LecturaArchivos}!lecturaCortes@{lecturaCortes}}
+\index{lecturaCortes@{lecturaCortes}!LecturaArchivos@{LecturaArchivos}}
+\doxysubsubsection{\texorpdfstring{lecturaCortes()}{lecturaCortes()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{class_corte}{Corte}} $>$ Lectura\+Archivos\+::lectura\+Cortes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_profesor}{Profesor}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Inserta en una lista en memoria los datos leídos de los archivos que contiene los cortes relacionados a un profesor. 
+
+
+\begin{DoxyParams}{ParÃ¡metros}
+{\em p} & \mbox{\hyperlink{class_profesor}{Profesor}} asociado a los cortes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Lista de tipo \mbox{\hyperlink{class_corte}{Corte}} con los datos leídos 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_lectura_archivos_a53e67cd52a31cae5cc9bc01cbee34784}\label{class_lectura_archivos_a53e67cd52a31cae5cc9bc01cbee34784}} 
+\index{LecturaArchivos@{LecturaArchivos}!lecturaCursos@{lecturaCursos}}
+\index{lecturaCursos@{lecturaCursos}!LecturaArchivos@{LecturaArchivos}}
+\doxysubsubsection{\texorpdfstring{lecturaCursos()}{lecturaCursos()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{class_curso}{Curso}} $>$ Lectura\+Archivos\+::lectura\+Cursos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{class_curso}{Curso}} $>$}]{cs }\end{DoxyParamCaption})}
+
+
+
+Inserta en una lista en memoria los datos leídos del archivo que contiene los cursos. 
+
+
+\begin{DoxyParams}{ParÃ¡metros}
+{\em cs} & Lista de tipo \mbox{\hyperlink{class_curso}{Curso}} donde se guardará la información \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Lista de tipo \mbox{\hyperlink{class_curso}{Curso}} con los datos leídos 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_lectura_archivos_a3b35c4778fbc659b4be93e9b7400951e}\label{class_lectura_archivos_a3b35c4778fbc659b4be93e9b7400951e}} 
+\index{LecturaArchivos@{LecturaArchivos}!lecturaEstudiantes@{lecturaEstudiantes}}
+\index{lecturaEstudiantes@{lecturaEstudiantes}!LecturaArchivos@{LecturaArchivos}}
+\doxysubsubsection{\texorpdfstring{lecturaEstudiantes()}{lecturaEstudiantes()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{class_estudiante}{Estudiante}} $>$ Lectura\+Archivos\+::lectura\+Estudiantes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_curso}{Curso}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Inserta en una lista en memoria los datos leídos del archivo que contiene los estudiantes asociados a un curso. 
+
+
+\begin{DoxyParams}{ParÃ¡metros}
+{\em c} & \mbox{\hyperlink{class_curso}{Curso}} al que pertenecen los estudiantes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Lista de tipo \mbox{\hyperlink{class_estudiante}{Estudiante}} con los datos leídos 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_lectura_archivos_a5661ec71734a51886912592a69a159c8}\label{class_lectura_archivos_a5661ec71734a51886912592a69a159c8}} 
+\index{LecturaArchivos@{LecturaArchivos}!lecturaEvaluaciones@{lecturaEvaluaciones}}
+\index{lecturaEvaluaciones@{lecturaEvaluaciones}!LecturaArchivos@{LecturaArchivos}}
+\doxysubsubsection{\texorpdfstring{lecturaEvaluaciones()}{lecturaEvaluaciones()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{class_evaluacion}{Evaluacion}} $>$ Lectura\+Archivos\+::lectura\+Evaluaciones (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_profesor}{Profesor}}}]{p,  }\item[{\mbox{\hyperlink{class_corte}{Corte}}}]{cor,  }\item[{\mbox{\hyperlink{class_nota}{Nota}}}]{nt,  }\item[{\mbox{\hyperlink{class_contenedor}{Contenedor}}}]{cont }\end{DoxyParamCaption})}
+
+
+
+Inserta en una lista en memoria los datos leídos del archivo que contiene las preguntas de una evaluación dada. 
+
+
+\begin{DoxyParams}{ParÃ¡metros}
+{\em p} & \mbox{\hyperlink{class_profesor}{Profesor}} asociado al corte \\
+\hline
+{\em cor} & \mbox{\hyperlink{class_corte}{Corte}} asociado al tipo de evaluación \\
+\hline
+{\em nt} & Tipo de evaluación asociado a las evaluaciones \\
+\hline
+{\em cont} & Evaluación asociada a las preguntas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Lista de tipo Evaluación con los datos leídos 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_lectura_archivos_a99243d06271c0ecb215cb6db93ffb83d}\label{class_lectura_archivos_a99243d06271c0ecb215cb6db93ffb83d}} 
+\index{LecturaArchivos@{LecturaArchivos}!lecturaNotas@{lecturaNotas}}
+\index{lecturaNotas@{lecturaNotas}!LecturaArchivos@{LecturaArchivos}}
+\doxysubsubsection{\texorpdfstring{lecturaNotas()}{lecturaNotas()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{class_nota}{Nota}} $>$ Lectura\+Archivos\+::lectura\+Notas (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_profesor}{Profesor}}}]{p,  }\item[{\mbox{\hyperlink{class_corte}{Corte}}}]{cor }\end{DoxyParamCaption})}
+
+
+
+Inserta en una lista en memoria los datos leídos del archivo que contiene los tipo de evaluación de un corte dado. 
+
+
+\begin{DoxyParams}{ParÃ¡metros}
+{\em p} & \mbox{\hyperlink{class_profesor}{Profesor}} asociado al corte \\
+\hline
+{\em cor} & \mbox{\hyperlink{class_corte}{Corte}} asociado a los tipos de evaluación \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Lista de tipo \mbox{\hyperlink{class_nota}{Nota}} con los datos leídos 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_lectura_archivos_ad3478e5d1ffcaf6271d4203fb8bde02c}\label{class_lectura_archivos_ad3478e5d1ffcaf6271d4203fb8bde02c}} 
+\index{LecturaArchivos@{LecturaArchivos}!lecturaProfesores@{lecturaProfesores}}
+\index{lecturaProfesores@{lecturaProfesores}!LecturaArchivos@{LecturaArchivos}}
+\doxysubsubsection{\texorpdfstring{lecturaProfesores()}{lecturaProfesores()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{class_profesor}{Profesor}} $>$ Lectura\+Archivos\+::lectura\+Profesores (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{class_profesor}{Profesor}} $>$}]{ps }\end{DoxyParamCaption})}
+
+
+
+Inserta en una lista en memoria los datos leídos del archivo que contiene los profesores. 
+
+
+\begin{DoxyParams}{ParÃ¡metros}
+{\em ps} & Lista de tipo \mbox{\hyperlink{class_profesor}{Profesor}} donde se guardará la información \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Lista de tipo \mbox{\hyperlink{class_profesor}{Profesor}} con los datos leídos 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_lectura_archivos_a4e34d37700b650a0319945cea73d7b4c}\label{class_lectura_archivos_a4e34d37700b650a0319945cea73d7b4c}} 
+\index{LecturaArchivos@{LecturaArchivos}!lecturaTemas@{lecturaTemas}}
+\index{lecturaTemas@{lecturaTemas}!LecturaArchivos@{LecturaArchivos}}
+\doxysubsubsection{\texorpdfstring{lecturaTemas()}{lecturaTemas()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{class_tema}{Tema}} $>$ Lectura\+Archivos\+::lectura\+Temas (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{class_tema}{Tema}} $>$}]{ts }\end{DoxyParamCaption})}
+
+
+
+Inserta en una lista en memoria los datos leídos del archivo que contiene los temas. 
+
+
+\begin{DoxyParams}{ParÃ¡metros}
+{\em ts} & Lista de tipo \mbox{\hyperlink{class_tema}{Tema}} donde se guardará la información \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Lista de tipo \mbox{\hyperlink{class_tema}{Tema}} con los datos leídos 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_lectura_archivos_ae1847d1ee44fea021f8c8ae3329a6b8d}\label{class_lectura_archivos_ae1847d1ee44fea021f8c8ae3329a6b8d}} 
+\index{LecturaArchivos@{LecturaArchivos}!mostrarClases@{mostrarClases}}
+\index{mostrarClases@{mostrarClases}!LecturaArchivos@{LecturaArchivos}}
+\doxysubsubsection{\texorpdfstring{mostrarClases()}{mostrarClases()}}
+{\footnotesize\ttfamily void Lectura\+Archivos\+::mostrar\+Clases (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{class_profesor}{Profesor}} $>$}]{profesores,  }\item[{\mbox{\hyperlink{class_profesor}{Profesor}}}]{p }\end{DoxyParamCaption})}
+
+
+
+La documentaciÃ³n para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{lecturaarchivos_8h}{lecturaarchivos.\+h}}\end{DoxyCompactItemize}

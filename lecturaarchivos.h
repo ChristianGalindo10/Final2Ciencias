@@ -7,6 +7,14 @@
 #include <fstream>
 #include "lista.h"
 #include "corte.h"
+/**
+  *@file lecturaarchivos.h
+  *@version 1.0
+  *@date 24/08/2020
+  *@title Clase LecturaArchivos
+  *@brief Clase leer archivos
+  */
+
 #include "nota.h"
 #include "Cola.h"
 #include "contenedor.h"
@@ -16,17 +24,73 @@
 #include "estudiante.h"
 
 
+/**
+  *@brief Clase para ingresar a memoria los datos leídos de varios archivos
+  */ 
 class LecturaArchivos{
 	private: 
 	int ***clases;
 	public:
+		/**
+	  	*@brief Inserta en una lista en memoria los datos leídos del archivo que contiene los profesores
+	  	*@param ps Lista de tipo Profesor donde se guardará la información
+	  	*@return Lista de tipo Profesor con los datos leídos
+	  	*/
 		lista<Profesor> lecturaProfesores(lista<Profesor> ps);
+		
+		/**
+	  	*@brief Inserta en una lista en memoria los datos leídos de los archivos que contiene los cortes relacionados a un profesor
+	  	*@param p Profesor asociado a los cortes
+	  	*@return Lista de tipo Corte con los datos leídos
+	  	*/
 		lista<Corte> lecturaCortes(Profesor p);
+		
+		/**
+	  	*@brief Inserta en una lista en memoria los datos leídos del archivo que contiene los tipo de evaluación de un corte dado
+	  	*@param p Profesor asociado al corte
+	  	*@param cor Corte asociado a los tipos de evaluación
+	  	*@return Lista de tipo Nota con los datos leídos
+	  	*/
 		lista<Nota> lecturaNotas(Profesor p, Corte cor);
+		
+		/**
+	  	*@brief Inserta en una lista en memoria los datos leídos del archivo que contiene las evaluaciones de un tipo de evaluación dado
+	  	*@param p Profesor asociado al corte
+	  	*@param cor Corte asociado al tipo de evaluación
+	  	*@param nt Tipo de evaluación asociado a las evaluaciones
+	  	*@return Lista de tipo Contenedor con los datos leídos
+	  	*/
 		lista<Contenedor> lecturaContenedores(Profesor p, Corte cor, Nota nt);
+		
+		/**
+	  	*@brief Inserta en una lista en memoria los datos leídos del archivo que contiene las preguntas de una evaluación dada
+	  	*@param p Profesor asociado al corte
+	  	*@param cor Corte asociado al tipo de evaluación
+	  	*@param nt Tipo de evaluación asociado a las evaluaciones
+	  	*@param cont Evaluación asociada a las preguntas
+	  	*@return Lista de tipo Evaluación con los datos leídos
+	  	*/
 		lista<Evaluacion> lecturaEvaluaciones(Profesor p, Corte cor, Nota nt, Contenedor cont);
+		
+		/**
+	  	*@brief Inserta en una lista en memoria los datos leídos del archivo que contiene los temas
+	  	*@param ts Lista de tipo Tema donde se guardará la información
+	  	*@return Lista de tipo Tema con los datos leídos
+	  	*/
 		lista<Tema> lecturaTemas(lista<Tema> ts);
+		
+		/**
+	  	*@brief Inserta en una lista en memoria los datos leídos del archivo que contiene los cursos
+	  	*@param cs Lista de tipo Curso donde se guardará la información
+	  	*@return Lista de tipo Curso con los datos leídos
+	  	*/
 		lista<Curso> lecturaCursos(lista<Curso> cs);
+		
+		/**
+	  	*@brief Inserta en una lista en memoria los datos leídos del archivo que contiene los estudiantes asociados a un curso
+	  	*@param c Curso al que pertenecen los estudiantes
+	  	*@return Lista de tipo Estudiante con los datos leídos
+	  	*/
 		lista<Estudiante> lecturaEstudiantes(Curso c);
 		
 		//Métodos parciales

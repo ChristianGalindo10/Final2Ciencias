@@ -1,27 +1,156 @@
+/**
+  *@file llenarlistas.h
+  *@version 1.0
+  *@date 24/08/2020
+  *@title Clase LlenarListas
+  *@brief Clase para manejar todas las listas utilizadas en el programa
+  */
+
+
 #ifndef LLENARLISTAS_H
 #define LLENARLISTAS_H
 using namespace std;
+
+/**
+  *@brief Clase para manipular las listas (inserción, modificación, eliminación)
+  */
 class LlenarListas{
 	public:
+		/**
+	  	  *@brief Inserta temas
+	  	  *@param ts Lista de temas para ingresar el tema
+	  	  *@return Lista de tipo Tema con el(os) nuevo(s) tema(s) ingresado(s) 
+	  	  */
 		lista<Tema> llenaTemas(lista<Tema> ts);
+		
+		/**
+	  	  *@brief Inserta profesores
+	  	  *@param ps Lista de profesores para ingresar el profesor
+	  	  *@return Lista de tipo Profesor con el(os) nuevo(s) profesor(es) ingresado(s) 
+	  	  */
 		lista<Profesor> llenaProfes(lista<Profesor> ps);
+		
+		/**
+	  	  *@brief Inserta cortes
+	  	  *@param cs Lista de cortes asociada a un profesor para ingresar el corte
+	  	  *@return Lista de tipo Corte con el(os) nuevo(s) cortes(s) ingresado(s) 
+	  	  */
 		lista<Corte> llenaCortes(lista<Corte> cs);
+		
+		/**
+	  	  *@brief Inserta notas
+	  	  *@param ns Lista de notas asociada a un corte para ingresar el nuevo tipo de evaluación
+	  	  *@return Lista de tipo Nota con el(os) nuevo(s) tipo(s) de evaluación(es) ingresado(s) 
+	  	  */
 		lista<Nota> llenaNotas(lista<Nota> ns);
+		
+		/**
+	  	  *@brief Inserta contenedores para guardar las evaluaciones de un tipo de evaluación
+	  	  *@param cs Lista de contenedores para ingresar un nuevo contenedor
+	  	  *@return Lista de tipo Contenedor con la(s) nueva(s) evaluación(es) ingresada(s) 
+	  	  */
 		lista<Contenedor> llenaContenedores(lista<Contenedor> cs);
+		
+		/**
+	  	  *@brief Inserta preguntas a una evaluación dada
+	  	  *@param es Lista de preguntas relacionadas a una evaluación
+	  	  *@return Lista de tipo Evaluación con la(s) nueva(s) preguntas(s) ingresada(s) 
+	  	  */
 		lista<Evaluacion> llenaEvaluaciones(lista<Evaluacion> es);
+		
+		/**
+	  	  *@brief Modifica un profesor
+	  	  *@param ps Lista de profesores donde se va a modificar el profesor
+	  	  *@return Lista de tipo Profesor con el(os) profesores(s) modificados(s) 
+	  	  */
 		lista<Profesor> modificarProfe(lista<Profesor> ps);
+		
+		/**
+	  	  *@brief Modifica un corte de un profesor dado
+	  	  *@param cs Lista de cortes asociados a un profesor
+	  	  *@return Lista de tipo Corte con el(os) corte(s) modificados(s) 
+	  	  */
 		lista<Corte> modificarCorte(lista<Corte> cs);
+		
+		/**
+	  	  *@brief Modifica un tipo de evaluación de un corte dado
+	  	  *@param ns Lista de tipos de evaluación asociados a un corte
+	  	  *@return Lista de tipo Nota con el(os) tipo(s) de evaluación(es) modificados(s) 
+	  	  */
 		lista<Nota> modificarNota(lista<Nota> ns);
+		
+		/**
+	  	  *@brief Modifica un tema
+	  	  *@param ts Lista de temas donde se va a modificar el tema
+	  	  *@return Lista de tipo Tema con el(os) tema(s) modificados(s) 
+	  	  */
 		lista<Tema> modificarTema(lista<Tema> ts);
+		
+		/**
+	  	  *@brief Modifica una evaluación
+	  	  *@param cs Lista de contenedores(evaluaciones)
+	  	  *@return Lista de tipo Contenedor con la(s) evaluación(es) modificadas(s) 
+	  	  */
 		lista<Contenedor> modificarContenedor(lista<Contenedor> cs);
+		
+		/**
+	  	  *@brief Modifica una pregunta de una evaluación dada
+	  	  *@param es Lista de evaluaciones(preguntas de una evaluación)
+	  	  *@return Lista de tipo Evaluacion con la(s) pregunta(s) modificadas(s) 
+	  	  */
 		lista<Evaluacion> modificarEvaluacion(lista<Evaluacion> es);
+		
+		/**
+	  	  *@brief Elimina un profesor
+	  	  *@param ps Lista de profesores donde se desea eliminar el profesor
+	  	  *@return Lista de tipo Profesor con el(os) profesor(es) eliminado(s) 
+	  	  */
 		lista<Profesor> eliminarProfesor(lista<Profesor> ps);
+		
+		/**
+	  	  *@brief Inserta cursos
+	  	  *@param cs Lista de cursos para ingresar el nuevo curso
+	  	  *@return Lista de tipo Curso con el(os) nuevo(s) curso(s) ingresado(s) 
+	  	  */
 		lista<Curso> llenaCursos(lista<Curso> cs);
+		
+		/**
+	  	  *@brief Inserta estudiantes
+	  	  *@param es Lista de estudiantes asociados a un curso
+	  	  *@return Lista de tipo Estudiante con el(os) nuevo(s) estudiante(s) ingresado(s) 
+	  	  */
 		lista<Estudiante> llenaEstudiantes(lista<Estudiante> es);
+		
+		/**
+	  	  *@brief Elimina un estudiante
+	  	  *@param es Lista de estudiantes donde se desea eliminar el estudiante
+	  	  *@return Lista de tipo Estudiante con el(os) estudiante(s) eliminado(s) 
+	  	  */
 		lista<Estudiante> eliminarEstudiante(lista<Estudiante> es);
+		
+		/**
+	  	  *@brief Elimina un curso
+	  	  *@param cs Lista de cursos donde se desea eliminar el curso
+	  	  *@return Lista de tipo Curso con el(os) curso(s) eliminado(s) 
+	  	  */
 		lista<Curso> eliminarCurso(lista<Curso> cs);
+		
+		/**
+	  	  *@brief Elimina un tema
+	  	  *@param ts Lista de temas donde se desea eliminar el tema
+	  	  *@return Lista de tipo Tema con el(os) tema(s) eliminado(s) 
+	  	  */
 		lista<Tema> eliminarTema(lista<Tema> ts);
-		lista<Clase> llenarClases(lista<Profesor>,lista<Curso> cr,lista<Clase> cs,lista<Cur> curs);
+		
+		/**
+	  	  *@brief Llena las clases para el manejo de parciales
+	  	  *@param ps Lista de profesores
+	  	  *@param cr Lista de cursos
+	  	  *@param cs Lista de clases
+	  	  *@param curs Lista de estructuras Cur donde deben estar los archivos de los parciales
+	  	  *@return Lista de tipo Tema con el(os) nuevo(s) tema(s) ingresado(s) 
+	  	  */
+		lista<Clase> llenarClases(lista<Profesor> ps,lista<Curso> cr,lista<Clase> cs,lista<Cur> curs);
 };
 
 lista<Clase> LlenarListas::llenarClases(lista<Profesor> ps,lista<Curso> cr,lista<Clase> cs,lista<Cur> curs){

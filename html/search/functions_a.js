@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['setapellidos_321',['setApellidos',['../class_estudiante.html#ab74903b3fb8e1a3bdb2091e56e0440dd',1,'Estudiante::setApellidos()'],['../class_profesor.html#a58d97e321a4ec078272a382993382d7f',1,'Profesor::setApellidos()']]],
+  ['setcedula_322',['setCedula',['../class_clase.html#a6ca52a7abf67d6af09a3099a7837561c',1,'Clase::setCedula()'],['../class_profesor.html#aac09ae72d0591b6a68be6673bd4bf107',1,'Profesor::setCedula()']]],
+  ['setcodigo_323',['setCodigo',['../class_curso.html#abaea6b31e0bc00166661a8772ade459a',1,'Curso::setCodigo()'],['../class_estudiante.html#acdc609e34c839da82007315da6b1cf34',1,'Estudiante::setCodigo()'],['../class_tema.html#ab77006668fe1282e0fadb188b91a43d2',1,'Tema::setCodigo()']]],
+  ['setcursos_324',['setCursos',['../class_clase.html#ad57a575d64956a2c8ae69b38e7c6f62a',1,'Clase::setCursos()'],['../class_controlador.html#ada65bb35d776141bfb5caaf5491bb7af',1,'Controlador::setCursos()']]],
+  ['setevaluaciones_325',['setEvaluaciones',['../class_corte.html#afead85c2e347b2db422d60570c50451d',1,'Corte']]],
+  ['seti_326',['setI',['../class_contenedor.html#ad805f0cec24b8ee73850115ddc29bab5',1,'Contenedor']]],
+  ['setlistacontenedor_327',['setListaContenedor',['../class_nota.html#abe622db2df6f8c104ef7cd5dc105f774',1,'Nota']]],
+  ['setlistacorte_328',['setListaCorte',['../class_profesor.html#ab48d23045200975899417254b0ed8d88',1,'Profesor']]],
+  ['setlistaestudiantes_329',['setListaEstudiantes',['../class_curso.html#a361cb3325c314d1abfbc8cd9812d4e91',1,'Curso']]],
+  ['setlistaevaluacion_330',['setListaEvaluacion',['../class_contenedor.html#a06063f8c6627c6e62d70cbfcf9e88940',1,'Contenedor']]],
+  ['setnombre_331',['setNombre',['../class_corte.html#aaba638bc311d39d64dfddd5277745736',1,'Corte::setNombre()'],['../class_tema.html#a8b43747cfdfa7d11f0c405cc5b4bafb0',1,'Tema::setNombre()']]],
+  ['setnombres_332',['setNombres',['../class_estudiante.html#ac6f6a2e176b3f75fb1f68ca1f2274b5b',1,'Estudiante::setNombres()'],['../class_profesor.html#aab7c6c6d2f93387cc95356d61853c5cf',1,'Profesor::setNombres()']]],
+  ['setnumclases_333',['setNumClases',['../class_profesor.html#a23db75e79e79d519a93e88f95e0a8f7a',1,'Profesor']]],
+  ['setporcentaje_334',['setPorcentaje',['../class_evaluacion.html#a1d48aaab76255fab9b9ed291565efe62',1,'Evaluacion::setPorcentaje()'],['../class_nota.html#ab018a4a907614b9e1a15560900123fcd',1,'Nota::setPorcentaje()']]],
+  ['setprofes_335',['setProfes',['../class_controlador.html#a8e5389fc8d158950927ff74f07032356',1,'Controlador']]],
+  ['setprofesor_336',['setProfesor',['../class_curso.html#adc27e5178ceb337a36531b00ada123d1',1,'Curso']]],
+  ['settema_337',['setTema',['../class_evaluacion.html#a3e36861c2f96aaf6e7887d53f9fe8ded',1,'Evaluacion']]],
+  ['settemas_338',['setTemas',['../class_controlador.html#a65d0ca0348170a7cdd34986517487e64',1,'Controlador']]],
+  ['settipo_339',['setTipo',['../class_nota.html#a07c7de8b2851839bc106f17f61575bb6',1,'Nota']]]
+];

@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ProyectoFinalCienciasI: Fichero Fuente contenedor.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">ProyectoFinalCienciasI
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Manejo de listas y archivos</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">contenedor.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="contenedor_8h.html">Ir a la documentaciÃ³n de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef CONTENEDOR_H     </span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define CONTENEDOR_H</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="lista_8h.html">lista.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="evaluacion_8h.html">evaluacion.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_contenedor.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_contenedor.html">Contenedor</a>{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordtype">int</span> i; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="classlista.html">lista&lt;Evaluacion&gt;</a> c; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="comment">//Setters</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_contenedor.html#ad805f0cec24b8ee73850115ddc29bab5">setI</a>(<span class="keywordtype">int</span> a);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_contenedor.html#a06063f8c6627c6e62d70cbfcf9e88940">setListaEvaluacion</a>(<a class="code" href="classlista.html">lista&lt;Evaluacion&gt;</a> b);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">//Getters</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordtype">int</span>&amp; <a class="code" href="class_contenedor.html#a310c9af4a250698f7d8c377fcffdba44">getI</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="classlista.html">lista&lt;Evaluacion&gt;</a> <a class="code" href="class_contenedor.html#a3fc17e09e6802884d970886f6e133808">getListaEvaluacion</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//Setters</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_contenedor.html#ad805f0cec24b8ee73850115ddc29bab5">   49</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_contenedor.html#ad805f0cec24b8ee73850115ddc29bab5">Contenedor::setI</a>(<span class="keywordtype">int</span> a){</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    i = a;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="class_contenedor.html#a06063f8c6627c6e62d70cbfcf9e88940">   52</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_contenedor.html#a06063f8c6627c6e62d70cbfcf9e88940">Contenedor::setListaEvaluacion</a>(<a class="code" href="classlista.html">lista&lt;Evaluacion&gt;</a> b){</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    c = b;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">//Getters</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="class_contenedor.html#a310c9af4a250698f7d8c377fcffdba44">   56</a></span>&#160;<span class="keywordtype">int</span>&amp; <a class="code" href="class_contenedor.html#a310c9af4a250698f7d8c377fcffdba44">Contenedor::getI</a>(){</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">return</span> i;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="class_contenedor.html#a3fc17e09e6802884d970886f6e133808">   59</a></span>&#160;<a class="code" href="classlista.html">lista&lt;Evaluacion&gt;</a> <a class="code" href="class_contenedor.html#a3fc17e09e6802884d970886f6e133808">Contenedor::getListaEvaluacion</a>(){</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">return</span> c;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aevaluacion_8h_html"><div class="ttname"><a href="evaluacion_8h.html">evaluacion.h</a></div><div class="ttdoc">Clase que representa una pregunta.</div></div>
+<div class="ttc" id="aclass_contenedor_html"><div class="ttname"><a href="class_contenedor.html">Contenedor</a></div><div class="ttdoc">Clase para manejar los datos de una evaluación relacionada a un tipo de evaluación</div><div class="ttdef"><b>Definition:</b> contenedor.h:17</div></div>
+<div class="ttc" id="aclass_contenedor_html_ad805f0cec24b8ee73850115ddc29bab5"><div class="ttname"><a href="class_contenedor.html#ad805f0cec24b8ee73850115ddc29bab5">Contenedor::setI</a></div><div class="ttdeci">void setI(int a)</div><div class="ttdoc">&lt; Preguntas asociadas a la evaluación</div><div class="ttdef"><b>Definition:</b> contenedor.h:49</div></div>
+<div class="ttc" id="aclass_contenedor_html_a3fc17e09e6802884d970886f6e133808"><div class="ttname"><a href="class_contenedor.html#a3fc17e09e6802884d970886f6e133808">Contenedor::getListaEvaluacion</a></div><div class="ttdeci">lista&lt; Evaluacion &gt; getListaEvaluacion()</div><div class="ttdoc">Retorna la lista de preguntas.</div><div class="ttdef"><b>Definition:</b> contenedor.h:59</div></div>
+<div class="ttc" id="aclass_contenedor_html_a06063f8c6627c6e62d70cbfcf9e88940"><div class="ttname"><a href="class_contenedor.html#a06063f8c6627c6e62d70cbfcf9e88940">Contenedor::setListaEvaluacion</a></div><div class="ttdeci">void setListaEvaluacion(lista&lt; Evaluacion &gt; b)</div><div class="ttdoc">Establece la lista de preguntas.</div><div class="ttdef"><b>Definition:</b> contenedor.h:52</div></div>
+<div class="ttc" id="aclasslista_html"><div class="ttname"><a href="classlista.html">lista&lt; Evaluacion &gt;</a></div></div>
+<div class="ttc" id="alista_8h_html"><div class="ttname"><a href="lista_8h.html">lista.h</a></div><div class="ttdoc">Clase para la implementación de la estructura de datos lista.</div></div>
+<div class="ttc" id="aclass_contenedor_html_a310c9af4a250698f7d8c377fcffdba44"><div class="ttname"><a href="class_contenedor.html#a310c9af4a250698f7d8c377fcffdba44">Contenedor::getI</a></div><div class="ttdeci">int &amp; getI()</div><div class="ttdoc">Retorna el número de la evaluación</div><div class="ttdef"><b>Definition:</b> contenedor.h:56</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

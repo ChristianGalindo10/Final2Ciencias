@@ -1,3 +1,10 @@
+/**
+  *@file controlador.h
+  *@version 1.0
+  *@date 24/08/2020
+  *@title Clase Controlador
+  *@brief Clase principal que maneja el programa
+  */
 #ifndef CONTROLADOR_H
 #define CONTROLADOR_H
 
@@ -20,30 +27,36 @@
 #include "lecturaarchivos.h"
 #include "escribirarchivos.h"
 
+/**
+  *@brief Clase que controla todas las listas y operaciones sobre estas
+  */ 
 using namespace std;
 class Controlador{
-	lista<Profesor> profesores;
-	lista<Tema> temas;
-	lista<Curso> cursos;
-	lista<Clase> clases;
-	LecturaArchivos lecArchivos;
-	EscribirArchivos escArchivos;
-	LlenarListas insertar;
+	lista<Profesor> profesores; ///&lt; Lista de profesores
+	lista<Tema> temas; ///&lt; Lista de temas
+	lista<Curso> cursos; ///&lt; Lista de cursos
+	lista<Clase> clases; ///&lt; Lista de clases
+	LecturaArchivos lecArchivos; ///&lt; Instancia de LecturaArchivos
+	EscribirArchivos escArchivos; ///&lt; Instancia de EscribirArchivos
+	LlenarListas insertar; ///&lt; Instancia de LlenarListas
 	//Paramétros necesarios para manejo de listas
-	Profesor p;
-	Corte cor;
-	Nota nt;
-	Contenedor ct;
-	Evaluacion eva;
-	string ap;
-	string nom;
-	Tema t;
-	Curso curso;
-	Cur cur;
-	lista<Cur> cs;
-	Estudiante est;
-	Clase clase;
+	Profesor p; ///&lt; Instancia de Profesor
+	Corte cor; ///&lt; Instancia de Corte
+	Nota nt; ///&lt; Instancia de Nota
+	Contenedor ct; ///&lt; Instancia de Contenedor
+	Evaluacion eva; ///&lt; Instancia de Evaluacion
+	string ap; ///&lt; string auxiliar para apellidos
+	string nom; ///&lt; string auxiliar para nombres
+	Tema t; ///&lt; Instancia de Tema
+	Curso curso; ///&lt; Instancia de Curso
+	Cur cur; ///&lt; Instancia de Cur
+	lista<Cur> cs; ///&lt; Lista de tipo Cur
+	Estudiante est; ///&lt; Instancia de Estudiante
+	Clase clase; ///&lt; Instancia de Clase
 	public:	
+		/**
+	  	  *@brief Constructor por defecto Controlador
+	  	  */
 		Controlador(){
 			//Inicializar lista profesores
 			p.setCedula(999999);
@@ -73,52 +86,177 @@ class Controlador{
 			clase.setCursos(cs);
 			clases=lista<Clase>(clase);
 		};
+		
 		//Métodos para manejar listas
+		
+		/**
+	  	  *@brief Muestra la lista de profesores
+	  	  */
 		void mostrarListaProfes();
+		
+		/**
+	  	  *@brief Muestra la lista de profesores dado el número de clases ingresado
+	  	  *@param c Número de clases del profesor
+	  	  */
 		void mostrarListaProfes(int c);
+		
+		/**
+	  	  *@brief Muestra la lista de cortes asociada a un profesor
+	  	  *@param p Profesor asociado a la lista de cortes
+	  	  */
 		void mostrarListaCortes(Profesor p);
+		
+		/**
+	  	  *@brief Muestra la lista de tipos de evaluaciones asociada a un corte
+	  	  *@param cor Corte asociado a lista de tipos de evaluación
+	  	  */
 		void mostrarListaNotas(Corte cor);
+		
+		/**
+	  	  *@brief Muestra las evaluacios relacionadas a un tipo de evaluación
+	  	  *@param nt Tipo de evaluación asociada a la lista de evaluaciones
+	  	  */
 		void mostrarListaContenedores(Nota nt);
+		
+		/**
+	  	  *@brief Muestra la lista  de preguntas asociadas a una evaluación
+	  	  *@param cont Evaluación asociada a las preguntas
+	  	  */
 		void mostrarListaEvaluaciones(Contenedor cont);
+		
+		/**
+	  	  *@brief Muestra la lista de temas
+	  	  */
 		void mostrarListaTemas();
+		
+		/**
+	  	  *@brief Muestra la lista de cursos
+	  	  */
 		void mostrarListaCursos();
+		
+		/**
+	  	  *@brief Muestra la lista de estudiantes asociados a un curso
+	  	  *@param c Curso que contiene a la lista de estudiantes
+	  	  */
 		void mostrarListaEstudiantes(Curso c);
 		
 		//Métodos modificación
+		/**
+	  	  *@brief Inserta profesores
+	  	  */
 		void insertarProfes();
+		
+		/**
+	  	  *@brief Inserta temas
+	  	  */
 		void insertarTemas();
+		
+		/**
+	  	  *@brief Inserta cursos
+	  	  */
 		void insertarCursos();
+		
+		/**
+	  	  *@brief Inserta estudiantes
+	  	  */
 		void insertarEstudiantes();
+		
+		/**
+	  	  *@brief Modifica profesores
+	  	  */
 		void modificarProfesor();
+		
+		/**
+	  	  *@brief Modifica temas
+	  	  */
 		void modificarTemas();	
+		
+		/**
+	  	  *@brief Elimina profesores
+	  	  */
 		void eliminarProfesor();	
+		
+		/**
+	  	  *@brief Elimina estudiantes
+	  	  */
 		void eliminarEstudiante();
+		
+		/**
+	  	  *@brief Elimina cursos
+	  	  */
 		void eliminarCurso();
+		
+		/**
+	  	  *@brief Elimina temas
+	  	  */
 		void eliminarTema();
 		
 		//Métodos profesores
+		/**
+	  	  *@brief Retorna la lista de profesores
+	  	  *@return Lista de tipo Profesor
+	  	  */
 		lista<Profesor> getProfes();
+		
+		/**
+	  	  *@brief Lee los profesores desde archivos
+	  	  */
 		void leerProfes();
+		
+		/**
+	  	  *@brief Establece la lista de profesores
+	  	  *@param ps lista de tipo Profesor
+	  	  */
 		void setProfes(lista<Profesor> ps);
 		
 		//Métodos temas
+		
+		/**
+	  	  *@brief Retorna la lista de temas
+	  	  *@return lista de tipo Tema
+	  	  */
 		lista<Tema> getTemas();
+		
+		/**
+	  	  *@brief Lee los temas desde archivos
+	  	  */
 		void leerTemas();
+		
+		/**
+	  	  *@brief Establece la lista de temas
+	  	  *@param ts Lista de tipo Tema
+	  	  */
 		void setTemas(lista<Tema> ts);
 		
 		//Métodos Cursos
+		
+		/**
+	  	  *@brief Retorna la lista de cursos
+	  	  *@return lista de tipo Curso
+	  	  */
 		lista<Curso> getCursos();
+		
+		/**
+	  	  *@brief Establece la lista de cursos
+	  	  *@param cs lista de tipo Curso
+	  	  */
 		void setCursos(lista<Curso> cs);
+		
+		/**
+	  	  *@brief Lee los cursos desde archivos
+	  	  */
 		void leerCursos(); 
 		
 		//Métodos de escritura
+		
+		/**
+	  	  *@brief Escribe todas las listas en archivos en el disco
+	  	  */
 		void escribirArchivos();
 		
 		//Métodos de clases
 		void llenarClases();
 		void mostrarClases();
-		
-		//
 		
 };
 

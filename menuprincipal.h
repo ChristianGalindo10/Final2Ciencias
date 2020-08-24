@@ -1,8 +1,23 @@
+/**
+  *@file menuprincipal.h
+  *@version 1.0
+  *@date 24/08/2020
+  *@title Clase MenuPrincipal
+  *@brief Clase que representa el ménu de todo el programa
+  */
 #ifndef MENUPRINCIPAL_H     
 #define MENUPRINCIPAL_H
 
+
+/**
+  *@brief Clase para mostrar el menu al usuario
+  */
 class MenuPrincipal{
 	public:
+		/**
+	  	  *@brief Muestra el menú al usuario
+	  	  *@param c Controlador del programa
+	  	  */
 		void mostrarMenu(Controlador c);
 };
 void MenuPrincipal::mostrarMenu(Controlador c){

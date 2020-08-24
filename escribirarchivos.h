@@ -1,3 +1,11 @@
+/**
+  *@file escribirarchivos.h
+  *@version 1.0
+  *@date 24/08/2020
+  *@title Clase EscribirArchivos
+  *@brief Clase para escribir los archivos en disco
+  */
+
 #ifndef ESCRIBIRARCHIVOS_H
 #define ESCRIBIRARCHIVOS_H
 #include <fstream>
@@ -6,16 +14,63 @@
 #include <sstream>
 #include <fstream>
 #include "profesor.h"
+
+/**
+  *@brief Clase para escribir los archivos en disco luego de terminada la ejecucución del programa
+  */ 
 class EscribirArchivos{
 	public:
+		/**
+	  	  *@brief Escribe todos los archivos necesarios
+	  	  */
 		void escribir(lista<Profesor> ps, lista<Tema> ts, lista<Curso> cs);
+		
+		/**
+	  	  *@brief Escribe los profesores
+	  	  *@param ps Lista de tipo Profesor a escribir en los archivos
+	  	  */
 		void escribirProfesores(lista<Profesor> ps);
+		
+		/**
+	  	  *@brief Escribe los cortes relacionados a cada profesor
+	  	  *@param ps Lista de tipo Profesor a escribir en los archivos
+	  	  */
 		void escribirCortes(lista<Profesor> ps);
+		
+		/**
+	  	  *@brief Escribe los tipos de evaluación asociados a cada corte
+	  	  *@param ps Lista de tipo Profesor a escribir en los archivos
+	  	  */
 		void escribirNotas(lista<Profesor> ps);
+		
+		/**
+	  	  *@brief Escribe las evaluaciones asociadas a cada tipo de evaluación
+	  	  *@param ps Lista de tipo Profesor a escribir en los archivos
+	  	  */
 		void escribirContenedores(lista<Profesor> ps);
+		
+		/**
+	  	  *@brief Escribe las preguntas asociadas a una evaluación
+	  	  *@param ps Lista de tipo Profesor a escribir en los archivos
+	  	  */
 		void escribirEvaluaciones(lista<Profesor> ps);
+		
+		/**
+	  	  *@brief Escribe los temas
+	  	  *@param ts Lista de tipo Tema a escribir en los archivos
+	  	  */
 		void escribirTemas(lista<Tema> ts);
+		
+		/**
+	  	  *@brief Escribe los cursos
+	  	  *@param cs Lista de tipo Curso a escribir en los archivos
+	  	  */
 		void escribirCursos(lista<Curso> cs);
+		
+		/**
+	  	  *@brief Escribe los estudiantes asociados a un curso
+	  	  *@param cs Lista de tipo Curso a escribir en los archivos
+	  	  */
 		void escribirEstudiantes(lista<Curso> cs);
 };
 

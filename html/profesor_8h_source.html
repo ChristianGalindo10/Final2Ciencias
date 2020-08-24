@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ProyectoFinalCienciasI: Fichero Fuente profesor.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">ProyectoFinalCienciasI
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Manejo de listas y archivos</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">profesor.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="profesor_8h.html">Ir a la documentaciÃ³n de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef PROFESOR_H     </span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define PROFESOR_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="lista_8h.html">lista.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="corte_8h.html">corte.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_profesor.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_profesor.html">Profesor</a>{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> cedula; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keywordtype">char</span> apellidos[50]; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <span class="keywordtype">char</span> nombres[50]; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <span class="keywordtype">int</span> numClases; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <a class="code" href="classlista.html">lista&lt;Corte&gt;</a> cortes; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_profesor.html#abf158f1b3c5f3f6bcb36159795356515">   26</a></span>&#160;            <a class="code" href="class_profesor.html#abf158f1b3c5f3f6bcb36159795356515">Profesor</a>(){</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            };</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="comment">//Setters</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_profesor.html#aac09ae72d0591b6a68be6673bd4bf107">setCedula</a>(<span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> cc);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_profesor.html#a58d97e321a4ec078272a382993382d7f">setApellidos</a>(<span class="keywordtype">int</span> pos, <span class="keywordtype">char</span> letra);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_profesor.html#aab7c6c6d2f93387cc95356d61853c5cf">setNombres</a>(<span class="keywordtype">int</span> pos, <span class="keywordtype">char</span> letra);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_profesor.html#a23db75e79e79d519a93e88f95e0a8f7a">setNumClases</a>(<span class="keywordtype">int</span> num);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_profesor.html#ab48d23045200975899417254b0ed8d88">setListaCorte</a>(<a class="code" href="classlista.html">lista&lt;Corte&gt;</a> cor);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="comment">//Getters</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <a class="code" href="classlista.html">lista&lt;Corte&gt;</a> <a class="code" href="class_profesor.html#a6bf755be76c0eb40e922d1a62a1fc2aa">getListaCorte</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span>&amp; <a class="code" href="class_profesor.html#a3b227b40fcf822b2e978a7e22a552816">getCedula</a>();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordtype">char</span>* <a class="code" href="class_profesor.html#a22c264073c8bf1ff33752fbddf584932">getApellidos</a>();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordtype">char</span>* <a class="code" href="class_profesor.html#a8b2bbc2e6253c5d81669f2278c9ccc1a">getNombres</a>();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keywordtype">int</span>&amp; <a class="code" href="class_profesor.html#a1fd72aa0625a4e5ce95dabb974b9f8cd">getNumClases</a>();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;};</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">//Setters</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="class_profesor.html#aac09ae72d0591b6a68be6673bd4bf107">   95</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_profesor.html#aac09ae72d0591b6a68be6673bd4bf107">Profesor::setCedula</a>(<span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> cc){</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    cedula=cc;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="class_profesor.html#a58d97e321a4ec078272a382993382d7f">   99</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_profesor.html#a58d97e321a4ec078272a382993382d7f">Profesor::setApellidos</a>(<span class="keywordtype">int</span> pos, <span class="keywordtype">char</span> letra){</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    apellidos[pos]=letra;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="class_profesor.html#aab7c6c6d2f93387cc95356d61853c5cf">  103</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_profesor.html#aab7c6c6d2f93387cc95356d61853c5cf">Profesor::setNombres</a>(<span class="keywordtype">int</span> pos, <span class="keywordtype">char</span> letra){</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    nombres[pos]=letra;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="class_profesor.html#a23db75e79e79d519a93e88f95e0a8f7a">  106</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_profesor.html#a23db75e79e79d519a93e88f95e0a8f7a">Profesor::setNumClases</a>(<span class="keywordtype">int</span> num){</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    numClases=num;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="class_profesor.html#ab48d23045200975899417254b0ed8d88">  109</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_profesor.html#ab48d23045200975899417254b0ed8d88">Profesor::setListaCorte</a>(<a class="code" href="classlista.html">lista&lt;Corte&gt;</a> cor){</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    cortes=cor;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">//Getters</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="class_profesor.html#a3b227b40fcf822b2e978a7e22a552816">  113</a></span>&#160;<span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span>&amp; <a class="code" href="class_profesor.html#a3b227b40fcf822b2e978a7e22a552816">Profesor::getCedula</a>(){</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">return</span> cedula;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="class_profesor.html#a22c264073c8bf1ff33752fbddf584932">  116</a></span>&#160;<span class="keywordtype">char</span>* <a class="code" href="class_profesor.html#a22c264073c8bf1ff33752fbddf584932">Profesor::getApellidos</a>(){</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">return</span> apellidos;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}</div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="class_profesor.html#a8b2bbc2e6253c5d81669f2278c9ccc1a">  119</a></span>&#160;<span class="keywordtype">char</span>* <a class="code" href="class_profesor.html#a8b2bbc2e6253c5d81669f2278c9ccc1a">Profesor::getNombres</a>(){</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">return</span> nombres;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="class_profesor.html#a1fd72aa0625a4e5ce95dabb974b9f8cd">  122</a></span>&#160;<span class="keywordtype">int</span>&amp; <a class="code" href="class_profesor.html#a1fd72aa0625a4e5ce95dabb974b9f8cd">Profesor::getNumClases</a>(){</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">return</span> numClases;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="class_profesor.html#a6bf755be76c0eb40e922d1a62a1fc2aa">  125</a></span>&#160;<a class="code" href="classlista.html">lista&lt;Corte&gt;</a> <a class="code" href="class_profesor.html#a6bf755be76c0eb40e922d1a62a1fc2aa">Profesor::getListaCorte</a>(){</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">return</span> cortes;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_profesor_html_a8b2bbc2e6253c5d81669f2278c9ccc1a"><div class="ttname"><a href="class_profesor.html#a8b2bbc2e6253c5d81669f2278c9ccc1a">Profesor::getNombres</a></div><div class="ttdeci">char * getNombres()</div><div class="ttdoc">Retorna los nombres del profesor.</div><div class="ttdef"><b>Definition:</b> profesor.h:119</div></div>
+<div class="ttc" id="aclass_profesor_html_ab48d23045200975899417254b0ed8d88"><div class="ttname"><a href="class_profesor.html#ab48d23045200975899417254b0ed8d88">Profesor::setListaCorte</a></div><div class="ttdeci">void setListaCorte(lista&lt; Corte &gt; cor)</div><div class="ttdoc">Establece la lista de cortes del profesor.</div><div class="ttdef"><b>Definition:</b> profesor.h:109</div></div>
+<div class="ttc" id="aclass_profesor_html_a1fd72aa0625a4e5ce95dabb974b9f8cd"><div class="ttname"><a href="class_profesor.html#a1fd72aa0625a4e5ce95dabb974b9f8cd">Profesor::getNumClases</a></div><div class="ttdeci">int &amp; getNumClases()</div><div class="ttdoc">Retorna el número de clases del profesor.</div><div class="ttdef"><b>Definition:</b> profesor.h:122</div></div>
+<div class="ttc" id="aclass_profesor_html_a23db75e79e79d519a93e88f95e0a8f7a"><div class="ttname"><a href="class_profesor.html#a23db75e79e79d519a93e88f95e0a8f7a">Profesor::setNumClases</a></div><div class="ttdeci">void setNumClases(int num)</div><div class="ttdoc">Establece el número de clases del profesor.</div><div class="ttdef"><b>Definition:</b> profesor.h:106</div></div>
+<div class="ttc" id="aclass_profesor_html_aac09ae72d0591b6a68be6673bd4bf107"><div class="ttname"><a href="class_profesor.html#aac09ae72d0591b6a68be6673bd4bf107">Profesor::setCedula</a></div><div class="ttdeci">void setCedula(long long int cc)</div><div class="ttdoc">Establece la cédula del profesor.</div><div class="ttdef"><b>Definition:</b> profesor.h:95</div></div>
+<div class="ttc" id="aclass_profesor_html_a58d97e321a4ec078272a382993382d7f"><div class="ttname"><a href="class_profesor.html#a58d97e321a4ec078272a382993382d7f">Profesor::setApellidos</a></div><div class="ttdeci">void setApellidos(int pos, char letra)</div><div class="ttdoc">Establece los apellidos del profesor.</div><div class="ttdef"><b>Definition:</b> profesor.h:99</div></div>
+<div class="ttc" id="acorte_8h_html"><div class="ttname"><a href="corte_8h.html">corte.h</a></div><div class="ttdoc">Clase para representar un corte dentro del programa.</div></div>
+<div class="ttc" id="aclasslista_html"><div class="ttname"><a href="classlista.html">lista&lt; Corte &gt;</a></div></div>
+<div class="ttc" id="aclass_profesor_html"><div class="ttname"><a href="class_profesor.html">Profesor</a></div><div class="ttdoc">Clase para manejar los datos relacionados al profesor.</div><div class="ttdef"><b>Definition:</b> profesor.h:16</div></div>
+<div class="ttc" id="aclass_profesor_html_aab7c6c6d2f93387cc95356d61853c5cf"><div class="ttname"><a href="class_profesor.html#aab7c6c6d2f93387cc95356d61853c5cf">Profesor::setNombres</a></div><div class="ttdeci">void setNombres(int pos, char letra)</div><div class="ttdoc">Establece los nombres del profesor.</div><div class="ttdef"><b>Definition:</b> profesor.h:103</div></div>
+<div class="ttc" id="aclass_profesor_html_a6bf755be76c0eb40e922d1a62a1fc2aa"><div class="ttname"><a href="class_profesor.html#a6bf755be76c0eb40e922d1a62a1fc2aa">Profesor::getListaCorte</a></div><div class="ttdeci">lista&lt; Corte &gt; getListaCorte()</div><div class="ttdoc">Retorna la lista de cortes del profesor.</div><div class="ttdef"><b>Definition:</b> profesor.h:125</div></div>
+<div class="ttc" id="aclass_profesor_html_abf158f1b3c5f3f6bcb36159795356515"><div class="ttname"><a href="class_profesor.html#abf158f1b3c5f3f6bcb36159795356515">Profesor::Profesor</a></div><div class="ttdeci">Profesor()</div><div class="ttdoc">&lt; Lista de cortes asociada al profesor</div><div class="ttdef"><b>Definition:</b> profesor.h:26</div></div>
+<div class="ttc" id="alista_8h_html"><div class="ttname"><a href="lista_8h.html">lista.h</a></div><div class="ttdoc">Clase para la implementación de la estructura de datos lista.</div></div>
+<div class="ttc" id="aclass_profesor_html_a22c264073c8bf1ff33752fbddf584932"><div class="ttname"><a href="class_profesor.html#a22c264073c8bf1ff33752fbddf584932">Profesor::getApellidos</a></div><div class="ttdeci">char * getApellidos()</div><div class="ttdoc">Retorna los apellidos del profesor.</div><div class="ttdef"><b>Definition:</b> profesor.h:116</div></div>
+<div class="ttc" id="aclass_profesor_html_a3b227b40fcf822b2e978a7e22a552816"><div class="ttname"><a href="class_profesor.html#a3b227b40fcf822b2e978a7e22a552816">Profesor::getCedula</a></div><div class="ttdeci">long long int &amp; getCedula()</div><div class="ttdoc">Retorna la cédula del profesor.</div><div class="ttdef"><b>Definition:</b> profesor.h:113</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

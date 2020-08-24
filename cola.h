@@ -1,3 +1,10 @@
+/**
+  *@file cola.h
+  *@version 1.0
+  *@date 24/08/2020
+  *@title Clase plantilla cola
+  *@brief Clase para la implementación de la estructura de datos cola
+  */
 #include <cstdlib>
 #include <iostream>
 #include "estructura.h"
@@ -7,21 +14,49 @@
 
 using namespace std;
 
-/*
-struct nodo{char dato;
-        nodo *sig;
-       };*/
-       
+/**
+  *@brief Clase para implementar la estructura de datos cola
+  */ 
+    
 template <class T>
-class cola{nodo<T> *cab,*fin;
-      public: cola(){cab=fin=NULL;}
-      void InsCola(T i);
+//Clase plantilla cola
+class cola{nodo<T> *cab,*fin; ///&lt; apuntadores a una estructura nodo.
+      public: 
+	  /**
+	  	*@brief Constructor por defecto Cola
+	  	*/
+	  cola(){cab=fin=NULL;}
+      
+	  /**
+	  	*@brief Inserta en la cola
+	  	*@param i Dato a insertar en la cola
+	  	*/
+	  void InsCola(T i);
+	   
+	   /**
+	  	*@brief Atiende la cola
+	  	*@param infoRet Direccion de un tipo de dato asociado al tipo de dato de la cola, para poder retornar la información
+	  	*/
       void AtenderCola(T *infoRet);
+      
+      /**
+	  	*@brief Imprime los datos que se encuentran en la cola
+	  	*/
       void ImprimirCola();
+      
+      /**
+	  	*@brief Devuelve el estado de la cola
+	  	*@return Verdadero si está vacía, falso en caso contrario
+	  	*/
       bool ColaVacia();
+      
+      /**
+	  	*@brief Destructor de la cola
+	  	*/
       ~cola();
  };
 
+//Implementación de los métodos de clase
 template <class T>
 void cola<T>::InsCola(T i){
      nodo<T> *nuevo;

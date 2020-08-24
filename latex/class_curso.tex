@@ -1,0 +1,121 @@
+\hypertarget{class_curso}{}\doxysection{Referencia de la Clase Curso}
+\label{class_curso}\index{Curso@{Curso}}
+
+
+\mbox{\hyperlink{class_clase}{Clase}} para manejar los datos relacionados a un curso.  
+
+
+
+
+{\ttfamily \#include $<$curso.\+h$>$}
+
+\doxysubsection*{MÃ©todos pÃºblicos}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_curso_abaea6b31e0bc00166661a8772ade459a}{set\+Codigo}} (string cod)
+\begin{DoxyCompactList}\small\item\em $<$ Lista de estudiantes asociada al curso \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_curso_a361cb3325c314d1abfbc8cd9812d4e91}{set\+Lista\+Estudiantes}} (\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{class_estudiante}{Estudiante}} $>$ es)
+\begin{DoxyCompactList}\small\item\em Establece la lista de estudiantes asociada al curso. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_curso_adc27e5178ceb337a36531b00ada123d1}{set\+Profesor}} (long long int cedula)
+\begin{DoxyCompactList}\small\item\em Establece la cédula del profesor. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_curso_ad74debb40c59712ec3f09dc5bb379ac2}{get\+Codigo}} ()
+\begin{DoxyCompactList}\small\item\em Retorna el código del curso. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{class_estudiante}{Estudiante}} $>$ \mbox{\hyperlink{class_curso_a48cfd3d0423af49980383eeb6d3f52ea}{get\+Lista\+Estudiantes}} ()
+\begin{DoxyCompactList}\small\item\em Retorna la lista de estudiantes del curso. \end{DoxyCompactList}\item 
+long long int \& \mbox{\hyperlink{class_curso_af1e80849708b6262c8e4f9c23b890b79}{get\+Profesor}} ()
+\begin{DoxyCompactList}\small\item\em Retorna la cédula del profesor a cargo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{DescripciÃ³n detallada}
+\mbox{\hyperlink{class_clase}{Clase}} para manejar los datos relacionados a un curso. 
+
+\doxysubsection{DocumentaciÃ³n de las funciones miembro}
+\mbox{\Hypertarget{class_curso_ad74debb40c59712ec3f09dc5bb379ac2}\label{class_curso_ad74debb40c59712ec3f09dc5bb379ac2}} 
+\index{Curso@{Curso}!getCodigo@{getCodigo}}
+\index{getCodigo@{getCodigo}!Curso@{Curso}}
+\doxysubsubsection{\texorpdfstring{getCodigo()}{getCodigo()}}
+{\footnotesize\ttfamily string Curso\+::get\+Codigo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna el código del curso. 
+
+\begin{DoxyReturn}{Devuelve}
+Código del curso tipo string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_curso_a48cfd3d0423af49980383eeb6d3f52ea}\label{class_curso_a48cfd3d0423af49980383eeb6d3f52ea}} 
+\index{Curso@{Curso}!getListaEstudiantes@{getListaEstudiantes}}
+\index{getListaEstudiantes@{getListaEstudiantes}!Curso@{Curso}}
+\doxysubsubsection{\texorpdfstring{getListaEstudiantes()}{getListaEstudiantes()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{class_estudiante}{Estudiante}} $>$ Curso\+::get\+Lista\+Estudiantes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna la lista de estudiantes del curso. 
+
+\begin{DoxyReturn}{Devuelve}
+Lista de tipo \mbox{\hyperlink{class_estudiante}{Estudiante}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_curso_af1e80849708b6262c8e4f9c23b890b79}\label{class_curso_af1e80849708b6262c8e4f9c23b890b79}} 
+\index{Curso@{Curso}!getProfesor@{getProfesor}}
+\index{getProfesor@{getProfesor}!Curso@{Curso}}
+\doxysubsubsection{\texorpdfstring{getProfesor()}{getProfesor()}}
+{\footnotesize\ttfamily long long int \& Curso\+::get\+Profesor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna la cédula del profesor a cargo. 
+
+\begin{DoxyReturn}{Devuelve}
+Número de cédula del profesor tipo long long int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_curso_abaea6b31e0bc00166661a8772ade459a}\label{class_curso_abaea6b31e0bc00166661a8772ade459a}} 
+\index{Curso@{Curso}!setCodigo@{setCodigo}}
+\index{setCodigo@{setCodigo}!Curso@{Curso}}
+\doxysubsubsection{\texorpdfstring{setCodigo()}{setCodigo()}}
+{\footnotesize\ttfamily void Curso\+::set\+Codigo (\begin{DoxyParamCaption}\item[{string}]{cod }\end{DoxyParamCaption})}
+
+
+
+$<$ Lista de estudiantes asociada al curso 
+
+Establece el código del curso 
+\begin{DoxyParams}{ParÃ¡metros}
+{\em cod} & Código del curso \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_curso_a361cb3325c314d1abfbc8cd9812d4e91}\label{class_curso_a361cb3325c314d1abfbc8cd9812d4e91}} 
+\index{Curso@{Curso}!setListaEstudiantes@{setListaEstudiantes}}
+\index{setListaEstudiantes@{setListaEstudiantes}!Curso@{Curso}}
+\doxysubsubsection{\texorpdfstring{setListaEstudiantes()}{setListaEstudiantes()}}
+{\footnotesize\ttfamily void Curso\+::set\+Lista\+Estudiantes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlista}{lista}}$<$ \mbox{\hyperlink{class_estudiante}{Estudiante}} $>$}]{es }\end{DoxyParamCaption})}
+
+
+
+Establece la lista de estudiantes asociada al curso. 
+
+
+\begin{DoxyParams}{ParÃ¡metros}
+{\em es} & Lista de tipo \mbox{\hyperlink{class_estudiante}{Estudiante}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_curso_adc27e5178ceb337a36531b00ada123d1}\label{class_curso_adc27e5178ceb337a36531b00ada123d1}} 
+\index{Curso@{Curso}!setProfesor@{setProfesor}}
+\index{setProfesor@{setProfesor}!Curso@{Curso}}
+\doxysubsubsection{\texorpdfstring{setProfesor()}{setProfesor()}}
+{\footnotesize\ttfamily void Curso\+::set\+Profesor (\begin{DoxyParamCaption}\item[{long long int}]{cedula }\end{DoxyParamCaption})}
+
+
+
+Establece la cédula del profesor. 
+
+
+\begin{DoxyParams}{ParÃ¡metros}
+{\em cedula} & Cédula del profesor \\
+\hline
+\end{DoxyParams}
+
+
+La documentaciÃ³n para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{curso_8h}{curso.\+h}}\end{DoxyCompactItemize}
