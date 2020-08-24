@@ -31,7 +31,7 @@ class lista{nodo <T> *cab, *z;///&lt; apuntadores a una estructura nodo.
 					z->Dato=Infomax;
 					z->sig=z;
 					tam=0;}
-
+			lista(){cab=NULL; tam=0;}		
 			/**
 			  *@brief Devuelve el estado de la cola
 			  *@return Verdadero si está vacía, falso en caso contrario
